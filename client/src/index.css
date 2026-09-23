@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-text-primary font-body antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-heading text-forest font-semibold;
+  }
+  :focus-visible {
+    @apply outline-none ring-2 ring-amber ring-offset-2 ring-offset-background;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* Layout */
+  .container-custom {
+    @apply mx-auto w-full max-w-[1200px] px-6 md:px-10;
+  }
+  .section {
+    @apply py-16 md:py-24;
+  }
+  .section-dark {
+    @apply bg-forest-dark text-white;
+  }
+  .section-dark h1, .section-dark h2, .section-dark h3 {
+    @apply text-white;
+  }
+  .section-heading-accent {
+    @apply inline-block h-1 w-10 rounded-full bg-amber mb-4;
+  }
+
+  /* Buttons */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3 text-[15px] font-semibold transition-colors duration-200 disabled:opacity-50 disabled:pointer-events-none;
+  }
+  .btn-primary {
+    @apply btn bg-amber text-forest-dark hover:bg-amber-dark;
+  }
+  .btn-secondary {
+    @apply btn bg-forest text-white hover:bg-forest-dark;
+  }
+  .btn-outline {
+    @apply btn border border-forest text-forest bg-transparent hover:bg-forest hover:text-white;
+  }
+  .btn-ghost {
+    @apply btn text-forest hover:bg-forest/5 px-3;
+  }
+
+  /* Cards */
+  .card {
+    @apply bg-surface border border-border rounded-xl shadow-card overflow-hidden transition-shadow duration-200;
+  }
+  .card:hover {
+    @apply shadow-card-hover;
+  }
+  .card-image {
+    @apply w-full aspect-[4/3] object-cover rounded-t-xl;
+  }
+  .card-body {
+    @apply p-6;
+  }
+
+  /* Badges */
+  .badge {
+    @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-sm font-medium;
+  }
+  .badge-mint {
+    @apply badge bg-mint/30 text-forest-dark;
+  }
+  .badge-amber {
+    @apply badge bg-amber/20 text-amber-dark;
+  }
+  .badge-neutral {
+    @apply badge bg-border/60 text-text-secondary;
+  }
+
+  /* Forms */
+  .field-label {
+    @apply block text-sm font-medium text-text-primary mb-1.5;
+  }
+  .field-input {
+    @apply w-full rounded-lg border border-border bg-surface px-4 py-2.5 text-text-primary placeholder:text-text-secondary/70 focus:border-forest transition-colors;
+  }
+  .field-error {
+    @apply mt-1 text-sm text-red-600;
+  }
+}
