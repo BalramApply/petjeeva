@@ -83,6 +83,27 @@ export const services = [
     startingPrice: 449,
     active: true,
   },
+  {
+  id: 'pet-registration',
+  name: 'Pet Registration',
+  category: 'Administrative & Legal',
+  image: 'https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=800&q=80',
+  shortDescription: 'Official pet registration, license acquisition, and legal identification.',
+  whoItsFor: 'New pet parents and pet owners needing municipal licensing or official ownership records.',
+  benefits: [
+    'Official government registration certificate',
+    'Legal ownership proof and identity tags',
+    'Hassle-free document verification and renewal alerts'
+  ],
+  process: [
+    'Upload pet details, owner ID, and vaccination records',
+    'Document verification and municipal authority processing',
+    'Receive digital certificate and registration ID'
+  ],
+  professionalRoles: ['pet_legal_advisor', 'registration_specialist'],
+  startingPrice: 449,
+  active: true,
+},
 ];
 
 const VETTING_STEPS = [
@@ -190,7 +211,7 @@ export default function About() {
         <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
           <div className="bg-white rounded-3xl p-6 border border-[#DDE5DF] shadow-sm text-center transform transition duration-300 hover:-translate-y-1">
             <span className="text-3xl sm:text-4xl font-extrabold text-[#12372A] block" style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }}>
-              15,000+
+              5,000+
             </span>
             <span className="text-xs sm:text-sm font-semibold text-[#66736B] mt-1 block">
               Companions Nurtured

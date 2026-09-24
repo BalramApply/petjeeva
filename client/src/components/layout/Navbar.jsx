@@ -49,7 +49,7 @@ export default function Navbar() {
 
         <div className="hidden lg:block">
           <Button variant="primary" href="/book">
-            Book Demo
+            Book Free Demo
           </Button>
         </div>
 
