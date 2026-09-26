@@ -1,52 +1,66 @@
 import * as Icons from 'lucide-react';
-import { Check } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import Button from '../ui/Button';
-import Badge from '../ui/Badge';
 
-const TINTS = ['bg-mint/25', 'bg-amber/20', 'bg-forest/10', 'bg-mint/20'];
+export default function ServiceCard({ service }) {
+  const imageUrl =
+    service.image ||
+    (service.icon?.startsWith('http') ? service.icon : null);
 
-export default function ServiceCard({ service, index = 0 }) {
-  const imageUrl = service.image || (service.icon?.startsWith('http') ? service.icon : null);
   const Icon = !imageUrl ? Icons[service.icon] : null;
-  const tint = TINTS[index % TINTS.length];
 
   return (
-    <div className="card flex flex-col overflow-hidden">
-      {/* Visual header: Renders the image if available, else falls back to tint + icon */}
-      <div className={`aspect-[16/9] w-full flex items-center justify-center overflow-hidden ${!imageUrl ? tint : 'bg-neutral-100'}`}>
+    <div className="group flex h-full flex-col overflow-hidden rounded-2xl border border-[#232730] bg-[#14171E] transition-all duration-300 hover:-translate-y-1 hover:border-[#383F4D]">
+      {/* Image / Icon */}
+      <div className="relative aspect-[16/8] w-full overflow-hidden bg-[#0F1115]">
         {imageUrl ? (
           <img
             src={imageUrl}
             alt={service.name}
-            className="h-full w-full object-cover"
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
             loading="lazy"
           />
         ) : (
-          Icon && <Icon size={48} className="text-forest-dark/70" strokeWidth={1.3} />
+          <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-[#1A1D24] to-[#101217]">
+            {Icon && (
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-amber-500/10 text-amber-400">
+                <Icon size={26} strokeWidth={1.8} />
+              </div>
+            )}
+          </div>
         )}
       </div>
 
-      <div className="card-body flex flex-1 flex-col">
-        <h3 className="text-h3 font-heading">{service.name}</h3>
-        <p className="mt-2 text-sm text-text-secondary">{service.shortDescription}</p>
+      {/* Content */}
+      <div className="flex flex-1 flex-col p-4">
+        <h3 className="font-heading text-base font-bold tracking-tight text-[#F9FAFB] transition-colors group-hover:text-amber-300">
+          {service.name}
+        </h3>
 
-        <ul className="mt-4 space-y-2">
-          {service.benefits.map((benefit) => (
-            <li key={benefit} className="flex items-start gap-2 text-sm text-text-primary">
-              <Check size={16} className="mt-0.5 shrink-0 text-forest" />
-              {benefit}
-            </li>
-          ))}
-        </ul>
+        <p className="mt-1.5 line-clamp-2 text-xs leading-relaxed text-[#9CA3AF]">
+          {service.shortDescription}
+        </p>
 
-        <div className="mt-6 flex items-center justify-between gap-4">
+        {/* Price + CTA */}
+        <div className="mt-auto flex items-end justify-between gap-2 pt-4">
           <div>
-            <p className="text-lg font-semibold text-forest">From ₹{service.startingPrice}</p>
-            <Badge variant="neutral">Per session</Badge>
+            <span className="block text-[10px] text-[#6B7280]">
+              Starting at
+            </span>
+
+            <span className="text-lg font-extrabold tracking-tight text-[#F9FAFB]">
+              ₹{service.startingPrice}
+            </span>
           </div>
-          <Button variant="outline" href={`/services/${service.id}`}>
-            View Service
-          </Button>
+
+<Button
+  variant="outline"
+  href={`/services/${service.id}`}
+  className="inline-flex h-9 shrink-0 items-center gap-1.5 whitespace-nowrap rounded-lg border border-[#343A46] bg-[#191C23] px-3 text-xs font-semibold text-[#E5E7EB] transition-all duration-200 hover:border-amber-500/50 hover:bg-[#20242D] hover:text-white"
+>
+  <span>More Details</span>
+</Button>
+
         </div>
       </div>
     </div>

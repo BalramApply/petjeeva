@@ -32,7 +32,7 @@ export const estimatorServices = [
 // Generic placeholder zones — never fabricate real neighborhood names
 // before the business confirms actual service areas (Admin > Service Areas).
 export const locations = [
-  { id: 'zone-a', label: 'Gurugram', multiplier: 1 },
-  { id: 'zone-b', label: 'Noida', multiplier: 1.1 },
-  { id: 'zone-c', label: 'Delhi NCR', multiplier: 1.2 },
+  { id: 'Gurugram', label: 'Gurugram', multiplier: 1 },
+  { id: 'Noida', label: 'Noida', multiplier: 1.1 },
+  { id: 'Delhi NCR', label: 'Delhi NCR', multiplier: 1.2 },
 ];

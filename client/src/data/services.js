@@ -3,6 +3,8 @@
 // GET /api/services call in Phase 12 is a drop-in change.
 // startingPrice is placeholder/demo — real pricing is admin-configured
 // via PriceRule, never hardcoded once that's wired up.
+import heroImg from './bathing.png';
+import vaccinations from './vaccinations.png'
 export const services = [
   {
     id: 'training',
@@ -34,7 +36,7 @@ export const services = [
     id: 'grooming',
     name: 'Pet Grooming',
     category: 'Grooming',
-    image: 'https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=800&q=80',
+    image: heroImg,
     shortDescription: 'Bathing, haircuts, nail trims and breed-specific coat care.',
     whoItsFor: 'Any pet due for a bath, trim, or extra coat care between visits.',
     benefits: ['Breed-specific care', 'Gentle handling', 'At-home or in-studio'],
@@ -47,7 +49,7 @@ export const services = [
     id: 'wellness',
     name: 'Vaccination & Wellness',
     category: 'Healthcare',
-    image: 'https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?auto=format&fit=crop&w=800&q=80',
+    image: vaccinations,
     shortDescription: 'Routine checkups, vaccinations and preventive care.',
     whoItsFor: 'Pets due for a routine checkup, vaccination, or general wellness review.',
     benefits: ['Trained care team', 'Digital health records', 'Timely reminders'],

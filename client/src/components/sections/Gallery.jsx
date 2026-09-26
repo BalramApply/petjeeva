@@ -2,12 +2,10 @@ import React, { useState, useMemo } from 'react';
 import { 
   Heart, 
   Search, 
-  Filter, 
   Sparkles, 
   X, 
   ChevronRight, 
   ChevronLeft, 
-  UploadCloud, 
   Share2, 
   Award, 
   CheckCircle2, 
@@ -17,15 +15,8 @@ import {
   ArrowUpDown,
   Maximize2,
   ShieldCheck,
-  Dog,
-  Cat,
-  Scissors
+  Check
 } from 'lucide-react';
-
-// Design Tokens strictly following the specified pet care theme:
-// Deep Forest: #12372A | Dark Evergreen: #0B2119 | Warm Amber: #F4A261
-// Soft Mint: #A8D5BA | Background: #F8F7F2 | Surface: #FFFFFF
-// Text Primary: #17211B | Text Secondary: #66736B | Border: #DDE5DF
 
 const GALLERY_ITEMS = [
   {
@@ -37,7 +28,7 @@ const GALLERY_ITEMS = [
     caregiver: "Sarah Jenkins (Certified Trainer)",
     careNote: "Milo enjoyed obstacle courses today and made friends with Rusty during the 2 PM lawn run!",
     image: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&q=80",
-    aspect: "tall", // for bento layout
+    aspect: "tall",
     likes: 142,
     date: "2024-05-18",
     badge: "Daycare Fun",
@@ -180,35 +171,40 @@ function TransformationSection() {
   };
 
   return (
-    <section id="gallery" className="bg-white rounded-3xl p-6 md:p-10 border border-[#DDE5DF] shadow-sm mb-16 overflow-hidden">
-      <div className="flex flex-col lg:flex-row items-center gap-8">
+    <section id="gallery" className="relative bg-[#14171E] rounded-3xl p-6 md:p-10 border border-[#232730] shadow-2xl shadow-black/50 mb-16 overflow-hidden">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -top-24 right-0 -z-10 h-72 w-72 rounded-full bg-amber-500/5 blur-3xl"
+      />
+
+      <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
         {/* Left copy */}
         <div className="lg:w-5/12 space-y-4 text-left">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#A8D5BA]/20 border border-[#A8D5BA] text-[#12372A] text-xs font-semibold uppercase tracking-wider">
-            <Sparkles size={14} className="text-[#12372A]" />
-            Real Care Transformation
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-300 text-xs font-semibold tracking-wide">
+            <Sparkles size={14} className="text-amber-400" />
+            <span>Real Care Transformation</span>
           </div>
-          <h3 className="text-3xl font-extrabold text-[#12372A] tracking-tight" style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }}>
-            From Muddy Trail to Velvety Fluff
+          <h3 className="text-2xl sm:text-3xl font-extrabold text-[#F9FAFB] tracking-tight leading-snug">
+            From Muddy Trail to <span className="bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent">Velvety Fluff</span>
           </h3>
-          <p className="text-[#66736B] leading-relaxed text-sm md:text-base">
-            Slide horizontally to reveal the before and after of Archie’s full de-shedding bath, 
+          <p className="text-[#9CA3AF] leading-relaxed text-sm md:text-base">
+            Slide horizontally to reveal the before and after of Archie&apos;s full de-shedding bath, 
             ear sanitization, and warm lavender paw moisture treatment.
           </p>
           
-          <div className="pt-2 grid grid-cols-2 gap-3 text-xs font-medium text-[#17211B]">
-            <div className="p-3 rounded-xl bg-[#F8F7F2] border border-[#DDE5DF]">
-              <span className="text-[#66736B] block text-[11px]">PET GUEST</span>
-              <strong className="text-[#12372A] text-sm">Archie (Cockapoo)</strong>
+          <div className="pt-2 grid grid-cols-2 gap-3 text-xs font-medium">
+            <div className="p-3 rounded-2xl bg-[#0F1115] border border-[#232730]">
+              <span className="text-[#6B7280] block text-[11px] uppercase tracking-wider font-semibold">Pet Guest</span>
+              <strong className="text-[#F3F4F6] text-sm mt-0.5 block">Archie (Cockapoo)</strong>
             </div>
-            <div className="p-3 rounded-xl bg-[#F8F7F2] border border-[#DDE5DF]">
-              <span className="text-[#66736B] block text-[11px]">CARE PACKAGE</span>
-              <strong className="text-[#12372A] text-sm">Signature Spa & Trim</strong>
+            <div className="p-3 rounded-2xl bg-[#0F1115] border border-[#232730]">
+              <span className="text-[#6B7280] block text-[11px] uppercase tracking-wider font-semibold">Care Package</span>
+              <strong className="text-[#F3F4F6] text-sm mt-0.5 block">Signature Spa &amp; Trim</strong>
             </div>
           </div>
 
-          <div className="flex items-center gap-2 text-xs text-[#66736B] pt-1">
-            <ShieldCheck size={16} className="text-[#A8D5BA]" />
+          <div className="flex items-center gap-2 text-xs text-[#9CA3AF] pt-1">
+            <ShieldCheck size={16} className="text-emerald-400 shrink-0" />
             <span>Performed using 100% organic, tear-free botanicals.</span>
           </div>
         </div>
@@ -216,7 +212,7 @@ function TransformationSection() {
         {/* Interactive Comparison Slider */}
         <div className="lg:w-7/12 w-full">
           <div 
-            className="relative w-full h-80 sm:h-96 rounded-2xl overflow-hidden cursor-ew-resize select-none border border-[#DDE5DF] shadow-inner"
+            className="relative w-full h-80 sm:h-96 rounded-2xl overflow-hidden cursor-ew-resize select-none border border-[#272B33] shadow-inner bg-[#0B0D11]"
             onMouseMove={(e) => {
               if (e.buttons === 1 || isDragging) handleMouseMove(e);
             }}
@@ -230,7 +226,7 @@ function TransformationSection() {
               alt="Archie After Care Grooming" 
               className="absolute inset-0 w-full h-full object-cover pointer-events-none"
             />
-            <div className="absolute top-4 right-4 bg-[#12372A]/90 text-white backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold shadow">
+            <div className="absolute top-4 right-4 bg-[#0F1115]/90 border border-white/10 text-[#F9FAFB] backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold shadow-lg">
               After Grooming ✨
             </div>
 
@@ -245,24 +241,24 @@ function TransformationSection() {
                 className="absolute inset-0 w-full h-full object-cover max-w-none pointer-events-none"
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />
-              <div className="absolute top-4 left-4 bg-[#0B2119]/80 text-white backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold shadow">
+              <div className="absolute top-4 left-4 bg-[#0F1115]/90 border border-white/10 text-[#D1D5DB] backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold shadow-lg">
                 Before Arrival 🐾
               </div>
             </div>
 
             {/* Splitter Line and Handle */}
             <div 
-              className="absolute inset-y-0 w-1 bg-white shadow-xl cursor-ew-resize flex items-center justify-center pointer-events-none"
+              className="absolute inset-y-0 w-0.5 bg-white/90 shadow-[0_0_12px_rgba(255,255,255,0.4)] cursor-ew-resize flex items-center justify-center pointer-events-none"
               style={{ left: `${sliderPos}%` }}
             >
-              <div className="w-8 h-8 -ml-3.5 bg-[#F4A261] border-2 border-white rounded-full flex items-center justify-center text-white shadow-md">
-                <ChevronLeft size={14} className="-mr-1" />
-                <ChevronRight size={14} className="-ml-1" />
+              <div className="w-8 h-8 -ml-4 bg-gradient-to-r from-amber-500 to-orange-500 border border-white/70 rounded-full flex items-center justify-center text-stone-950 shadow-lg shadow-black/60">
+                <ChevronLeft size={13} className="-mr-0.5" strokeWidth={2.5} />
+                <ChevronRight size={13} className="-ml-0.5" strokeWidth={2.5} />
               </div>
             </div>
           </div>
-          <p className="text-center text-xs text-[#66736B] mt-2">
-            ← Drag or slide across the image to see Archie's glow up →
+          <p className="text-center text-xs text-[#6B7280] mt-3">
+            ← Drag or slide across the image to see Archie&apos;s transformation →
           </p>
         </div>
       </div>
@@ -271,72 +267,82 @@ function TransformationSection() {
 }
 
 function LightboxModal({ item, onClose, onLike, isLiked }) {
+  const [copied, setCopied] = useState(false);
+
   if (!item) return null;
+
+  const handleShare = () => {
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(window.location.href);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }
+  };
 
   return (
     <div 
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#0B2119]/85 backdrop-blur-md transition-opacity duration-300 animate-fadeIn"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md transition-opacity duration-300"
       onClick={onClose}
     >
       <div 
-        className="relative bg-white rounded-3xl max-w-4xl w-full max-h-[92vh] overflow-hidden shadow-2xl border border-[#DDE5DF] flex flex-col md:flex-row"
+        className="relative bg-[#14171E] rounded-3xl max-w-4xl w-full max-h-[92vh] overflow-hidden shadow-2xl border border-[#272B33] flex flex-col md:flex-row"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
         <button 
           onClick={onClose}
-          className="absolute top-4 right-4 z-20 w-9 h-9 bg-white/90 hover:bg-[#F8F7F2] text-[#12372A] rounded-full flex items-center justify-center shadow-md transition-all"
+          className="absolute top-4 right-4 z-20 w-9 h-9 bg-[#1F232C]/80 hover:bg-[#282E3B] text-[#D1D5DB] hover:text-white rounded-full flex items-center justify-center shadow-lg border border-[#2C313C] transition-all"
           aria-label="Close modal"
         >
-          <X size={18} />
+          <X size={17} />
         </button>
 
         {/* Media Preview */}
-        <div className="md:w-7/12 bg-black relative flex items-center justify-center overflow-hidden">
+        <div className="md:w-7/12 bg-[#0A0C0F] relative flex items-center justify-center overflow-hidden">
           <img 
             src={item.image} 
             alt={item.title} 
             className="w-full h-72 md:h-full object-cover max-h-[580px]"
           />
-          <div className="absolute bottom-3 left-3 bg-[#0B2119]/70 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-medium">
+          <div className="absolute bottom-3.5 left-3.5 bg-[#0F1115]/85 border border-[#272B33] backdrop-blur-md text-[#E5E7EB] px-3 py-1 rounded-full text-xs font-medium">
             {item.badge}
           </div>
         </div>
 
         {/* Details Panel */}
-        <div className="md:w-5/12 p-6 md:p-8 flex flex-col justify-between overflow-y-auto max-h-[50vh] md:max-h-none">
+        <div className="md:w-5/12 p-6 md:p-8 flex flex-col justify-between overflow-y-auto max-h-[50vh] md:max-h-none bg-[#14171E]">
           <div className="space-y-4">
             <div>
-              <span className="inline-block text-xs font-bold uppercase tracking-wider text-[#F4A261]">
+              <span className="inline-block text-xs font-semibold uppercase tracking-wider text-amber-400">
                 {item.category}
               </span>
-              <h3 className="text-2xl font-bold text-[#12372A] mt-1" style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }}>
+              <h3 className="text-xl sm:text-2xl font-bold text-[#F9FAFB] mt-1 tracking-tight">
                 {item.title}
               </h3>
-              <p className="text-sm font-semibold text-[#17211B] mt-1">
-                Guest: <span className="text-[#12372A]">{item.petName}</span>
+              <p className="text-sm font-medium text-[#9CA3AF] mt-1">
+                Guest: <span className="text-[#F3F4F6] font-semibold">{item.petName}</span>
               </p>
             </div>
 
-            <div className="p-3.5 bg-[#F8F7F2] rounded-2xl border border-[#DDE5DF] space-y-2">
-              <div className="flex items-center gap-2 text-xs text-[#66736B]">
-                <Award size={14} className="text-[#A8D5BA]" />
-                <span className="font-semibold text-[#12372A]">{item.service}</span>
+            <div className="p-4 bg-[#0F1115] rounded-2xl border border-[#232730] space-y-2.5">
+              <div className="flex items-center gap-2 text-xs text-[#9CA3AF]">
+                <Award size={14} className="text-amber-400 shrink-0" />
+                <span className="font-semibold text-[#E5E7EB]">{item.service}</span>
               </div>
-              <p className="text-xs text-[#66736B] leading-relaxed italic">
-                "{item.careNote}"
+              <p className="text-xs text-[#9CA3AF] leading-relaxed italic">
+                &ldquo;{item.careNote}&rdquo;
               </p>
-              <div className="pt-1 text-[11px] text-[#66736B] flex items-center gap-1.5 border-t border-[#DDE5DF]">
-                <CheckCircle2 size={13} className="text-[#A8D5BA]" />
-                Caregiver: {item.caregiver}
+              <div className="pt-2 text-[11px] text-[#6B7280] flex items-center gap-1.5 border-t border-[#1C2028]">
+                <CheckCircle2 size={13} className="text-emerald-400 shrink-0" />
+                <span>Caregiver: {item.caregiver}</span>
               </div>
             </div>
 
             <div>
-              <p className="text-xs font-semibold text-[#66736B] mb-2">Care Tags</p>
+              <p className="text-xs font-semibold text-[#6B7280] uppercase tracking-wider mb-2">Care Tags</p>
               <div className="flex flex-wrap gap-1.5">
                 {item.tags.map((t, idx) => (
-                  <span key={idx} className="text-xs px-2.5 py-1 rounded-full bg-[#A8D5BA]/20 text-[#12372A] font-medium border border-[#A8D5BA]/40">
+                  <span key={idx} className="text-xs px-2.5 py-1 rounded-full bg-[#181C24] text-amber-300 font-medium border border-[#262B34]">
                     #{t}
                   </span>
                 ))}
@@ -344,30 +350,35 @@ function LightboxModal({ item, onClose, onLike, isLiked }) {
             </div>
           </div>
 
-          <div className="pt-6 border-t border-[#DDE5DF] mt-6 flex items-center justify-between">
+          <div className="pt-6 border-t border-[#232730] mt-6 flex items-center justify-between">
             <button 
               onClick={() => onLike(item.id)}
-              className={`flex items-center gap-2 px-4 py-2.5 rounded-full font-medium text-sm transition-all ${
+              className={`flex items-center gap-2 px-4 py-2.5 rounded-full font-medium text-xs sm:text-sm border transition-all active:scale-95 ${
                 isLiked 
-                  ? 'bg-[#12372A] text-white' 
-                  : 'bg-[#F8F7F2] hover:bg-[#DDE5DF]/60 text-[#17211B]'
+                  ? 'bg-amber-500/15 border-amber-500/40 text-amber-300' 
+                  : 'bg-[#181C24] hover:bg-[#1F232D] border-[#262A34] text-[#D1D5DB]'
               }`}
             >
-              <Heart size={16} className={isLiked ? "fill-[#F4A261] text-[#F4A261]" : "text-[#66736B]"} />
+              <Heart size={15} className={isLiked ? "fill-amber-400 text-amber-400" : "text-[#6B7280]"} />
               <span>{item.likes + (isLiked ? 1 : 0)} Loves</span>
             </button>
 
             <button 
-              onClick={() => {
-                if (navigator.clipboard) {
-                  navigator.clipboard.writeText(window.location.href);
-                }
-              }}
-              className="flex items-center gap-1.5 text-xs text-[#66736B] hover:text-[#12372A] transition-colors p-2"
+              onClick={handleShare}
+              className="flex items-center gap-1.5 text-xs text-[#9CA3AF] hover:text-[#F3F4F6] transition-colors p-2"
               title="Copy share link"
             >
-              <Share2 size={16} />
-              <span>Share</span>
+              {copied ? (
+                <>
+                  <Check size={15} className="text-emerald-400" />
+                  <span className="text-emerald-400">Copied</span>
+                </>
+              ) : (
+                <>
+                  <Share2 size={15} />
+                  <span>Share</span>
+                </>
+              )}
             </button>
           </div>
         </div>
@@ -379,12 +390,10 @@ function LightboxModal({ item, onClose, onLike, isLiked }) {
 export default function Gallery() {
   const [activeCategory, setActiveCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
-  const [sortBy, setSortBy] = useState("popular"); // popular | newest
+  const [sortBy, setSortBy] = useState("popular");
   const [selectedItem, setSelectedItem] = useState(null);
   const [likedItems, setLikedItems] = useState({});
-  const [uploadNotice, setUploadNotice] = useState(false);
 
-  // Toggle like
   const toggleLike = (id) => {
     setLikedItems(prev => ({
       ...prev,
@@ -392,7 +401,6 @@ export default function Gallery() {
     }));
   };
 
-  // Filter and sort items
   const filteredItems = useMemo(() => {
     return GALLERY_ITEMS.filter((item) => {
       const matchCategory = activeCategory === "All" || item.category === activeCategory;
@@ -416,19 +424,27 @@ export default function Gallery() {
   }, [activeCategory, searchQuery, sortBy, likedItems]);
 
   return (
-    <div className="min-h-screen bg-[#F8F7F2] text-[#17211B] flex flex-col font-sans selection:bg-[#A8D5BA]/30 selection:text-[#12372A]">
+    <div className="min-h-screen bg-[#0F1115] text-[#9CA3AF] flex flex-col font-sans selection:bg-amber-500/20 selection:text-amber-300">
 
-      {/* Hero Section of Gallery */}
-      <section className="relative pt-12 pb-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+      {/* Hero Section */}
+      <section className="relative overflow-hidden pt-16 pb-8 md:pt-20 md:pb-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -top-24 left-1/2 -z-10 h-80 w-[38rem] -translate-x-1/2 rounded-full bg-gradient-to-tr from-amber-500/10 via-orange-500/5 to-transparent blur-3xl"
+        />
+
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#12372A] text-white text-xs font-semibold tracking-wide">
-            <ShieldCheck size={14} className="text-[#A8D5BA]" />
-            Verified Paws, Certified Smiles
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-300 text-xs font-medium tracking-wide backdrop-blur-sm">
+            <ShieldCheck size={14} className="text-amber-400" />
+            <span>Verified Paws, Certified Smiles</span>
           </div>
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-[#12372A] tracking-tight" style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }}>
-            Moments of Joy & Royal Care
+          <h1 className="text-3xl sm:text-5xl font-extrabold text-[#F9FAFB] tracking-tight leading-[1.12]">
+            Moments of Joy &amp;{' '}
+            <span className="bg-gradient-to-r from-amber-400 via-orange-400 to-amber-200 bg-clip-text text-transparent">
+              Royal Care
+            </span>
           </h1>
-          <p className="text-base sm:text-lg text-[#66736B] leading-relaxed">
+          <p className="text-sm sm:text-base md:text-lg text-[#9CA3AF] leading-relaxed max-w-2xl mx-auto">
             Peek inside our serene play runs, clinical suites, and botanical spa rooms. Every tail wag and purr captured with love by our certified caregivers.
           </p>
         </div>
@@ -439,7 +455,7 @@ export default function Gallery() {
         <TransformationSection />
 
         {/* Filter Controls Bar */}
-        <div className="sticky top-20 z-30 bg-[#F8F7F2]/95 backdrop-blur-sm py-4 mb-6 border-b border-[#DDE5DF]">
+        <div className="sticky top-20 z-30 bg-[#0F1115]/90 backdrop-blur-md py-4 mb-8 border-b border-[#232730]">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-4">
             
             {/* Category Pills */}
@@ -450,10 +466,10 @@ export default function Gallery() {
                   <button
                     key={cat}
                     onClick={() => setActiveCategory(cat)}
-                    className={`whitespace-nowrap px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 ${
+                    className={`whitespace-nowrap px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 select-none ${
                       isActive 
-                        ? 'bg-[#12372A] text-white shadow-sm' 
-                        : 'bg-white text-[#66736B] hover:text-[#12372A] hover:bg-white/80 border border-[#DDE5DF]'
+                        ? 'bg-gradient-to-r from-amber-500 to-orange-500 text-stone-950 shadow-md shadow-amber-500/20' 
+                        : 'bg-[#14171E] text-[#9CA3AF] hover:text-[#F3F4F6] hover:bg-[#1A1E27] border border-[#232730]'
                     }`}
                   >
                     {cat}
@@ -462,21 +478,21 @@ export default function Gallery() {
               })}
             </div>
 
-            {/* Search & Sort dropdown */}
-            <div className="flex items-center gap-2 w-full lg:w-auto">
+            {/* Search & Sort Dropdown */}
+            <div className="flex items-center gap-2.5 w-full lg:w-auto">
               <div className="relative flex-1 sm:w-64">
-                <Search size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#66736B]" />
+                <Search size={15} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#6B7280]" />
                 <input 
                   type="text"
                   placeholder="Search pet, tag or service..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-9 pr-4 py-2 bg-white text-xs sm:text-sm rounded-full border border-[#DDE5DF] focus:outline-none focus:border-[#12372A] text-[#17211B] placeholder-[#66736B]/70 transition-colors"
+                  className="w-full pl-9 pr-8 py-2 bg-[#14171E] text-xs sm:text-sm rounded-full border border-[#262A34] focus:outline-none focus:border-amber-500/80 text-[#F3F4F6] placeholder-[#4B5563] transition-colors"
                 />
                 {searchQuery && (
                   <button 
                     onClick={() => setSearchQuery("")} 
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-[#66736B] hover:text-[#12372A]"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-[#6B7280] hover:text-[#F3F4F6]"
                   >
                     <X size={14} />
                   </button>
@@ -488,31 +504,31 @@ export default function Gallery() {
                 <select 
                   value={sortBy} 
                   onChange={(e) => setSortBy(e.target.value)}
-                  className="appearance-none bg-white text-xs sm:text-sm font-medium text-[#17211B] pl-3.5 pr-8 py-2 rounded-full border border-[#DDE5DF] focus:outline-none focus:border-[#12372A] cursor-pointer"
+                  className="appearance-none bg-[#14171E] text-xs sm:text-sm font-medium text-[#D1D5DB] pl-3.5 pr-8 py-2 rounded-full border border-[#262A34] focus:outline-none focus:border-amber-500/80 cursor-pointer"
                 >
-                  <option value="popular">Most Loved</option>
-                  <option value="newest">Recent Captures</option>
+                  <option value="popular" className="bg-[#14171E] text-[#F3F4F6]">Most Loved</option>
+                  <option value="newest" className="bg-[#14171E] text-[#F3F4F6]">Recent Captures</option>
                 </select>
-                <ArrowUpDown size={13} className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-[#66736B]" />
+                <ArrowUpDown size={13} className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-[#6B7280]" />
               </div>
             </div>
 
           </div>
         </div>
 
-        {/* Gallery Grid with Responsive Bento / Masonry feel */}
+        {/* Gallery Grid */}
         {filteredItems.length === 0 ? (
-          <div className="text-center py-20 bg-white rounded-3xl border border-[#DDE5DF] p-8">
-            <div className="w-14 h-14 bg-[#F8F7F2] rounded-full flex items-center justify-center mx-auto text-[#66736B] mb-3">
-              <Camera size={24} />
+          <div className="text-center py-20 bg-[#14171E] rounded-3xl border border-[#232730] p-8">
+            <div className="w-14 h-14 bg-[#0F1115] rounded-2xl border border-[#262A34] flex items-center justify-center mx-auto text-[#6B7280] mb-3">
+              <Camera size={22} className="text-amber-400" />
             </div>
-            <h4 className="text-lg font-bold text-[#12372A]">No pet memories found</h4>
-            <p className="text-sm text-[#66736B] max-w-sm mx-auto mt-1">
-              Try adjusting your search query or selecting "All" categories to view other lovely moments.
+            <h4 className="text-lg font-bold text-[#F9FAFB] tracking-tight">No pet memories found</h4>
+            <p className="text-xs sm:text-sm text-[#9CA3AF] max-w-sm mx-auto mt-1 leading-relaxed">
+              Try adjusting your search query or selecting &ldquo;All&rdquo; categories to view other lovely moments.
             </p>
             <button 
               onClick={() => { setActiveCategory("All"); setSearchQuery(""); }}
-              className="mt-4 px-4 py-2 bg-[#12372A] text-white text-xs font-semibold rounded-full hover:bg-[#0B2119] transition-colors"
+              className="mt-5 px-5 py-2 bg-gradient-to-r from-amber-500 to-orange-500 text-stone-950 text-xs font-semibold rounded-full hover:from-amber-400 hover:to-orange-400 transition-all shadow-md shadow-amber-500/20 active:scale-95"
             >
               Reset Filters
             </button>
@@ -525,10 +541,10 @@ export default function Gallery() {
                 <article 
                   key={item.id}
                   onClick={() => setSelectedItem(item)}
-                  className="group relative bg-white rounded-3xl overflow-hidden border border-[#DDE5DF] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col cursor-pointer hover:-translate-y-1"
+                  className="group relative bg-[#14171E] rounded-3xl overflow-hidden border border-[#232730] shadow-xl shadow-black/40 hover:shadow-2xl hover:border-[#383F4E] transition-all duration-300 flex flex-col cursor-pointer hover:-translate-y-1"
                 >
                   {/* Image Container with Smooth Zoom */}
-                  <div className="relative w-full h-72 sm:h-80 overflow-hidden bg-[#0B2119]/5">
+                  <div className="relative w-full h-72 sm:h-80 overflow-hidden bg-[#0F1115]">
                     <img 
                       src={item.image} 
                       alt={item.title} 
@@ -537,37 +553,37 @@ export default function Gallery() {
                     />
 
                     {/* Gradient Overlay for legibility */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0B2119]/70 via-transparent to-black/10 opacity-80 group-hover:opacity-90 transition-opacity" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0B0D11] via-[#0B0D11]/30 to-black/20 opacity-90 group-hover:opacity-95 transition-opacity" />
 
                     {/* Top Badges */}
                     <div className="absolute top-3.5 left-3.5 right-3.5 flex items-center justify-between pointer-events-none">
-                      <span className="px-3 py-1 rounded-full text-[11px] font-bold bg-white/90 text-[#12372A] backdrop-blur-md shadow-sm">
+                      <span className="px-3 py-1 rounded-full text-[11px] font-semibold bg-[#14171E]/90 border border-white/10 text-[#F3F4F6] backdrop-blur-md shadow-sm">
                         {item.badge}
                       </span>
-                      <span className="w-8 h-8 rounded-full bg-white/80 text-[#12372A] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                        <Maximize2 size={14} />
+                      <span className="w-8 h-8 rounded-full bg-[#14171E]/90 border border-white/10 text-[#F3F4F6] backdrop-blur-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 shadow-md">
+                        <Maximize2 size={13} />
                       </span>
                     </div>
 
                     {/* Overlay Content Bottom */}
                     <div className="absolute bottom-3.5 left-3.5 right-3.5 text-white">
-                      <div className="flex items-center gap-1.5 text-xs text-[#A8D5BA] font-semibold mb-1">
+                      <div className="flex items-center gap-1.5 text-xs text-amber-400 font-semibold mb-1">
                         <Tag size={12} />
                         <span>{item.service}</span>
                       </div>
-                      <h4 className="text-lg font-bold tracking-tight text-white drop-shadow-sm line-clamp-1" style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }}>
+                      <h4 className="text-base sm:text-lg font-bold tracking-tight text-[#F9FAFB] line-clamp-1 drop-shadow-sm">
                         {item.title}
                       </h4>
-                      <p className="text-xs text-[#F8F7F2]/90 mt-0.5">
-                        Guest: <strong className="text-[#F4A261]">{item.petName}</strong>
+                      <p className="text-xs text-[#9CA3AF] mt-0.5">
+                        Guest: <strong className="text-[#F3F4F6] font-semibold">{item.petName}</strong>
                       </p>
                     </div>
                   </div>
 
                   {/* Card Footer Bar */}
-                  <div className="p-4 bg-white flex items-center justify-between border-t border-[#DDE5DF]">
-                    <div className="flex items-center gap-1 text-xs text-[#66736B]">
-                      <Calendar size={13} className="text-[#A8D5BA]" />
+                  <div className="p-4 bg-[#14171E] flex items-center justify-between border-t border-[#20242D]">
+                    <div className="flex items-center gap-1.5 text-xs text-[#6B7280]">
+                      <Calendar size={13} className="text-amber-400" />
                       <span>{new Date(item.date).toLocaleDateString(undefined, { month: 'short', day: 'numeric' })}</span>
                     </div>
 
@@ -576,11 +592,15 @@ export default function Gallery() {
                         e.stopPropagation();
                         toggleLike(item.id);
                       }}
-                      className="flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#F8F7F2] hover:bg-[#DDE5DF]/60 transition-colors text-[#17211B]"
+                      className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold border transition-all active:scale-95 ${
+                        isLiked
+                          ? 'bg-amber-500/15 border-amber-500/40 text-amber-300'
+                          : 'bg-[#181C24] hover:bg-[#1F232D] border-[#262A34] text-[#D1D5DB]'
+                      }`}
                     >
                       <Heart 
-                        size={14} 
-                        className={isLiked ? "fill-[#F4A261] text-[#F4A261]" : "text-[#66736B]"} 
+                        size={13} 
+                        className={isLiked ? "fill-amber-400 text-amber-400" : "text-[#6B7280]"} 
                       />
                       <span>{item.likes + (isLiked ? 1 : 0)}</span>
                     </button>
