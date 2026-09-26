@@ -12,8 +12,8 @@ import ProfessionalsPage from './components/sections/Professionals';
 import GalleryPage from './components/sections/Gallery';
 import AboutPage from './components/sections/About';
 import ContactPage from './components/sections/Contact';
-// import ServiceDetail from './pages/ServiceDetail';
-// import Booking from './pages/Booking';
+import ServiceDetail from './pages/ServiceDetail';
+import Booking from './pages/Booking';
 
 // Admin Pages
 import AdminLogin from './pages/admin/Login';
@@ -36,8 +36,8 @@ export default function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
           
-          {/* <Route path="/services/:serviceId" element={<ServiceDetail />} /> */}
-          {/* <Route path="/book" element={<Booking />} /> */}
+          <Route path="/services/:serviceId" element={<ServiceDetail />} />
+          <Route path="/book" element={<Booking />} />
         </Route>
 
         {/* Admin — separate layout, protected */}
