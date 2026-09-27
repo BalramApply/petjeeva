@@ -173,14 +173,14 @@ function DesktopInPlaceCard({ story, isPlaying, onSelect, onStop }) {
       onClick={() => {
         if (!isPlaying) onSelect();
       }}
-      className={`group relative w-[176px] sm:w-[200px] md:w-[224px] lg:w-[240px] aspect-[9/16] rounded-3xl overflow-hidden cursor-pointer bg-[#18191D] border transition-all duration-300 flex-shrink-0 select-none ${
+      className={`group relative w-[176px] sm:w-[200px] md:w-[224px] lg:w-[240px] aspect-[9/16] rounded-3xl overflow-hidden cursor-pointer bg-stone-100 border transition-all duration-300 flex-shrink-0 select-none dark:bg-[#18191D] ${
         isPlaying 
-          ? 'border-[#FF7A59] ring-2 ring-[#FF7A59]/40 ring-offset-2 ring-offset-[#0F1013] shadow-2xl shadow-[#FF7A59]/10' 
-          : 'border-white/[0.08] hover:border-white/20 hover:-translate-y-1.5 shadow-lg shadow-black/40 hover:shadow-2xl hover:shadow-black/60'
+          ? 'border-[#FF7A59] ring-2 ring-[#FF7A59]/40 ring-offset-2 ring-offset-white shadow-2xl shadow-[#FF7A59]/20 dark:ring-offset-[#0F1013] dark:shadow-[#FF7A59]/10' 
+          : 'border-stone-200/80 hover:border-stone-300 hover:-translate-y-1.5 shadow-md shadow-stone-200/60 hover:shadow-xl hover:shadow-stone-300/80 dark:border-white/[0.08] dark:hover:border-white/20 dark:shadow-black/40 dark:hover:shadow-black/60'
       }`}
     >
       {isPlaying ? (
-        <div className="relative w-full h-full bg-[#0F1013]">
+        <div className="relative w-full h-full bg-stone-950 dark:bg-[#0F1013]">
           <video
             ref={videoRef}
             src={story.videoUrl}
@@ -193,7 +193,7 @@ function DesktopInPlaceCard({ story, isPlaying, onSelect, onStop }) {
           />
 
           {/* Top Progress bar indicator */}
-          <div className="absolute top-0 left-0 right-0 h-1 bg-white/10 z-20">
+          <div className="absolute top-0 left-0 right-0 h-1 bg-white/20 z-20 dark:bg-white/10">
             <div 
               className="h-full bg-gradient-to-r from-[#FF7A59] to-[#FFA770] transition-all duration-75 ease-linear"
               style={{ width: `${progress}%` }}
@@ -243,12 +243,12 @@ function DesktopInPlaceCard({ story, isPlaying, onSelect, onStop }) {
           {/* Playing Card Bottom Details */}
           <div 
             onClick={togglePlayPause}
-            className="absolute inset-x-0 bottom-0 p-3.5 sm:p-4 bg-gradient-to-t from-[#0F1013] via-[#0F1013]/85 to-transparent text-left z-20 pointer-events-auto"
+            className="absolute inset-x-0 bottom-0 p-3.5 sm:p-4 bg-gradient-to-t from-stone-950 via-stone-950/85 to-transparent text-left z-20 pointer-events-auto dark:from-[#0F1013] dark:via-[#0F1013]/85"
           >
             <h3 className="text-stone-100 font-bold text-sm sm:text-base leading-tight tracking-tight">
               {story.petName}
             </h3>
-            <p className="text-stone-400 font-medium text-xs leading-tight mt-0.5">
+            <p className="text-stone-300 font-medium text-xs leading-tight mt-0.5 dark:text-stone-400">
               {story.detail}
             </p>
           </div>
@@ -263,18 +263,18 @@ function DesktopInPlaceCard({ story, isPlaying, onSelect, onStop }) {
           />
 
           {/* Dark Overlay with gentle PetJeeva gradient */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-[#0F1013]/90 transition-opacity group-hover:opacity-95" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-stone-950/90 transition-opacity group-hover:opacity-95 dark:from-black/40 dark:via-black/20 dark:to-[#0F1013]/90" />
 
           {/* Duration Pill */}
           <div className="absolute top-3 right-3 z-10">
-            <div className="bg-[#121316]/70 backdrop-blur-md text-stone-200 text-[10px] font-semibold px-2 py-0.5 rounded-full border border-white/10 tracking-wide">
+            <div className="bg-black/50 backdrop-blur-md text-stone-100 text-[10px] font-semibold px-2 py-0.5 rounded-full border border-white/20 tracking-wide dark:bg-[#121316]/70 dark:text-stone-200 dark:border-white/10">
               {story.duration}
             </div>
           </div>
 
           {/* Tag Pill */}
           <div className="absolute top-3 left-3 z-10">
-            <div className="bg-black/60 backdrop-blur-md text-[#FFB199] text-[10px] font-medium px-2 py-0.5 rounded-full border border-white/10">
+            <div className="bg-black/60 backdrop-blur-md text-[#FFC4B3] text-[10px] font-medium px-2 py-0.5 rounded-full border border-white/15 dark:text-[#FFB199] dark:border-white/10">
               {story.tag}
             </div>
           </div>
@@ -283,7 +283,7 @@ function DesktopInPlaceCard({ story, isPlaying, onSelect, onStop }) {
           <div className="absolute inset-0 flex items-center justify-center z-10">
             <div className="relative">
               <div className="absolute -inset-2 rounded-full bg-[#FF7A59]/30 opacity-0 group-hover:opacity-100 group-hover:scale-125 transition-all duration-500 blur-sm" />
-              <div className="relative w-12 h-12 sm:w-13 sm:h-13 rounded-full bg-[#FF7A59] group-hover:bg-[#FF8B6D] text-stone-950 flex items-center justify-center shadow-xl shadow-black/60 transition-transform duration-300 group-hover:scale-110">
+              <div className="relative w-12 h-12 sm:w-13 sm:h-13 rounded-full bg-[#FF7A59] group-hover:bg-[#FF8B6D] text-stone-950 flex items-center justify-center shadow-xl shadow-black/40 transition-transform duration-300 group-hover:scale-110 dark:shadow-black/60">
                 <Play className="w-5 h-5 fill-current translate-x-0.5" />
               </div>
             </div>
@@ -291,11 +291,11 @@ function DesktopInPlaceCard({ story, isPlaying, onSelect, onStop }) {
 
           {/* Bottom Card Title Info */}
           <div className="absolute inset-x-0 bottom-0 p-3.5 sm:p-4 text-left z-10">
-            <h3 className="text-white font-bold text-base sm:text-lg leading-tight tracking-tight drop-shadow-sm group-hover:text-[#FFB199] transition-colors">
+            <h3 className="text-white font-bold text-base sm:text-lg leading-tight tracking-tight drop-shadow-sm group-hover:text-[#FFC4B3] transition-colors dark:group-hover:text-[#FFB199]">
               {story.petName}
             </h3>
-            <p className="text-stone-300 font-medium text-xs sm:text-[13px] leading-tight mt-0.5">
-              {story.detail} • <span className="text-stone-400">{story.breed}</span>
+            <p className="text-stone-200 font-medium text-xs sm:text-[13px] leading-tight mt-0.5 dark:text-stone-300">
+              {story.detail} • <span className="text-stone-300 dark:text-stone-400">{story.breed}</span>
             </p>
           </div>
         </>
@@ -646,16 +646,16 @@ export function Testimonials({ forceMobileMode = false }) {
   };
 
   return (
-    <section className="w-full bg-[#0D0E11] py-14 sm:py-20 lg:py-28 relative overflow-hidden select-none border-t border-b border-white/[0.04]">
+    <section className="w-full bg-white py-14 sm:py-20 lg:py-28 relative overflow-hidden select-none border-t border-b border-stone-200 transition-colors duration-200 dark:bg-[#0D0E11] dark:border-white/[0.04]">
       {/* Background Ambient Glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-[#FF7A59]/[0.035] blur-[120px] pointer-events-none rounded-full" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-[#FF7A59]/[0.06] blur-[120px] pointer-events-none rounded-full dark:bg-[#FF7A59]/[0.035]" />
       
       {/* Header Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-10 sm:mb-14 relative z-10">
         <motion.div 
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FF7A59]/10 border border-[#FF7A59]/20 text-[#FF9E7D] text-xs font-semibold mb-3 tracking-wide"
+          className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FF7A59]/15 border border-[#FF7A59]/30 text-[#D84C28] text-xs font-semibold mb-3 tracking-wide dark:bg-[#FF7A59]/10 dark:border-[#FF7A59]/20 dark:text-[#FF9E7D]"
         >
           <Sparkles className="w-3.5 h-3.5" />
           <span>Real Transformations</span>
@@ -665,12 +665,12 @@ export function Testimonials({ forceMobileMode = false }) {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-stone-100 tracking-tight leading-tight"
+          className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-stone-900 tracking-tight leading-tight dark:text-stone-100"
         >
           Stories of Love, Trust &amp; <span className="bg-gradient-to-r from-[#FF7A59] to-[#FFA770] bg-clip-text text-transparent">Growth</span>
         </motion.h2>
 
-        <p className="mt-3 text-stone-400 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
+        <p className="mt-3 text-stone-600 text-sm sm:text-base max-w-xl mx-auto leading-relaxed dark:text-stone-400">
           Watch firsthand how PetJeeva's certified, positive-reinforcement routines bring out the best behavior in your companions.
         </p>
       </div>
@@ -681,9 +681,9 @@ export function Testimonials({ forceMobileMode = false }) {
         <button
           onClick={() => handleScroll('left')}
           disabled={!canScrollLeft}
-          className={`absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#18191D]/90 backdrop-blur-md text-stone-200 shadow-xl border border-white/10 flex items-center justify-center transition-all duration-200 ${
+          className={`absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/95 backdrop-blur-md text-stone-700 shadow-xl border border-stone-200 flex items-center justify-center transition-all duration-200 dark:bg-[#18191D]/90 dark:text-stone-200 dark:border-white/10 ${
             canScrollLeft 
-              ? 'opacity-100 hover:scale-105 hover:bg-[#202227] hover:text-white active:scale-95 cursor-pointer' 
+              ? 'opacity-100 hover:scale-105 hover:bg-stone-50 hover:text-stone-900 active:scale-95 cursor-pointer dark:hover:bg-[#202227] dark:hover:text-white' 
               : 'opacity-0 pointer-events-none'
           }`}
           aria-label="Scroll left"
@@ -720,9 +720,9 @@ export function Testimonials({ forceMobileMode = false }) {
         <button
           onClick={() => handleScroll('right')}
           disabled={!canScrollRight}
-          className={`absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#18191D]/90 backdrop-blur-md text-stone-200 shadow-xl border border-white/10 flex items-center justify-center transition-all duration-200 ${
+          className={`absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/95 backdrop-blur-md text-stone-700 shadow-xl border border-stone-200 flex items-center justify-center transition-all duration-200 dark:bg-[#18191D]/90 dark:text-stone-200 dark:border-white/10 ${
             canScrollRight 
-              ? 'opacity-100 hover:scale-105 hover:bg-[#202227] hover:text-white active:scale-95 cursor-pointer' 
+              ? 'opacity-100 hover:scale-105 hover:bg-stone-50 hover:text-stone-900 active:scale-95 cursor-pointer dark:hover:bg-[#202227] dark:hover:text-white' 
               : 'opacity-0 pointer-events-none'
           }`}
           aria-label="Scroll right"
@@ -733,32 +733,32 @@ export function Testimonials({ forceMobileMode = false }) {
 
       {/* Trust Counters */}
       <div className="max-w-4xl mx-auto mt-12 px-4">
-        <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-12 pt-8 border-t border-white/[0.08] text-stone-400 text-xs sm:text-sm">
+        <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-12 pt-8 border-t border-stone-200 text-stone-600 text-xs sm:text-sm dark:border-white/[0.08] dark:text-stone-400">
           <div className="flex items-center gap-2.5">
             <ShieldCheck className="w-5 h-5 text-[#FF7A59]" />
             <div>
-              <span className="font-extrabold text-stone-100 text-base sm:text-lg">4,500+</span>
-              <span className="text-stone-400 font-normal ml-1.5">Dogs Trained</span>
+              <span className="font-extrabold text-stone-900 text-base sm:text-lg dark:text-stone-100">4,500+</span>
+              <span className="text-stone-500 font-normal ml-1.5 dark:text-stone-400">Dogs Trained</span>
             </div>
           </div>
 
-          <div className="w-1.5 h-1.5 rounded-full bg-stone-700 hidden sm:block" />
+          <div className="w-1.5 h-1.5 rounded-full bg-stone-300 hidden sm:block dark:bg-stone-700" />
 
           <div className="flex items-center gap-2.5">
             <Award className="w-5 h-5 text-[#FF7A59]" />
             <div>
-              <span className="font-extrabold text-stone-100 text-base sm:text-lg">4.9/5</span>
-              <span className="text-stone-400 font-normal ml-1.5">Verified Google Rating</span>
+              <span className="font-extrabold text-stone-900 text-base sm:text-lg dark:text-stone-100">4.5/5</span>
+              <span className="text-stone-500 font-normal ml-1.5 dark:text-stone-400">Verified Rating</span>
             </div>
           </div>
 
-          <div className="w-1.5 h-1.5 rounded-full bg-stone-700 hidden sm:block" />
+          <div className="w-1.5 h-1.5 rounded-full bg-stone-300 hidden sm:block dark:bg-stone-700" />
 
           <div className="flex items-center gap-2.5">
-            <CheckCircle2 className="w-5 h-5 text-emerald-400" />
+            <CheckCircle2 className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
             <div>
-              <span className="font-extrabold text-stone-100 text-base sm:text-lg">100%</span>
-              <span className="text-stone-400 font-normal ml-1.5">Force-Free Positive Reinforcement</span>
+              <span className="font-extrabold text-stone-900 text-base sm:text-lg dark:text-stone-100">100%</span>
+              <span className="text-stone-500 font-normal ml-1.5 dark:text-stone-400">Force-Free Positive Reinforcement</span>
             </div>
           </div>
         </div>
@@ -782,13 +782,13 @@ export default function App() {
   const [devicePreview, setDevicePreview] = useState('desktop');
 
   return (
-    <div className="min-h-screen bg-[#0A0B0D] text-stone-100 font-sans flex flex-col items-center">
+    <div className="min-h-screen bg-stone-50 text-stone-900 font-sans flex flex-col items-center transition-colors duration-200 dark:bg-[#0A0B0D] dark:text-stone-100">
       
 
       {/* Canvas Display */}
       <div className="w-full flex justify-center py-0">
         {devicePreview === 'mobile' ? (
-          <div className="w-full max-w-[400px] border-8 border-stone-800 rounded-[44px] overflow-hidden shadow-2xl bg-[#0A0B0D]">
+          <div className="w-full max-w-[400px] border-8 border-stone-300 rounded-[44px] overflow-hidden shadow-2xl bg-white dark:border-stone-800 dark:bg-[#0A0B0D]">
             <Testimonials forceMobileMode={true} />
           </div>
         ) : (

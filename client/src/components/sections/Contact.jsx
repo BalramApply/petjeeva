@@ -40,7 +40,7 @@ const CONTACT_CHANNELS = [
     display: '+91 98765 43210',
     type: 'whatsapp',
     badge: 'Response in ~5 mins',
-    badgeClass: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
+    badgeClass: 'bg-emerald-500/10 text-emerald-600 border-emerald-500/30 dark:text-emerald-400 dark:border-emerald-500/20',
     actionText: 'Message on WhatsApp'
   },
   // {
@@ -51,7 +51,7 @@ const CONTACT_CHANNELS = [
   //   display: '1800-572-8222 (Toll Free)',
   //   type: 'tel',
   //   badge: '9:00 AM – 8:30 PM',
-  //   badgeClass: 'bg-amber-500/10 text-amber-300 border-amber-500/20',
+  //   badgeClass: 'bg-amber-500/10 text-amber-800 border-amber-500/30 dark:text-amber-300 dark:border-amber-500/20',
   //   actionText: 'Call Care Desk'
   // },
   // {
@@ -62,7 +62,7 @@ const CONTACT_CHANNELS = [
   //   display: '+91 91100 24700',
   //   type: 'tel',
   //   badge: '24/7 Priority Emergency',
-  //   badgeClass: 'bg-rose-500/10 text-rose-400 border-rose-500/25',
+  //   badgeClass: 'bg-rose-500/10 text-rose-600 border-rose-500/30 dark:text-rose-400 dark:border-rose-500/25',
   //   actionText: 'Call Emergency Line'
   // },
   {
@@ -73,7 +73,7 @@ const CONTACT_CHANNELS = [
     display: 'care@petjeeva.com',
     type: 'email',
     badge: 'Same-day Reply',
-    badgeClass: 'bg-orange-500/10 text-orange-300 border-orange-500/20',
+    badgeClass: 'bg-orange-500/10 text-orange-700 border-orange-500/30 dark:text-orange-300 dark:border-orange-500/20',
     actionText: 'Send Email'
   }
 ];
@@ -202,7 +202,7 @@ export default function Contact() {
   return (
     <div
       id="contact"
-      className="w-full bg-[#0F1115] text-[#9CA3AF] font-sans antialiased selection:bg-amber-500/20 selection:text-amber-300"
+      className="w-full bg-white text-stone-600 font-sans antialiased selection:bg-amber-500/20 selection:text-amber-800 transition-colors duration-200 dark:bg-[#0F1115] dark:text-[#9CA3AF] dark:selection:text-amber-300"
     >
       {/* SECTION 1: Hero Header */}
       <section className="relative overflow-hidden pt-16 pb-12 md:pt-24 md:pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
@@ -212,29 +212,29 @@ export default function Contact() {
         />
 
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-300 text-xs sm:text-sm font-medium tracking-wide backdrop-blur-sm">
-            <Sparkles size={14} className="text-amber-400" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-800 text-xs sm:text-sm font-medium tracking-wide backdrop-blur-sm dark:border-amber-500/20 dark:text-amber-300">
+            <Sparkles size={14} className="text-amber-600 dark:text-amber-400" />
             <span>PetJeeva Care Concierge Desk</span>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-[#F9FAFB] tracking-tight leading-[1.12]">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-stone-900 tracking-tight leading-[1.12] dark:text-[#F9FAFB]">
             We Are Here For You <br className="hidden sm:inline" />
-            <span className="bg-gradient-to-r from-amber-400 via-orange-400 to-amber-200 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-amber-600 via-orange-500 to-amber-500 bg-clip-text text-transparent dark:from-amber-400 dark:via-orange-400 dark:to-amber-200">
               And Your Cherished Companion.
             </span>
           </h1>
 
-          <p className="text-sm sm:text-base md:text-lg text-[#9CA3AF] leading-relaxed max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg text-stone-600 leading-relaxed max-w-2xl mx-auto dark:text-[#9CA3AF]">
             Have questions about customized training routines, daily walk scheduling, zero-sedation grooming, or home wellness visits? Our certified animal care coordinators are just a touch away.
           </p>
 
-          <div className="pt-2 flex flex-wrap items-center justify-center gap-2.5 sm:gap-3.5 text-xs font-medium text-[#D1D5DB]">
-            <span className="flex items-center gap-1.5 bg-[#14171E] px-3.5 py-1.5 rounded-full border border-[#232730] shadow-sm">
-              <Clock size={14} className="text-emerald-400" />
+          <div className="pt-2 flex flex-wrap items-center justify-center gap-2.5 sm:gap-3.5 text-xs font-medium text-stone-700 dark:text-[#D1D5DB]">
+            <span className="flex items-center gap-1.5 bg-stone-50 px-3.5 py-1.5 rounded-full border border-stone-200 shadow-sm dark:bg-[#14171E] dark:border-[#232730]">
+              <Clock size={14} className="text-emerald-600 dark:text-emerald-400" />
               Average WhatsApp reply: &lt; 8 mins
             </span>
-            <span className="flex items-center gap-1.5 bg-[#14171E] px-3.5 py-1.5 rounded-full border border-[#232730] shadow-sm">
-              <ShieldCheck size={14} className="text-amber-400" />
+            <span className="flex items-center gap-1.5 bg-stone-50 px-3.5 py-1.5 rounded-full border border-stone-200 shadow-sm dark:bg-[#14171E] dark:border-[#232730]">
+              <ShieldCheck size={14} className="text-amber-600 dark:text-amber-400" />
               Zero-obligation consultations
             </span>
           </div>
@@ -249,7 +249,7 @@ export default function Contact() {
             return (
               <div
                 key={ch.id}
-                className="bg-[#14171E] rounded-3xl p-6 border border-[#232730] shadow-xl shadow-black/40 flex flex-col justify-between group transition-all duration-200 hover:border-[#383E4C] hover:-translate-y-0.5"
+                className="bg-stone-50 rounded-3xl p-6 border border-stone-200 shadow-sm flex flex-col justify-between group transition-all duration-200 hover:border-stone-300 hover:-translate-y-0.5 dark:bg-[#14171E] dark:border-[#232730] dark:shadow-xl dark:shadow-black/40 dark:hover:border-[#383E4C]"
               >
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
@@ -258,28 +258,28 @@ export default function Contact() {
                     </span>
                     <button
                       onClick={() => handleCopy(ch.value, ch.id)}
-                      className="text-[#6B7280] hover:text-[#F3F4F6] p-1.5 rounded-lg hover:bg-[#1A1E27] transition-colors"
+                      className="text-stone-400 hover:text-stone-900 p-1.5 rounded-lg hover:bg-stone-200/60 transition-colors dark:text-[#6B7280] dark:hover:text-[#F3F4F6] dark:hover:bg-[#1A1E27]"
                       title="Copy detail"
                       type="button"
                     >
-                      {isCopied ? <Check size={14} className="text-emerald-400" /> : <Copy size={14} />}
+                      {isCopied ? <Check size={14} className="text-emerald-600 dark:text-emerald-400" /> : <Copy size={14} />}
                     </button>
                   </div>
 
-                  <h3 className="text-base font-bold text-[#F9FAFB] tracking-tight">
+                  <h3 className="text-base font-bold text-stone-900 tracking-tight dark:text-[#F9FAFB]">
                     {ch.title}
                   </h3>
 
-                  <p className="text-xs text-[#9CA3AF] leading-relaxed">
+                  <p className="text-xs text-stone-600 leading-relaxed dark:text-[#9CA3AF]">
                     {ch.desc}
                   </p>
 
-                  <div className="pt-1 text-sm font-extrabold text-[#F3F4F6] tracking-tight">
+                  <div className="pt-1 text-sm font-extrabold text-stone-900 tracking-tight dark:text-[#F3F4F6]">
                     {ch.display}
                   </div>
                 </div>
 
-                <div className="pt-5 mt-4 border-t border-[#232730]">
+                <div className="pt-5 mt-4 border-t border-stone-200 dark:border-[#232730]">
                   {ch.type === 'whatsapp' ? (
                     <a
                       href={`https://wa.me/${ch.value.replace(/[^0-9]/g, '')}?text=Hello%20PetJeeva,%20I%20would%20like%20to%20inquire%20about%20care%20for%20my%20pet.`}
@@ -293,9 +293,9 @@ export default function Contact() {
                   ) : ch.type === 'email' ? (
                     <a
                       href={`mailto:${ch.value}?subject=PetJeeva%20Inquiry`}
-                      className="w-full py-2.5 px-4 rounded-xl bg-[#181C24] hover:bg-[#1E232E] hover:border-[#383F4E] text-[#E5E7EB] text-xs font-semibold flex items-center justify-center gap-2 transition-all border border-[#262A34] active:scale-[0.98]"
+                      className="w-full py-2.5 px-4 rounded-xl bg-white hover:bg-stone-100 hover:border-stone-300 text-stone-800 text-xs font-semibold flex items-center justify-center gap-2 transition-all border border-stone-200 shadow-xs active:scale-[0.98] dark:bg-[#181C24] dark:hover:bg-[#1E232E] dark:hover:border-[#383F4E] dark:text-[#E5E7EB] dark:border-[#262A34] dark:shadow-none"
                     >
-                      <Mail size={15} className="text-amber-400" />
+                      <Mail size={15} className="text-amber-600 dark:text-amber-400" />
                       <span>{ch.actionText}</span>
                     </a>
                   ) : (
@@ -303,11 +303,11 @@ export default function Contact() {
                       href={`tel:${ch.value.replace(/[^0-9+]/g, '')}`}
                       className={`w-full py-2.5 px-4 rounded-xl text-xs font-semibold flex items-center justify-center gap-2 transition-all border active:scale-[0.98] ${
                         ch.id === 'emergency'
-                          ? 'bg-rose-500/10 border-rose-500/30 text-rose-300 hover:bg-rose-500/20 hover:border-rose-500/50'
-                          : 'bg-[#181C24] hover:bg-[#1E232E] hover:border-[#383F4E] text-[#E5E7EB] border-[#262A34]'
+                          ? 'bg-rose-500/10 border-rose-500/30 text-rose-700 hover:bg-rose-500/20 hover:border-rose-500/50 dark:text-rose-300'
+                          : 'bg-white hover:bg-stone-100 hover:border-stone-300 text-stone-800 border-stone-200 shadow-xs dark:bg-[#181C24] dark:hover:bg-[#1E232E] dark:hover:border-[#383F4E] dark:text-[#E5E7EB] dark:border-[#262A34] dark:shadow-none'
                       }`}
                     >
-                      <PhoneForwarded size={15} className={ch.id === 'emergency' ? 'text-rose-400' : 'text-amber-400'} />
+                      <PhoneForwarded size={15} className={ch.id === 'emergency' ? 'text-rose-600 dark:text-rose-400' : 'text-amber-600 dark:text-amber-400'} />
                       <span>{ch.actionText}</span>
                     </a>
                   )}

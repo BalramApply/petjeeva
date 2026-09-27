@@ -1,12 +1,12 @@
 const VARIANTS = {
   // Fresh/Healthcare accent (mint/emerald)
-  mint: 'border-emerald-500/25 bg-emerald-500/10 text-emerald-300',
+  mint: 'border-emerald-500/30 dark:border-emerald-500/25 bg-emerald-500/10 text-emerald-700 dark:text-emerald-300',
   // Primary warm PetJeeva accent (amber/orange)
-  amber: 'border-amber-500/25 bg-amber-500/10 text-amber-300',
-  // Standard elevated dark neutral surface
-  neutral: 'border-[#262A34] bg-[#14171E] text-[#9CA3AF]',
+  amber: 'border-amber-500/30 dark:border-amber-500/25 bg-amber-500/10 text-amber-800 dark:text-amber-300',
+  // Standard elevated neutral surface
+  neutral: 'border-stone-200 dark:border-[#262A34] bg-stone-100 dark:bg-[#14171E] text-stone-700 dark:text-[#9CA3AF]',
   // Subtle glowing brand highlight
-  brand: 'border-amber-500/40 bg-gradient-to-r from-amber-500/15 to-orange-500/15 text-amber-200',
+  brand: 'border-amber-500/40 bg-gradient-to-r from-amber-500/15 to-orange-500/15 text-amber-800 dark:text-amber-200',
 };
 
 export default function Badge({

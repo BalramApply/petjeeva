@@ -26,7 +26,7 @@ export default function HowItWorks() {
             <motion.div
               key={title}
               variants={fadeUp}
-              className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-[#232730] bg-[#14171E] p-6 sm:p-7 shadow-xl shadow-black/40 transition-all duration-300 hover:-translate-y-1 hover:border-[#383F4D] hover:shadow-2xl"
+              className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-stone-200/80 bg-white p-6 shadow-sm shadow-stone-200/50 transition-all duration-300 hover:-translate-y-1 hover:border-amber-500/30 hover:shadow-xl hover:shadow-stone-200/80 sm:p-7 dark:border-[#232730] dark:bg-[#14171E] dark:shadow-xl dark:shadow-black/40 dark:hover:border-[#383F4D] dark:hover:shadow-2xl"
             >
               {/* Subtle Ambient Radial Backlight on Hover */}
               <div
@@ -37,34 +37,34 @@ export default function HowItWorks() {
               {/* Top Row: Icon Well + Step Tag */}
               <div>
                 <div className="flex items-center justify-between gap-3">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-amber-500/20 bg-amber-500/10 text-amber-400 transition-all duration-300 group-hover:scale-105 group-hover:border-amber-400/40 group-hover:bg-amber-500/15">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-amber-500/30 bg-amber-500/10 text-amber-600 transition-all duration-300 group-hover:scale-105 group-hover:border-amber-500/50 group-hover:bg-amber-500/15 dark:border-amber-500/20 dark:text-amber-400 dark:group-hover:border-amber-400/40">
                     {Icon ? <Icon size={22} strokeWidth={1.9} /> : null}
                   </div>
 
-                  <span className="font-heading text-xs font-bold tracking-widest text-[#6B7280] transition-colors group-hover:text-amber-400">
+                  <span className="font-heading text-xs font-bold tracking-widest text-stone-600 transition-colors group-hover:text-amber-600 dark:text-[#6B7280] dark:group-hover:text-amber-400">
                     STEP {stepNumber}
                   </span>
                 </div>
 
                 {/* Step Title & Description */}
-                <h3 className="mt-5 text-lg font-bold tracking-tight text-[#F9FAFB] transition-colors group-hover:text-amber-300">
+                <h3 className="mt-5 text-lg font-bold tracking-tight text-stone-900 transition-colors group-hover:text-amber-600 dark:text-[#F9FAFB] dark:group-hover:text-amber-300">
                   {title}
                 </h3>
 
-                <p className="mt-2.5 text-xs sm:text-sm leading-relaxed text-[#9CA3AF]">
+                <p className="mt-2.5 text-xs sm:text-sm leading-relaxed text-stone-600 dark:text-[#9CA3AF]">
                   {description}
                 </p>
               </div>
 
               {/* Bottom Subtle Progress Indicator */}
-              <div className="mt-6 flex items-center gap-1.5 pt-4 border-t border-[#1C2028]">
-                <div className="h-1 w-full rounded-full bg-[#101217] overflow-hidden">
+              <div className="mt-6 flex items-center gap-1.5 pt-4 border-t border-stone-200 dark:border-[#1C2028]">
+                <div className="h-1 w-full rounded-full bg-stone-100 overflow-hidden dark:bg-[#101217]">
                   <div
                     className="h-full bg-gradient-to-r from-amber-500 to-orange-500 transition-all duration-500"
                     style={{ width: `${((index + 1) / howItWorksSteps.length) * 100}%` }}
                   />
                 </div>
-                <span className="shrink-0 text-[10px] font-semibold text-[#4B5563]">
+                <span className="shrink-0 text-[10px] font-semibold text-stone-600 dark:text-[#4B5563]">
                   {index + 1}/{howItWorksSteps.length}
                 </span>
               </div>

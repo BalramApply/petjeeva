@@ -3,7 +3,7 @@ import Badge from '../ui/Badge';
 
 export default function ProfessionalCard({ professional }) {
   return (
-    <div className="group relative flex flex-col items-center overflow-hidden rounded-3xl border border-[#232730] bg-[#14171E] p-6 sm:p-7 text-center shadow-xl shadow-black/40 transition-all duration-300 hover:-translate-y-1 hover:border-[#383F4D] hover:shadow-2xl">
+    <div className="group relative flex flex-col items-center overflow-hidden rounded-3xl border border-stone-200 dark:border-[#232730] bg-white dark:bg-[#14171E] p-6 sm:p-7 text-center shadow-lg shadow-stone-900/5 dark:shadow-xl dark:shadow-black/40 transition-all duration-300 hover:-translate-y-1 hover:border-stone-300 dark:hover:border-[#383F4D] hover:shadow-xl dark:hover:shadow-2xl">
       {/* Ambient background hover glow */}
       <div
         aria-hidden="true"
@@ -12,7 +12,7 @@ export default function ProfessionalCard({ professional }) {
 
       {/* Profile Image with dual-layer border & verification badge */}
       <div className="relative">
-        <div className="relative h-24 w-24 overflow-hidden rounded-full border-2 border-amber-500/30 bg-[#0F1115] p-1 shadow-lg shadow-black/60 transition-transform duration-300 group-hover:scale-105 group-hover:border-amber-400/60">
+        <div className="relative h-24 w-24 overflow-hidden rounded-full border-2 border-amber-500/40 dark:border-amber-500/30 bg-stone-100 dark:bg-[#0F1115] p-1 shadow-md shadow-stone-900/10 dark:shadow-lg dark:shadow-black/60 transition-transform duration-300 group-hover:scale-105 group-hover:border-amber-500 dark:group-hover:border-amber-400/60">
           <img
             src={professional.imageUrl}
             alt={professional.name || professional.role}
@@ -24,7 +24,7 @@ export default function ProfessionalCard({ professional }) {
         {/* Verified Specialist Pill Icon */}
         <div
           title="100% Background-Vetted Specialist"
-          className="absolute -bottom-1 -right-1 flex h-7 w-7 items-center justify-center rounded-full border-2 border-[#14171E] bg-emerald-500 text-stone-950 shadow-md"
+          className="absolute -bottom-1 -right-1 flex h-7 w-7 items-center justify-center rounded-full border-2 border-white dark:border-[#14171E] bg-emerald-500 text-white dark:text-stone-950 shadow-md"
         >
           <ShieldCheck size={14} strokeWidth={2.5} />
         </div>
@@ -32,25 +32,25 @@ export default function ProfessionalCard({ professional }) {
 
       {/* Role / Demo Badge */}
       <div className="mt-5 flex items-center justify-center gap-2">
-        <span className="inline-flex items-center gap-1 rounded-full border border-amber-500/20 bg-amber-500/10 px-2 py-0.5 text-[10px] font-semibold text-amber-300">
-          <Sparkles size={11} className="text-amber-400" />
+        <span className="inline-flex items-center gap-1 rounded-full border border-amber-500/30 dark:border-amber-500/20 bg-amber-500/10 px-2 py-0.5 text-[10px] font-semibold text-amber-700 dark:text-amber-300">
+          <Sparkles size={11} className="text-amber-600 dark:text-amber-400" />
           Certified
         </span>
       </div>
 
       {/* Professional Title / Role */}
-      <h3 className="mt-3 font-heading text-lg font-bold tracking-tight text-[#F9FAFB] transition-colors group-hover:text-amber-300">
+      <h3 className="mt-3 font-heading text-lg font-bold tracking-tight text-stone-900 dark:text-[#F9FAFB] transition-colors group-hover:text-amber-600 dark:group-hover:text-amber-300">
         {professional.role}
       </h3>
 
       {/* Bio / Experience Description */}
-      <p className="mt-2 text-xs sm:text-sm leading-relaxed text-[#9CA3AF]">
+      <p className="mt-2 text-xs sm:text-sm leading-relaxed text-stone-600 dark:text-[#9CA3AF]">
         {professional.bio}
       </p>
 
       {/* Trust Mini-Footer */}
-      <div className="mt-5 flex items-center justify-center gap-1.5 border-t border-[#1F232C] pt-4 text-[11px] font-medium text-[#6B7280]">
-        <CheckCircle2 size={13} className="text-emerald-400 shrink-0" />
+      <div className="mt-5 flex items-center justify-center gap-1.5 border-t border-stone-100 dark:border-[#1F232C] pt-4 text-[11px] font-medium text-stone-500 dark:text-[#6B7280]">
+        <CheckCircle2 size={13} className="text-emerald-500 dark:text-emerald-400 shrink-0" />
         <span>Fear-Free &amp; Zero-Sedation Certified</span>
       </div>
     </div>

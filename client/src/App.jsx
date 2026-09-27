@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import { AdminAuthProvider } from './context/AdminAuthContext';
+import { ThemeProvider } from './context/ThemeContext';
 import PublicLayout from './layouts/PublicLayout';
 import AdminLayout from './layouts/AdminLayout';
 import ProtectedRoute from './components/admin/ProtectedRoute';
@@ -24,6 +25,7 @@ import AdminComingSoon from './pages/admin/ComingSoon';
 
 export default function App() {
   return (
+    <ThemeProvider>
     <AdminAuthProvider>
       <Routes>
         {/* Public site — Separate routes for each navbar page */}
@@ -52,5 +54,6 @@ export default function App() {
         </Route>
       </Routes>
     </AdminAuthProvider>
+    </ThemeProvider>
   );
 }

@@ -26,11 +26,6 @@ import {
   FileText
 } from 'lucide-react';
 
-// Demo services matching the four core categories from the brief.
-// Shape mirrors the future Service model so swapping this for a
-// GET /api/services call in Phase 12 is a drop-in change.
-// startingPrice is placeholder/demo — real pricing is admin-configured
-// via PriceRule, never hardcoded once that's wired up.
 export const services = [
   {
     id: 'training',
@@ -129,7 +124,7 @@ const VETTING_STEPS = [
   {
     icon: Lock,
     step: 'Step 04',
-    title: 'GPS-Monitored Accountability',
+    title: 'Monitored Accountability',
     description: 'Every walk, home visit, and consultation is logged with route telemetry, timestamped photo milestones, and guardian reports.'
   }
 ];
@@ -171,7 +166,7 @@ export default function About() {
   const ActiveIcon = SERVICE_ICONS[activeService.id] || Sparkles;
 
   return (
-    <div id="about" className="w-full bg-[#0F1115] text-[#9CA3AF] font-sans antialiased selection:bg-amber-500/20 selection:text-amber-300">
+    <div id="about" className="w-full bg-white text-stone-600 font-sans antialiased selection:bg-amber-500/20 selection:text-amber-800 transition-colors duration-200 dark:bg-[#0F1115] dark:text-[#9CA3AF] dark:selection:text-amber-300">
       
       {/* Hero Section */}
       <section className="relative overflow-hidden pt-16 pb-20 md:pt-24 md:pb-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
@@ -182,33 +177,33 @@ export default function About() {
         />
 
         <div className="text-center max-w-3xl mx-auto space-y-6">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-300 text-xs sm:text-sm font-medium tracking-wide backdrop-blur-sm">
-            <Sparkles size={14} className="text-amber-400" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-800 text-xs sm:text-sm font-medium tracking-wide backdrop-blur-sm dark:border-amber-500/20 dark:text-amber-300">
+            <Sparkles size={14} className="text-amber-600 dark:text-amber-400" />
             <span>The PetJeeva Standard of Care</span>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-[#F9FAFB] tracking-tight leading-[1.12]">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-stone-900 tracking-tight leading-[1.12] dark:text-[#F9FAFB]">
             Where Every Companion Lives <br className="hidden sm:inline" />
-            <span className="bg-gradient-to-r from-amber-400 via-orange-400 to-amber-200 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-amber-600 via-orange-500 to-amber-500 bg-clip-text text-transparent dark:from-amber-400 dark:via-orange-400 dark:to-amber-200">
               Their Healthiest Life.
             </span>
           </h1>
 
-          <p className="text-base sm:text-lg md:text-xl text-[#9CA3AF] leading-relaxed max-w-2xl mx-auto">
-            Founded on empathy and certified precision, <strong className="text-[#F3F4F6] font-semibold">PetJeeva</strong> brings ethical training, reliable walking, gentle salon grooming, and preventative wellness right to your door.
+          <p className="text-base sm:text-lg md:text-xl text-stone-600 leading-relaxed max-w-2xl mx-auto dark:text-[#9CA3AF]">
+            Founded on empathy and certified precision, <strong className="text-stone-900 font-semibold dark:text-[#F3F4F6]">PetJeeva</strong> brings ethical training, reliable walking, gentle salon grooming, and preventative wellness right to your door.
           </p>
 
-          <div className="pt-2 flex flex-wrap items-center justify-center gap-2.5 sm:gap-3.5 text-xs font-medium text-[#D1D5DB]">
-            <div className="flex items-center gap-2 bg-[#15181F] px-4 py-2 rounded-full border border-[#232730] shadow-sm">
-              <CheckCircle2 size={15} className="text-emerald-400" />
+          <div className="pt-2 flex flex-wrap items-center justify-center gap-2.5 sm:gap-3.5 text-xs font-medium text-stone-700 dark:text-[#D1D5DB]">
+            <div className="flex items-center gap-2 bg-stone-50 px-4 py-2 rounded-full border border-stone-200 shadow-sm dark:bg-[#15181F] dark:border-[#232730]">
+              <CheckCircle2 size={15} className="text-emerald-600 dark:text-emerald-400" />
               <span>Certified Care Specialists</span>
             </div>
-            <div className="flex items-center gap-2 bg-[#15181F] px-4 py-2 rounded-full border border-[#232730] shadow-sm">
-              <ShieldCheck size={15} className="text-amber-400" />
+            <div className="flex items-center gap-2 bg-stone-50 px-4 py-2 rounded-full border border-stone-200 shadow-sm dark:bg-[#15181F] dark:border-[#232730]">
+              <ShieldCheck size={15} className="text-amber-600 dark:text-amber-400" />
               <span>100% Background-Vetted</span>
             </div>
-            <div className="flex items-center gap-2 bg-[#15181F] px-4 py-2 rounded-full border border-[#232730] shadow-sm">
-              <Award size={15} className="text-orange-400" />
+            <div className="flex items-center gap-2 bg-stone-50 px-4 py-2 rounded-full border border-stone-200 shadow-sm dark:bg-[#15181F] dark:border-[#232730]">
+              <Award size={15} className="text-orange-600 dark:text-orange-400" />
               <span>Zero-Force Ethical Handling</span>
             </div>
           </div>
@@ -216,51 +211,51 @@ export default function About() {
 
         {/* Live Impact Stats Strip */}
         <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-3.5 sm:gap-5">
-          <div className="bg-[#14171E] rounded-2xl sm:rounded-3xl p-5 sm:p-6 border border-[#232730] shadow-xl shadow-black/40 text-center transition-all duration-200 hover:border-[#333945] hover:-translate-y-0.5">
-            <span className="text-3xl sm:text-4xl font-extrabold text-[#F9FAFB] block tracking-tight">
+          <div className="bg-stone-50 rounded-2xl sm:rounded-3xl p-5 sm:p-6 border border-stone-200 shadow-sm transition-all duration-200 hover:border-stone-300 hover:-translate-y-0.5 dark:bg-[#14171E] dark:border-[#232730] dark:shadow-xl dark:shadow-black/40 dark:hover:border-[#333945]">
+            <span className="text-3xl sm:text-4xl font-extrabold text-stone-900 block tracking-tight dark:text-[#F9FAFB]">
               5,000+
             </span>
-            <span className="text-xs sm:text-sm font-medium text-[#9CA3AF] mt-1.5 block">
+            <span className="text-xs sm:text-sm font-medium text-stone-600 mt-1.5 block dark:text-[#9CA3AF]">
               Companions Nurtured
             </span>
-            <span className="text-[11px] text-amber-400/90 font-semibold block mt-2">
+            <span className="text-[11px] text-amber-700 font-semibold block mt-2 dark:text-amber-400/90">
               Dogs & Cats Across India
             </span>
           </div>
 
-          <div className="bg-[#14171E] rounded-2xl sm:rounded-3xl p-5 sm:p-6 border border-[#232730] shadow-xl shadow-black/40 text-center transition-all duration-200 hover:border-[#333945] hover:-translate-y-0.5">
-            <span className="text-3xl sm:text-4xl font-extrabold text-[#F9FAFB] block tracking-tight">
+          <div className="bg-stone-50 rounded-2xl sm:rounded-3xl p-5 sm:p-6 border border-stone-200 shadow-sm transition-all duration-200 hover:border-stone-300 hover:-translate-y-0.5 dark:bg-[#14171E] dark:border-[#232730] dark:shadow-xl dark:shadow-black/40 dark:hover:border-[#333945]">
+            <span className="text-3xl sm:text-4xl font-extrabold text-stone-900 block tracking-tight dark:text-[#F9FAFB]">
               99.4%
             </span>
-            <span className="text-xs sm:text-sm font-medium text-[#9CA3AF] mt-1.5 block">
+            <span className="text-xs sm:text-sm font-medium text-stone-600 mt-1.5 block dark:text-[#9CA3AF]">
               Safety Verification Score
             </span>
-            <span className="text-[11px] text-emerald-400 font-semibold block mt-2">
+            <span className="text-[11px] text-emerald-600 font-semibold block mt-2 dark:text-emerald-400">
               Real-Time GPS Monitored
             </span>
           </div>
 
-          <div className="bg-[#14171E] rounded-2xl sm:rounded-3xl p-5 sm:p-6 border border-[#232730] shadow-xl shadow-black/40 text-center transition-all duration-200 hover:border-[#333945] hover:-translate-y-0.5">
-            <span className="text-3xl sm:text-4xl font-extrabold text-[#F9FAFB] block tracking-tight">
+          <div className="bg-stone-50 rounded-2xl sm:rounded-3xl p-5 sm:p-6 border border-stone-200 shadow-sm transition-all duration-200 hover:border-stone-300 hover:-translate-y-0.5 dark:bg-[#14171E] dark:border-[#232730] dark:shadow-xl dark:shadow-black/40 dark:hover:border-[#333945]">
+            <span className="text-3xl sm:text-4xl font-extrabold text-stone-900 block tracking-tight dark:text-[#F9FAFB]">
               4.9 / 5
             </span>
-            <span className="text-xs sm:text-sm font-medium text-[#9CA3AF] mt-1.5 block">
+            <span className="text-xs sm:text-sm font-medium text-stone-600 mt-1.5 block dark:text-[#9CA3AF]">
               Parent Satisfaction
             </span>
-            <span className="text-[11px] text-[#F3F4F6] font-semibold block mt-2 flex items-center justify-center gap-1">
-              <Star size={12} className="fill-amber-400 text-amber-400" />
+            <span className="text-[11px] text-stone-900 font-semibold mt-2 flex items-center justify-center gap-1 dark:text-[#F3F4F6]">
+              <Star size={12} className="fill-amber-500 text-amber-500 dark:fill-amber-400 dark:text-amber-400" />
               Verified Community
             </span>
           </div>
 
-          <div className="bg-[#14171E] rounded-2xl sm:rounded-3xl p-5 sm:p-6 border border-[#232730] shadow-xl shadow-black/40 text-center transition-all duration-200 hover:border-[#333945] hover:-translate-y-0.5">
-            <span className="text-3xl sm:text-4xl font-extrabold text-[#F9FAFB] block tracking-tight">
+          <div className="bg-stone-50 rounded-2xl sm:rounded-3xl p-5 sm:p-6 border border-stone-200 shadow-sm transition-all duration-200 hover:border-stone-300 hover:-translate-y-0.5 dark:bg-[#14171E] dark:border-[#232730] dark:shadow-xl dark:shadow-black/40 dark:hover:border-[#333945]">
+            <span className="text-3xl sm:text-4xl font-extrabold text-stone-900 block tracking-tight dark:text-[#F9FAFB]">
               Top 2%
             </span>
-            <span className="text-xs sm:text-sm font-medium text-[#9CA3AF] mt-1.5 block">
+            <span className="text-xs sm:text-sm font-medium text-stone-600 mt-1.5 block dark:text-[#9CA3AF]">
               Specialist Acceptance
             </span>
-            <span className="text-[11px] text-orange-400 font-semibold block mt-2">
+            <span className="text-[11px] text-orange-600 font-semibold block mt-2 dark:text-orange-400">
               Rigorous Onboarding
             </span>
           </div>
@@ -268,36 +263,36 @@ export default function About() {
       </section>
 
       {/* Story & Origin Section */}
-      <section className="py-16 sm:py-20 bg-[#0A0C0F] border-y border-[#1E222A]">
+      <section className="py-16 sm:py-20 bg-stone-50 border-y border-stone-200 dark:bg-[#0A0C0F] dark:border-[#1E222A]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
             
             <div className="lg:col-span-6 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#171B22] border border-[#272B33] text-amber-300 text-xs font-semibold uppercase tracking-wider">
-                <Compass size={13} className="text-amber-400" />
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-stone-200 text-amber-800 text-xs font-semibold uppercase tracking-wider dark:bg-[#171B22] dark:border-[#272B33] dark:text-amber-300">
+                <Compass size={13} className="text-amber-600 dark:text-amber-400" />
                 Why PetJeeva Was Born
               </div>
 
-              <h2 className="text-2xl sm:text-4xl font-extrabold text-[#F9FAFB] tracking-tight leading-tight">
+              <h2 className="text-2xl sm:text-4xl font-extrabold text-stone-900 tracking-tight leading-tight dark:text-[#F9FAFB]">
                 Because Pet Care Deserved Uncompromised Trust.
               </h2>
 
-              <p className="text-[#9CA3AF] leading-relaxed text-sm sm:text-base">
+              <p className="text-stone-600 leading-relaxed text-sm sm:text-base dark:text-[#9CA3AF]">
                 For years, pet parents were forced to navigate fragmented services—unvetted dog walkers with zero accountability, groomers relying on harsh restraints or unannounced sedation, and clinics with confusing billing.
               </p>
 
-              <p className="text-[#9CA3AF] leading-relaxed text-sm sm:text-base">
-                <strong className="text-[#F3F4F6] font-semibold">PetJeeva (&apos;Jeeva&apos; meaning life and soul)</strong> was created to restore absolute integrity to modern pet parenting. We believe our animals are not mere animals; they are family members entitled to certified, gentle, and transparent professionals every single day.
+              <p className="text-stone-600 leading-relaxed text-sm sm:text-base dark:text-[#9CA3AF]">
+                <strong className="text-stone-900 font-semibold dark:text-[#F3F4F6]">PetJeeva (&apos;Jeeva&apos; meaning life and soul)</strong> was created to restore absolute integrity to modern pet parenting. We believe our animals are not mere animals; they are family members entitled to certified, gentle, and transparent professionals every single day.
               </p>
 
-              <div className="p-4 sm:p-5 rounded-2xl bg-[#13161C] border border-[#232730] space-y-3">
+              <div className="p-4 sm:p-5 rounded-2xl bg-white border border-stone-200 shadow-sm space-y-3 dark:bg-[#13161C] dark:border-[#232730] dark:shadow-none">
                 <div className="flex items-start gap-3.5">
-                  <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center shrink-0">
-                    <Heart size={20} className="fill-amber-400/20" />
+                  <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-600 flex items-center justify-center shrink-0 dark:border-amber-500/20 dark:text-amber-400">
+                    <Heart size={20} className="fill-amber-500/20 dark:fill-amber-400/20" />
                   </div>
                   <div>
-                    <h3 className="text-sm font-bold text-[#F3F4F6]">The Zero Sedation & Humane Touch Promise</h3>
-                    <p className="text-xs text-[#9CA3AF] mt-1 leading-relaxed">
+                    <h3 className="text-sm font-bold text-stone-900 dark:text-[#F3F4F6]">The Zero Sedation & Humane Touch Promise</h3>
+                    <p className="text-xs text-stone-600 mt-1 leading-relaxed dark:text-[#9CA3AF]">
                       Every training lesson, wash, walk, and vaccination is executed with compassionate, positive-reinforcement techniques.
                     </p>
                   </div>
@@ -306,18 +301,18 @@ export default function About() {
             </div>
 
             <div className="lg:col-span-6">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-black/60 border border-[#272B33]">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-stone-300/60 border border-stone-200 dark:border-[#272B33] dark:shadow-black/60">
                 <img 
                   src="https://images.unsplash.com/photo-1544568100-847a948585b9?auto=format&fit=crop&w=1200&q=80" 
                   alt="PetJeeva caregiver with happy dog" 
                   className="w-full h-[380px] sm:h-[420px] object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0B0D11] via-[#0B0D11]/40 to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent pointer-events-none dark:from-[#0B0D11] dark:via-[#0B0D11]/40" />
                 <div className="absolute bottom-5 left-5 right-5 sm:bottom-6 sm:left-6 sm:right-6 text-white">
-                  <div className="inline-block px-3 py-1 rounded-full bg-black/60 border border-white/10 backdrop-blur-md text-amber-300 text-xs font-semibold mb-2">
+                  <div className="inline-block px-3 py-1 rounded-full bg-black/60 border border-white/20 backdrop-blur-md text-amber-300 text-xs font-semibold mb-2">
                     Verified Guardian Network
                   </div>
-                  <p className="text-xs sm:text-sm font-medium text-[#E5E7EB] leading-relaxed">
+                  <p className="text-xs sm:text-sm font-medium text-stone-100 leading-relaxed dark:text-[#E5E7EB]">
                     &ldquo;We measure success not in booked appointments, but in calm heartbeats, relaxed tail wags, and peace of mind.&rdquo;
                   </p>
                 </div>
@@ -331,14 +326,14 @@ export default function About() {
       {/* Interactive Core Pillars Section */}
       <section className="py-16 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12 space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#171A21] border border-[#262A34] text-amber-300 text-xs font-semibold uppercase tracking-wider">
-            <Award size={13} className="text-amber-400" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-stone-100 border border-stone-200 text-amber-800 text-xs font-semibold uppercase tracking-wider dark:bg-[#171A21] dark:border-[#262A34] dark:text-amber-300">
+            <Award size={13} className="text-amber-600 dark:text-amber-400" />
             Interactive Service Pillars
           </div>
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-[#F9FAFB] tracking-tight">
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-stone-900 tracking-tight dark:text-[#F9FAFB]">
             The Foundations of PetJeeva
           </h2>
-          <p className="text-xs sm:text-base text-[#9CA3AF]">
+          <p className="text-xs sm:text-base text-stone-600 dark:text-[#9CA3AF]">
             Explore each specialized division to see who it&apos;s for, the step-by-step process, and our verified professional roles.
           </p>
         </div>
@@ -356,10 +351,10 @@ export default function About() {
                 className={`flex items-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 active:scale-[0.98] select-none ${
                   isSelected
                     ? 'bg-gradient-to-r from-amber-500 to-orange-500 text-stone-950 shadow-md shadow-amber-500/20'
-                    : 'bg-[#14171E] text-[#9CA3AF] hover:text-[#F3F4F6] border border-[#232730] hover:border-[#383F4D] hover:bg-[#181C24]'
+                    : 'bg-stone-100 text-stone-600 hover:text-stone-900 border border-stone-200 hover:border-stone-300 hover:bg-stone-200/60 dark:bg-[#14171E] dark:text-[#9CA3AF] dark:hover:text-[#F3F4F6] dark:border-[#232730] dark:hover:border-[#383F4D] dark:hover:bg-[#181C24]'
                 }`}
               >
-                <TabIcon size={16} className={isSelected ? 'text-stone-950' : 'text-[#6B7280]'} />
+                <TabIcon size={16} className={isSelected ? 'text-stone-950' : 'text-stone-400 dark:text-[#6B7280]'} />
                 <span>{svc.name}</span>
               </button>
             );
@@ -367,49 +362,49 @@ export default function About() {
         </div>
 
         {/* Dynamic Deep-Dive Card */}
-        <div className="bg-[#14171E] rounded-3xl p-5 sm:p-8 md:p-10 border border-[#232730] shadow-2xl shadow-black/50 transition-all duration-300">
+        <div className="bg-stone-50 rounded-3xl p-5 sm:p-8 md:p-10 border border-stone-200 shadow-xl shadow-stone-200/50 transition-all duration-300 dark:bg-[#14171E] dark:border-[#232730] dark:shadow-2xl dark:shadow-black/50">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             
             {/* Left Content Details */}
             <div className="lg:col-span-7 space-y-5">
               <div className="flex flex-wrap items-center gap-2">
-                <span className="px-3 py-1 rounded-full text-xs font-bold bg-amber-500/10 text-amber-300 border border-amber-500/20">
+                <span className="px-3 py-1 rounded-full text-xs font-bold bg-amber-500/10 text-amber-800 border border-amber-500/30 dark:border-amber-500/20 dark:text-amber-300">
                   {activeService.category} Pillar
                 </span>
-                <span className="px-3 py-1 rounded-full text-xs font-bold bg-[#1B1E26] text-[#F3F4F6] border border-[#2B303B]">
+                <span className="px-3 py-1 rounded-full text-xs font-bold bg-white text-stone-900 border border-stone-200 dark:bg-[#1B1E26] dark:text-[#F3F4F6] dark:border-[#2B303B]">
                   Starts at ₹{activeService.startingPrice}
                 </span>
                 {activeService.professionalRoles.map((role) => (
-                  <span key={role} className="px-3 py-1 rounded-full text-[11px] font-medium bg-[#101217] text-[#9CA3AF] border border-[#232730] uppercase tracking-wider">
+                  <span key={role} className="px-3 py-1 rounded-full text-[11px] font-medium bg-stone-100 text-stone-600 border border-stone-200 uppercase tracking-wider dark:bg-[#101217] dark:text-[#9CA3AF] dark:border-[#232730]">
                     Role: {role.replace(/_/g, ' ')}
                   </span>
                 ))}
               </div>
 
               <div>
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-[#F9FAFB] tracking-tight">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-stone-900 tracking-tight dark:text-[#F9FAFB]">
                   {activeService.name}
                 </h3>
-                <p className="text-xs sm:text-sm text-[#9CA3AF] mt-1.5 leading-relaxed">
+                <p className="text-xs sm:text-sm text-stone-600 mt-1.5 leading-relaxed dark:text-[#9CA3AF]">
                   {activeService.shortDescription}
                 </p>
               </div>
 
               {/* Who it's for */}
-              <div className="p-3.5 sm:p-4 rounded-2xl bg-[#0F1115] border border-[#232730] space-y-1">
-                <span className="text-[11px] font-bold uppercase tracking-wider text-amber-400">Who It&apos;s Specially For:</span>
-                <p className="text-xs sm:text-sm text-[#D1D5DB] leading-relaxed">
+              <div className="p-3.5 sm:p-4 rounded-2xl bg-white border border-stone-200 shadow-sm space-y-1 dark:bg-[#0F1115] dark:border-[#232730] dark:shadow-none">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">Who It&apos;s Specially For:</span>
+                <p className="text-xs sm:text-sm text-stone-700 leading-relaxed dark:text-[#D1D5DB]">
                   {activeService.whoItsFor}
                 </p>
               </div>
 
               {/* Benefits */}
               <div className="space-y-2">
-                <span className="text-xs font-semibold text-[#F3F4F6] uppercase tracking-wider block">Key Benefits:</span>
+                <span className="text-xs font-semibold text-stone-900 uppercase tracking-wider block dark:text-[#F3F4F6]">Key Benefits:</span>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
                   {activeService.benefits.map((benefit, idx) => (
-                    <div key={idx} className="flex items-center gap-2 p-2.5 rounded-xl bg-[#0F1115] border border-[#232730] text-xs font-medium text-[#E5E7EB]">
-                      <CheckCircle2 size={15} className="text-emerald-400 shrink-0" />
+                    <div key={idx} className="flex items-center gap-2 p-2.5 rounded-xl bg-white border border-stone-200 shadow-sm text-xs font-medium text-stone-800 dark:bg-[#0F1115] dark:border-[#232730] dark:text-[#E5E7EB] dark:shadow-none">
+                      <CheckCircle2 size={15} className="text-emerald-600 shrink-0 dark:text-emerald-400" />
                       <span>{benefit}</span>
                     </div>
                   ))}
@@ -418,11 +413,11 @@ export default function About() {
 
               {/* 3-Step Process */}
               <div className="space-y-2 pt-1">
-                <span className="text-xs font-semibold text-[#F3F4F6] uppercase tracking-wider block">The 3-Step Process:</span>
+                <span className="text-xs font-semibold text-stone-900 uppercase tracking-wider block dark:text-[#F3F4F6]">The 3-Step Process:</span>
                 <div className="space-y-2">
                   {activeService.process.map((step, idx) => (
-                    <div key={idx} className="flex items-center gap-3 text-xs sm:text-sm text-[#9CA3AF]">
-                      <span className="w-5 h-5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-xs shrink-0">
+                    <div key={idx} className="flex items-center gap-3 text-xs sm:text-sm text-stone-600 dark:text-[#9CA3AF]">
+                      <span className="w-5 h-5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-600 flex items-center justify-center font-bold text-xs shrink-0 dark:border-amber-500/20 dark:text-amber-400">
                         {idx + 1}
                       </span>
                       <span>{step}</span>
@@ -434,24 +429,24 @@ export default function About() {
 
             {/* Right Visual Card */}
             <div className="lg:col-span-5">
-              <div className="relative h-72 sm:h-96 rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl border border-[#262A34] group">
+              <div className="relative h-72 sm:h-96 rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl border border-stone-200 group dark:border-[#262A34]">
                 <img 
                   src={activeService.image} 
                   alt={activeService.name} 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0B0D11] via-[#0B0D11]/30 to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent pointer-events-none dark:from-[#0B0D11] dark:via-[#0B0D11]/30" />
                 
                 <div className="absolute top-4 left-4">
-                  <div className="w-10 h-10 rounded-xl bg-[#0F1115]/90 border border-[#2B303B] backdrop-blur-md flex items-center justify-center text-amber-400 shadow">
+                  <div className="w-10 h-10 rounded-xl bg-white/90 border border-stone-200 backdrop-blur-md flex items-center justify-center text-amber-600 shadow dark:bg-[#0F1115]/90 dark:border-[#2B303B] dark:text-amber-400">
                     <ActiveIcon size={20} />
                   </div>
                 </div>
 
-                <div className="absolute bottom-4 left-4 right-4 bg-[#14171E]/95 backdrop-blur-md p-3.5 rounded-xl border border-[#272B33] shadow-lg flex items-center justify-between">
+                <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md p-3.5 rounded-xl border border-stone-200 shadow-lg flex items-center justify-between dark:bg-[#14171E]/95 dark:border-[#272B33]">
                   <div>
-                    <span className="text-[10px] uppercase font-bold text-[#6B7280] block">Guaranteed Quality</span>
-                    <span className="text-xs font-semibold text-[#F3F4F6]">PetJeeva Certified Specialist</span>
+                    <span className="text-[10px] uppercase font-bold text-stone-500 block dark:text-[#6B7280]">Guaranteed Quality</span>
+                    <span className="text-xs font-semibold text-stone-900 dark:text-[#F3F4F6]">PetJeeva Certified Specialist</span>
                   </div>
                   <span className="text-xs font-bold text-stone-950 bg-gradient-to-r from-amber-500 to-orange-500 px-3 py-1 rounded-full">
                     Active Pillar

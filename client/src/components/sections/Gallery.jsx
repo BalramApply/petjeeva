@@ -171,7 +171,7 @@ function TransformationSection() {
   };
 
   return (
-    <section id="gallery" className="relative bg-[#14171E] rounded-3xl p-6 md:p-10 border border-[#232730] shadow-2xl shadow-black/50 mb-16 overflow-hidden">
+    <section id="gallery" className="relative bg-white rounded-3xl p-6 md:p-10 border border-stone-200 shadow-xl shadow-stone-200/50 mb-16 overflow-hidden transition-colors duration-200 dark:bg-[#14171E] dark:border-[#232730] dark:shadow-2xl dark:shadow-black/50">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -top-24 right-0 -z-10 h-72 w-72 rounded-full bg-amber-500/5 blur-3xl"
@@ -180,31 +180,31 @@ function TransformationSection() {
       <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
         {/* Left copy */}
         <div className="lg:w-5/12 space-y-4 text-left">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-300 text-xs font-semibold tracking-wide">
-            <Sparkles size={14} className="text-amber-400" />
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-800 text-xs font-semibold tracking-wide dark:border-amber-500/20 dark:text-amber-300">
+            <Sparkles size={14} className="text-amber-600 dark:text-amber-400" />
             <span>Real Care Transformation</span>
           </div>
-          <h3 className="text-2xl sm:text-3xl font-extrabold text-[#F9FAFB] tracking-tight leading-snug">
-            From Muddy Trail to <span className="bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent">Velvety Fluff</span>
+          <h3 className="text-2xl sm:text-3xl font-extrabold text-stone-900 tracking-tight leading-snug dark:text-[#F9FAFB]">
+            From Muddy Trail to <span className="bg-gradient-to-r from-amber-600 via-orange-500 to-amber-500 bg-clip-text text-transparent dark:from-amber-400 dark:to-orange-400">Velvety Fluff</span>
           </h3>
-          <p className="text-[#9CA3AF] leading-relaxed text-sm md:text-base">
+          <p className="text-stone-600 leading-relaxed text-sm md:text-base dark:text-[#9CA3AF]">
             Slide horizontally to reveal the before and after of Archie&apos;s full de-shedding bath, 
             ear sanitization, and warm lavender paw moisture treatment.
           </p>
           
           <div className="pt-2 grid grid-cols-2 gap-3 text-xs font-medium">
-            <div className="p-3 rounded-2xl bg-[#0F1115] border border-[#232730]">
-              <span className="text-[#6B7280] block text-[11px] uppercase tracking-wider font-semibold">Pet Guest</span>
-              <strong className="text-[#F3F4F6] text-sm mt-0.5 block">Archie (Cockapoo)</strong>
+            <div className="p-3 rounded-2xl bg-stone-50 border border-stone-200 dark:bg-[#0F1115] dark:border-[#232730]">
+              <span className="text-stone-500 block text-[11px] uppercase tracking-wider font-semibold dark:text-[#6B7280]">Pet Guest</span>
+              <strong className="text-stone-900 text-sm mt-0.5 block dark:text-[#F3F4F6]">Archie (Cockapoo)</strong>
             </div>
-            <div className="p-3 rounded-2xl bg-[#0F1115] border border-[#232730]">
-              <span className="text-[#6B7280] block text-[11px] uppercase tracking-wider font-semibold">Care Package</span>
-              <strong className="text-[#F3F4F6] text-sm mt-0.5 block">Signature Spa &amp; Trim</strong>
+            <div className="p-3 rounded-2xl bg-stone-50 border border-stone-200 dark:bg-[#0F1115] dark:border-[#232730]">
+              <span className="text-stone-500 block text-[11px] uppercase tracking-wider font-semibold dark:text-[#6B7280]">Care Package</span>
+              <strong className="text-stone-900 text-sm mt-0.5 block dark:text-[#F3F4F6]">Signature Spa &amp; Trim</strong>
             </div>
           </div>
 
-          <div className="flex items-center gap-2 text-xs text-[#9CA3AF] pt-1">
-            <ShieldCheck size={16} className="text-emerald-400 shrink-0" />
+          <div className="flex items-center gap-2 text-xs text-stone-600 pt-1 dark:text-[#9CA3AF]">
+            <ShieldCheck size={16} className="text-emerald-600 shrink-0 dark:text-emerald-400" />
             <span>Performed using 100% organic, tear-free botanicals.</span>
           </div>
         </div>
@@ -212,7 +212,7 @@ function TransformationSection() {
         {/* Interactive Comparison Slider */}
         <div className="lg:w-7/12 w-full">
           <div 
-            className="relative w-full h-80 sm:h-96 rounded-2xl overflow-hidden cursor-ew-resize select-none border border-[#272B33] shadow-inner bg-[#0B0D11]"
+            className="relative w-full h-80 sm:h-96 rounded-2xl overflow-hidden cursor-ew-resize select-none border border-stone-200 shadow-inner bg-stone-100 dark:border-[#272B33] dark:bg-[#0B0D11]"
             onMouseMove={(e) => {
               if (e.buttons === 1 || isDragging) handleMouseMove(e);
             }}
@@ -226,7 +226,7 @@ function TransformationSection() {
               alt="Archie After Care Grooming" 
               className="absolute inset-0 w-full h-full object-cover pointer-events-none"
             />
-            <div className="absolute top-4 right-4 bg-[#0F1115]/90 border border-white/10 text-[#F9FAFB] backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold shadow-lg">
+            <div className="absolute top-4 right-4 bg-white/90 border border-stone-200 text-stone-900 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold shadow-lg dark:bg-[#0F1115]/90 dark:border-white/10 dark:text-[#F9FAFB]">
               After Grooming ✨
             </div>
 
@@ -241,7 +241,7 @@ function TransformationSection() {
                 className="absolute inset-0 w-full h-full object-cover max-w-none pointer-events-none"
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />
-              <div className="absolute top-4 left-4 bg-[#0F1115]/90 border border-white/10 text-[#D1D5DB] backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold shadow-lg">
+              <div className="absolute top-4 left-4 bg-white/90 border border-stone-200 text-stone-700 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold shadow-lg dark:bg-[#0F1115]/90 dark:border-white/10 dark:text-[#D1D5DB]">
                 Before Arrival 🐾
               </div>
             </div>
@@ -251,13 +251,13 @@ function TransformationSection() {
               className="absolute inset-y-0 w-0.5 bg-white/90 shadow-[0_0_12px_rgba(255,255,255,0.4)] cursor-ew-resize flex items-center justify-center pointer-events-none"
               style={{ left: `${sliderPos}%` }}
             >
-              <div className="w-8 h-8 -ml-4 bg-gradient-to-r from-amber-500 to-orange-500 border border-white/70 rounded-full flex items-center justify-center text-stone-950 shadow-lg shadow-black/60">
+              <div className="w-8 h-8 -ml-4 bg-gradient-to-r from-amber-500 to-orange-500 border border-white/70 rounded-full flex items-center justify-center text-stone-950 shadow-lg shadow-black/40">
                 <ChevronLeft size={13} className="-mr-0.5" strokeWidth={2.5} />
                 <ChevronRight size={13} className="-ml-0.5" strokeWidth={2.5} />
               </div>
             </div>
           </div>
-          <p className="text-center text-xs text-[#6B7280] mt-3">
+          <p className="text-center text-xs text-stone-500 mt-3 dark:text-[#6B7280]">
             ← Drag or slide across the image to see Archie&apos;s transformation →
           </p>
         </div>
@@ -281,68 +281,68 @@ function LightboxModal({ item, onClose, onLike, isLiked }) {
 
   return (
     <div 
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md transition-opacity duration-300"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md transition-opacity duration-300 dark:bg-black/80"
       onClick={onClose}
     >
       <div 
-        className="relative bg-[#14171E] rounded-3xl max-w-4xl w-full max-h-[92vh] overflow-hidden shadow-2xl border border-[#272B33] flex flex-col md:flex-row"
+        className="relative bg-white rounded-3xl max-w-4xl w-full max-h-[92vh] overflow-hidden shadow-2xl border border-stone-200 flex flex-col md:flex-row dark:bg-[#14171E] dark:border-[#272B33]"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
         <button 
           onClick={onClose}
-          className="absolute top-4 right-4 z-20 w-9 h-9 bg-[#1F232C]/80 hover:bg-[#282E3B] text-[#D1D5DB] hover:text-white rounded-full flex items-center justify-center shadow-lg border border-[#2C313C] transition-all"
+          className="absolute top-4 right-4 z-20 w-9 h-9 bg-white/90 hover:bg-stone-100 text-stone-700 hover:text-stone-900 rounded-full flex items-center justify-center shadow-lg border border-stone-200 transition-all dark:bg-[#1F232C]/80 dark:hover:bg-[#282E3B] dark:text-[#D1D5DB] dark:hover:text-white dark:border-[#2C313C]"
           aria-label="Close modal"
         >
           <X size={17} />
         </button>
 
         {/* Media Preview */}
-        <div className="md:w-7/12 bg-[#0A0C0F] relative flex items-center justify-center overflow-hidden">
+        <div className="md:w-7/12 bg-stone-100 relative flex items-center justify-center overflow-hidden dark:bg-[#0A0C0F]">
           <img 
             src={item.image} 
             alt={item.title} 
             className="w-full h-72 md:h-full object-cover max-h-[580px]"
           />
-          <div className="absolute bottom-3.5 left-3.5 bg-[#0F1115]/85 border border-[#272B33] backdrop-blur-md text-[#E5E7EB] px-3 py-1 rounded-full text-xs font-medium">
+          <div className="absolute bottom-3.5 left-3.5 bg-white/90 border border-stone-200 backdrop-blur-md text-stone-800 px-3 py-1 rounded-full text-xs font-medium dark:bg-[#0F1115]/85 dark:border-[#272B33] dark:text-[#E5E7EB]">
             {item.badge}
           </div>
         </div>
 
         {/* Details Panel */}
-        <div className="md:w-5/12 p-6 md:p-8 flex flex-col justify-between overflow-y-auto max-h-[50vh] md:max-h-none bg-[#14171E]">
+        <div className="md:w-5/12 p-6 md:p-8 flex flex-col justify-between overflow-y-auto max-h-[50vh] md:max-h-none bg-white dark:bg-[#14171E]">
           <div className="space-y-4">
             <div>
-              <span className="inline-block text-xs font-semibold uppercase tracking-wider text-amber-400">
+              <span className="inline-block text-xs font-semibold uppercase tracking-wider text-amber-600 dark:text-amber-400">
                 {item.category}
               </span>
-              <h3 className="text-xl sm:text-2xl font-bold text-[#F9FAFB] mt-1 tracking-tight">
+              <h3 className="text-xl sm:text-2xl font-bold text-stone-900 mt-1 tracking-tight dark:text-[#F9FAFB]">
                 {item.title}
               </h3>
-              <p className="text-sm font-medium text-[#9CA3AF] mt-1">
-                Guest: <span className="text-[#F3F4F6] font-semibold">{item.petName}</span>
+              <p className="text-sm font-medium text-stone-600 mt-1 dark:text-[#9CA3AF]">
+                Guest: <span className="text-stone-900 font-semibold dark:text-[#F3F4F6]">{item.petName}</span>
               </p>
             </div>
 
-            <div className="p-4 bg-[#0F1115] rounded-2xl border border-[#232730] space-y-2.5">
-              <div className="flex items-center gap-2 text-xs text-[#9CA3AF]">
-                <Award size={14} className="text-amber-400 shrink-0" />
-                <span className="font-semibold text-[#E5E7EB]">{item.service}</span>
+            <div className="p-4 bg-stone-50 rounded-2xl border border-stone-200 space-y-2.5 dark:bg-[#0F1115] dark:border-[#232730]">
+              <div className="flex items-center gap-2 text-xs text-stone-600 dark:text-[#9CA3AF]">
+                <Award size={14} className="text-amber-600 shrink-0 dark:text-amber-400" />
+                <span className="font-semibold text-stone-800 dark:text-[#E5E7EB]">{item.service}</span>
               </div>
-              <p className="text-xs text-[#9CA3AF] leading-relaxed italic">
+              <p className="text-xs text-stone-600 leading-relaxed italic dark:text-[#9CA3AF]">
                 &ldquo;{item.careNote}&rdquo;
               </p>
-              <div className="pt-2 text-[11px] text-[#6B7280] flex items-center gap-1.5 border-t border-[#1C2028]">
-                <CheckCircle2 size={13} className="text-emerald-400 shrink-0" />
+              <div className="pt-2 text-[11px] text-stone-500 flex items-center gap-1.5 border-t border-stone-200 dark:text-[#6B7280] dark:border-[#1C2028]">
+                <CheckCircle2 size={13} className="text-emerald-600 shrink-0 dark:text-emerald-400" />
                 <span>Caregiver: {item.caregiver}</span>
               </div>
             </div>
 
             <div>
-              <p className="text-xs font-semibold text-[#6B7280] uppercase tracking-wider mb-2">Care Tags</p>
+              <p className="text-xs font-semibold text-stone-500 uppercase tracking-wider mb-2 dark:text-[#6B7280]">Care Tags</p>
               <div className="flex flex-wrap gap-1.5">
                 {item.tags.map((t, idx) => (
-                  <span key={idx} className="text-xs px-2.5 py-1 rounded-full bg-[#181C24] text-amber-300 font-medium border border-[#262B34]">
+                  <span key={idx} className="text-xs px-2.5 py-1 rounded-full bg-amber-50 text-amber-800 font-medium border border-amber-200 dark:bg-[#181C24] dark:text-amber-300 dark:border-[#262B34]">
                     #{t}
                   </span>
                 ))}
@@ -350,28 +350,28 @@ function LightboxModal({ item, onClose, onLike, isLiked }) {
             </div>
           </div>
 
-          <div className="pt-6 border-t border-[#232730] mt-6 flex items-center justify-between">
+          <div className="pt-6 border-t border-stone-200 mt-6 flex items-center justify-between dark:border-[#232730]">
             <button 
               onClick={() => onLike(item.id)}
               className={`flex items-center gap-2 px-4 py-2.5 rounded-full font-medium text-xs sm:text-sm border transition-all active:scale-95 ${
                 isLiked 
-                  ? 'bg-amber-500/15 border-amber-500/40 text-amber-300' 
-                  : 'bg-[#181C24] hover:bg-[#1F232D] border-[#262A34] text-[#D1D5DB]'
+                  ? 'bg-amber-500/15 border-amber-500/40 text-amber-800 dark:text-amber-300' 
+                  : 'bg-stone-50 hover:bg-stone-100 border-stone-200 text-stone-700 dark:bg-[#181C24] dark:hover:bg-[#1F232D] dark:border-[#262A34] dark:text-[#D1D5DB]'
               }`}
             >
-              <Heart size={15} className={isLiked ? "fill-amber-400 text-amber-400" : "text-[#6B7280]"} />
+              <Heart size={15} className={isLiked ? "fill-amber-500 text-amber-500 dark:fill-amber-400 dark:text-amber-400" : "text-stone-400 dark:text-[#6B7280]"} />
               <span>{item.likes + (isLiked ? 1 : 0)} Loves</span>
             </button>
 
             <button 
               onClick={handleShare}
-              className="flex items-center gap-1.5 text-xs text-[#9CA3AF] hover:text-[#F3F4F6] transition-colors p-2"
+              className="flex items-center gap-1.5 text-xs text-stone-600 hover:text-stone-900 transition-colors p-2 dark:text-[#9CA3AF] dark:hover:text-[#F3F4F6]"
               title="Copy share link"
             >
               {copied ? (
                 <>
-                  <Check size={15} className="text-emerald-400" />
-                  <span className="text-emerald-400">Copied</span>
+                  <Check size={15} className="text-emerald-600 dark:text-emerald-400" />
+                  <span className="text-emerald-600 dark:text-emerald-400">Copied</span>
                 </>
               ) : (
                 <>
@@ -424,7 +424,7 @@ export default function Gallery() {
   }, [activeCategory, searchQuery, sortBy, likedItems]);
 
   return (
-    <div className="min-h-screen bg-[#0F1115] text-[#9CA3AF] flex flex-col font-sans selection:bg-amber-500/20 selection:text-amber-300">
+    <div className="min-h-screen bg-stone-50 text-stone-600 flex flex-col font-sans selection:bg-amber-500/20 selection:text-amber-800 transition-colors duration-200 dark:bg-[#0F1115] dark:text-[#9CA3AF] dark:selection:text-amber-300">
 
       {/* Hero Section */}
       <section className="relative overflow-hidden pt-16 pb-8 md:pt-20 md:pb-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
@@ -434,17 +434,17 @@ export default function Gallery() {
         />
 
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-300 text-xs font-medium tracking-wide backdrop-blur-sm">
-            <ShieldCheck size={14} className="text-amber-400" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-800 text-xs font-medium tracking-wide backdrop-blur-sm dark:border-amber-500/20 dark:text-amber-300">
+            <ShieldCheck size={14} className="text-amber-600 dark:text-amber-400" />
             <span>Verified Paws, Certified Smiles</span>
           </div>
-          <h1 className="text-3xl sm:text-5xl font-extrabold text-[#F9FAFB] tracking-tight leading-[1.12]">
+          <h1 className="text-3xl sm:text-5xl font-extrabold text-stone-900 tracking-tight leading-[1.12] dark:text-[#F9FAFB]">
             Moments of Joy &amp;{' '}
-            <span className="bg-gradient-to-r from-amber-400 via-orange-400 to-amber-200 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-amber-600 via-orange-500 to-amber-500 bg-clip-text text-transparent dark:from-amber-400 dark:via-orange-400 dark:to-amber-200">
               Royal Care
             </span>
           </h1>
-          <p className="text-sm sm:text-base md:text-lg text-[#9CA3AF] leading-relaxed max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg text-stone-600 leading-relaxed max-w-2xl mx-auto dark:text-[#9CA3AF]">
             Peek inside our serene play runs, clinical suites, and botanical spa rooms. Every tail wag and purr captured with love by our certified caregivers.
           </p>
         </div>
@@ -455,7 +455,7 @@ export default function Gallery() {
         <TransformationSection />
 
         {/* Filter Controls Bar */}
-        <div className="sticky top-20 z-30 bg-[#0F1115]/90 backdrop-blur-md py-4 mb-8 border-b border-[#232730]">
+        <div className="sticky top-0 z-30 bg-stone-50/90 backdrop-blur-md py-4 mb-8 border-b border-stone-200 dark:bg-[#0F1115]/90 dark:border-[#232730]">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-4">
             
             {/* Category Pills */}
@@ -469,7 +469,7 @@ export default function Gallery() {
                     className={`whitespace-nowrap px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 select-none ${
                       isActive 
                         ? 'bg-gradient-to-r from-amber-500 to-orange-500 text-stone-950 shadow-md shadow-amber-500/20' 
-                        : 'bg-[#14171E] text-[#9CA3AF] hover:text-[#F3F4F6] hover:bg-[#1A1E27] border border-[#232730]'
+                        : 'bg-white text-stone-600 hover:text-stone-900 hover:bg-stone-100 border border-stone-200 dark:bg-[#14171E] dark:text-[#9CA3AF] dark:hover:text-[#F3F4F6] dark:hover:bg-[#1A1E27] dark:border-[#232730]'
                     }`}
                   >
                     {cat}
@@ -481,18 +481,18 @@ export default function Gallery() {
             {/* Search & Sort Dropdown */}
             <div className="flex items-center gap-2.5 w-full lg:w-auto">
               <div className="relative flex-1 sm:w-64">
-                <Search size={15} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#6B7280]" />
+                <Search size={15} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-stone-400 dark:text-[#6B7280]" />
                 <input 
                   type="text"
                   placeholder="Search pet, tag or service..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-9 pr-8 py-2 bg-[#14171E] text-xs sm:text-sm rounded-full border border-[#262A34] focus:outline-none focus:border-amber-500/80 text-[#F3F4F6] placeholder-[#4B5563] transition-colors"
+                  className="w-full pl-9 pr-8 py-2 bg-white text-xs sm:text-sm rounded-full border border-stone-200 focus:outline-none focus:border-amber-500/80 text-stone-900 placeholder-stone-400 transition-colors shadow-xs dark:bg-[#14171E] dark:border-[#262A34] dark:text-[#F3F4F6] dark:placeholder-[#4B5563] dark:shadow-none"
                 />
                 {searchQuery && (
                   <button 
                     onClick={() => setSearchQuery("")} 
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-[#6B7280] hover:text-[#F3F4F6]"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-stone-400 hover:text-stone-700 dark:text-[#6B7280] dark:hover:text-[#F3F4F6]"
                   >
                     <X size={14} />
                   </button>
@@ -504,12 +504,12 @@ export default function Gallery() {
                 <select 
                   value={sortBy} 
                   onChange={(e) => setSortBy(e.target.value)}
-                  className="appearance-none bg-[#14171E] text-xs sm:text-sm font-medium text-[#D1D5DB] pl-3.5 pr-8 py-2 rounded-full border border-[#262A34] focus:outline-none focus:border-amber-500/80 cursor-pointer"
+                  className="appearance-none bg-white text-xs sm:text-sm font-medium text-stone-700 pl-3.5 pr-8 py-2 rounded-full border border-stone-200 focus:outline-none focus:border-amber-500/80 cursor-pointer shadow-xs dark:bg-[#14171E] dark:text-[#D1D5DB] dark:border-[#262A34] dark:shadow-none"
                 >
-                  <option value="popular" className="bg-[#14171E] text-[#F3F4F6]">Most Loved</option>
-                  <option value="newest" className="bg-[#14171E] text-[#F3F4F6]">Recent Captures</option>
+                  <option value="popular" className="bg-white text-stone-900 dark:bg-[#14171E] dark:text-[#F3F4F6]">Most Loved</option>
+                  <option value="newest" className="bg-white text-stone-900 dark:bg-[#14171E] dark:text-[#F3F4F6]">Recent Captures</option>
                 </select>
-                <ArrowUpDown size={13} className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-[#6B7280]" />
+                <ArrowUpDown size={13} className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-stone-400 dark:text-[#6B7280]" />
               </div>
             </div>
 
@@ -518,12 +518,12 @@ export default function Gallery() {
 
         {/* Gallery Grid */}
         {filteredItems.length === 0 ? (
-          <div className="text-center py-20 bg-[#14171E] rounded-3xl border border-[#232730] p-8">
-            <div className="w-14 h-14 bg-[#0F1115] rounded-2xl border border-[#262A34] flex items-center justify-center mx-auto text-[#6B7280] mb-3">
-              <Camera size={22} className="text-amber-400" />
+          <div className="text-center py-20 bg-white rounded-3xl border border-stone-200 p-8 shadow-sm dark:bg-[#14171E] dark:border-[#232730] dark:shadow-none">
+            <div className="w-14 h-14 bg-stone-100 rounded-2xl border border-stone-200 flex items-center justify-center mx-auto text-stone-400 mb-3 dark:bg-[#0F1115] dark:border-[#262A34] dark:text-[#6B7280]">
+              <Camera size={22} className="text-amber-600 dark:text-amber-400" />
             </div>
-            <h4 className="text-lg font-bold text-[#F9FAFB] tracking-tight">No pet memories found</h4>
-            <p className="text-xs sm:text-sm text-[#9CA3AF] max-w-sm mx-auto mt-1 leading-relaxed">
+            <h4 className="text-lg font-bold text-stone-900 tracking-tight dark:text-[#F9FAFB]">No pet memories found</h4>
+            <p className="text-xs sm:text-sm text-stone-600 max-w-sm mx-auto mt-1 leading-relaxed dark:text-[#9CA3AF]">
               Try adjusting your search query or selecting &ldquo;All&rdquo; categories to view other lovely moments.
             </p>
             <button 
@@ -541,10 +541,10 @@ export default function Gallery() {
                 <article 
                   key={item.id}
                   onClick={() => setSelectedItem(item)}
-                  className="group relative bg-[#14171E] rounded-3xl overflow-hidden border border-[#232730] shadow-xl shadow-black/40 hover:shadow-2xl hover:border-[#383F4E] transition-all duration-300 flex flex-col cursor-pointer hover:-translate-y-1"
+                  className="group relative bg-white rounded-3xl overflow-hidden border border-stone-200 shadow-sm shadow-stone-200/50 hover:shadow-xl hover:border-stone-300 transition-all duration-300 flex flex-col cursor-pointer hover:-translate-y-1 dark:bg-[#14171E] dark:border-[#232730] dark:shadow-xl dark:shadow-black/40 dark:hover:shadow-2xl dark:hover:border-[#383F4E]"
                 >
                   {/* Image Container with Smooth Zoom */}
-                  <div className="relative w-full h-72 sm:h-80 overflow-hidden bg-[#0F1115]">
+                  <div className="relative w-full h-72 sm:h-80 overflow-hidden bg-stone-100 dark:bg-[#0F1115]">
                     <img 
                       src={item.image} 
                       alt={item.title} 
@@ -553,37 +553,37 @@ export default function Gallery() {
                     />
 
                     {/* Gradient Overlay for legibility */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0B0D11] via-[#0B0D11]/30 to-black/20 opacity-90 group-hover:opacity-95 transition-opacity" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/30 to-black/20 opacity-90 group-hover:opacity-95 transition-opacity dark:from-[#0B0D11] dark:via-[#0B0D11]/30" />
 
                     {/* Top Badges */}
                     <div className="absolute top-3.5 left-3.5 right-3.5 flex items-center justify-between pointer-events-none">
-                      <span className="px-3 py-1 rounded-full text-[11px] font-semibold bg-[#14171E]/90 border border-white/10 text-[#F3F4F6] backdrop-blur-md shadow-sm">
+                      <span className="px-3 py-1 rounded-full text-[11px] font-semibold bg-white/90 border border-white/20 text-stone-900 backdrop-blur-md shadow-sm dark:bg-[#14171E]/90 dark:border-white/10 dark:text-[#F3F4F6]">
                         {item.badge}
                       </span>
-                      <span className="w-8 h-8 rounded-full bg-[#14171E]/90 border border-white/10 text-[#F3F4F6] backdrop-blur-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 shadow-md">
+                      <span className="w-8 h-8 rounded-full bg-white/90 border border-white/20 text-stone-900 backdrop-blur-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 shadow-md dark:bg-[#14171E]/90 dark:border-white/10 dark:text-[#F3F4F6]">
                         <Maximize2 size={13} />
                       </span>
                     </div>
 
                     {/* Overlay Content Bottom */}
                     <div className="absolute bottom-3.5 left-3.5 right-3.5 text-white">
-                      <div className="flex items-center gap-1.5 text-xs text-amber-400 font-semibold mb-1">
+                      <div className="flex items-center gap-1.5 text-xs text-amber-300 font-semibold mb-1 dark:text-amber-400">
                         <Tag size={12} />
                         <span>{item.service}</span>
                       </div>
-                      <h4 className="text-base sm:text-lg font-bold tracking-tight text-[#F9FAFB] line-clamp-1 drop-shadow-sm">
+                      <h4 className="text-base sm:text-lg font-bold tracking-tight text-white line-clamp-1 drop-shadow-sm dark:text-[#F9FAFB]">
                         {item.title}
                       </h4>
-                      <p className="text-xs text-[#9CA3AF] mt-0.5">
-                        Guest: <strong className="text-[#F3F4F6] font-semibold">{item.petName}</strong>
+                      <p className="text-xs text-stone-200 mt-0.5 dark:text-[#9CA3AF]">
+                        Guest: <strong className="text-white font-semibold dark:text-[#F3F4F6]">{item.petName}</strong>
                       </p>
                     </div>
                   </div>
 
                   {/* Card Footer Bar */}
-                  <div className="p-4 bg-[#14171E] flex items-center justify-between border-t border-[#20242D]">
-                    <div className="flex items-center gap-1.5 text-xs text-[#6B7280]">
-                      <Calendar size={13} className="text-amber-400" />
+                  <div className="p-4 bg-white flex items-center justify-between border-t border-stone-200 dark:bg-[#14171E] dark:border-[#20242D]">
+                    <div className="flex items-center gap-1.5 text-xs text-stone-500 dark:text-[#6B7280]">
+                      <Calendar size={13} className="text-amber-600 dark:text-amber-400" />
                       <span>{new Date(item.date).toLocaleDateString(undefined, { month: 'short', day: 'numeric' })}</span>
                     </div>
 
@@ -594,13 +594,13 @@ export default function Gallery() {
                       }}
                       className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold border transition-all active:scale-95 ${
                         isLiked
-                          ? 'bg-amber-500/15 border-amber-500/40 text-amber-300'
-                          : 'bg-[#181C24] hover:bg-[#1F232D] border-[#262A34] text-[#D1D5DB]'
+                          ? 'bg-amber-500/15 border-amber-500/40 text-amber-800 dark:text-amber-300'
+                          : 'bg-stone-50 hover:bg-stone-100 border-stone-200 text-stone-700 dark:bg-[#181C24] dark:hover:bg-[#1F232D] dark:border-[#262A34] dark:text-[#D1D5DB]'
                       }`}
                     >
                       <Heart 
                         size={13} 
-                        className={isLiked ? "fill-amber-400 text-amber-400" : "text-[#6B7280]"} 
+                        className={isLiked ? "fill-amber-500 text-amber-500 dark:fill-amber-400 dark:text-amber-400" : "text-stone-400 dark:text-[#6B7280]"} 
                       />
                       <span>{item.likes + (isLiked ? 1 : 0)}</span>
                     </button>
