@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 import Container from "./Container";
 import { businessInfo } from "../../data/businessInfo";
 import logo from "./image.png";
-import logoWhite from "./WhiteLogo.png";
+import logoWhite from "./whiteLogo.png";
 
 // Clean inline SVGs for brand icons not present in standard Lucide sets
 function YoutubeIcon({ className = "h-4 w-4" }) {
