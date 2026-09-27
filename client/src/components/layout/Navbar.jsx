@@ -5,7 +5,7 @@ import Container from "./Container";
 import Button from "../ui/Button";
 import { businessInfo } from "../../data/businessInfo";
 import logo from "./image.png";
-import logoWhite from "./WhiteLogo.png";
+import logoWhite from "./whiteLogo.png";
 
 const LINKS = [
   { label: "Home", href: "/" },
