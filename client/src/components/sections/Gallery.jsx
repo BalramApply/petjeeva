@@ -150,7 +150,6 @@ const CATEGORIES = [
   "Health & Wellness",
   "Happy Moments"
 ];
-
 function TransformationSection() {
   const [sliderPos, setSliderPos] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
@@ -434,20 +433,20 @@ export default function Gallery() {
         />
 
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-800 text-xs font-medium tracking-wide backdrop-blur-sm dark:border-amber-500/20 dark:text-amber-300">
-            <ShieldCheck size={14} className="text-amber-600 dark:text-amber-400" />
-            <span>Verified Paws, Certified Smiles</span>
-          </div>
-          <h1 className="text-3xl sm:text-5xl font-extrabold text-stone-900 tracking-tight leading-[1.12] dark:text-[#F9FAFB]">
-            Moments of Joy &amp;{' '}
-            <span className="bg-gradient-to-r from-amber-600 via-orange-500 to-amber-500 bg-clip-text text-transparent dark:from-amber-400 dark:via-orange-400 dark:to-amber-200">
-              Royal Care
-            </span>
-          </h1>
-          <p className="text-sm sm:text-base md:text-lg text-stone-600 leading-relaxed max-w-2xl mx-auto dark:text-[#9CA3AF]">
-            Peek inside our serene play runs, clinical suites, and botanical spa rooms. Every tail wag and purr captured with love by our certified caregivers.
-          </p>
-        </div>
+  <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-800 text-xs font-medium tracking-wide backdrop-blur-sm dark:border-amber-500/20 dark:text-amber-300">
+    <ShieldCheck size={14} className="text-amber-600 dark:text-amber-400" />
+    <span>Trusted Care, Happy Pets</span>
+  </div>
+  <h1 className="text-3xl sm:text-5xl font-extrabold text-stone-900 tracking-tight leading-[1.12] dark:text-[#F9FAFB]">
+    Happy Pets &amp;{' '}
+    <span className="bg-gradient-to-r from-amber-600 via-orange-500 to-amber-500 bg-clip-text text-transparent dark:from-amber-400 dark:via-orange-400 dark:to-amber-200">
+      Loving Care
+    </span>
+  </h1>
+  <p className="text-sm sm:text-base md:text-lg text-stone-600 leading-relaxed max-w-2xl mx-auto dark:text-[#9CA3AF]">
+    Take a look at our clean play areas, quiet resting spots, and pet spa. See how our trained team keeps every dog and cat safe, happy, and loved.
+  </p>
+</div>
       </section>
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pb-20 flex-1">

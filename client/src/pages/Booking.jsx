@@ -1,18 +1,19 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import {
   CheckCircle2,
   AlertCircle,
   Loader2,
   MessageCircle,
-  CalendarCheck,
   ShieldCheck,
   User,
   Phone,
   Dog,
   Sparkles,
   MapPin,
-  Clock
+  Clock,
+  ChevronDown,
+  Check
 } from 'lucide-react';
 
 import Section from '../components/layout/Section';
@@ -22,17 +23,152 @@ import { locations } from '../data/priceEstimatorOptions';
 import { getWhatsAppLink } from '../data/businessInfo';
 import { buildBookingMessage } from '../utils/buildBookingMessage';
 
+// Reusable responsive, styled custom dropdown
+function CustomSelect({
+  id,
+  name,
+  label,
+  icon: Icon,
+  options,
+  value,
+  onChange,
+  placeholder = 'Select an option',
+  required = true
+}) {
+  const [isOpen, setIsOpen] = useState(false);
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (containerRef.current && !containerRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  const selectedOption = options.find((opt) => opt.value === value);
+
+  return (
+    <div className="relative w-full" ref={containerRef}>
+      {/* Hidden input to ensure FormData picks up the value seamlessly */}
+      <input type="hidden" name={name} value={value} required={required} />
+
+      <label
+        htmlFor={id}
+        className="mb-1.5 flex items-center gap-1.5 text-xs font-semibold text-stone-700 dark:text-[#D1D5DB]"
+      >
+        {Icon && <Icon size={13} className="text-amber-600 dark:text-amber-400" />}
+        <span>{label}</span>
+      </label>
+
+      {/* Trigger Button */}
+      <button
+        id={id}
+        type="button"
+        onClick={() => setIsOpen((prev) => !prev)}
+        aria-expanded={isOpen}
+        aria-haspopup="listbox"
+        className={`w-full flex items-center justify-between rounded-xl border px-3.5 py-2.5 text-left text-xs sm:text-sm transition-all outline-none focus:ring-2 focus:ring-amber-500/20 ${
+          isOpen
+            ? 'border-amber-500 ring-2 ring-amber-500/20 bg-white dark:bg-[#14171E] dark:border-amber-500/60'
+            : 'border-stone-200 bg-stone-50 hover:border-stone-300 dark:border-[#262A34] dark:bg-[#0F1115] dark:hover:border-[#383E4C]'
+        }`}
+      >
+        <span
+          className={`truncate pr-2 ${
+            selectedOption
+              ? 'font-medium text-stone-900 dark:text-[#F3F4F6]'
+              : 'text-stone-400 dark:text-[#6B7280]'
+          }`}
+        >
+          {selectedOption ? selectedOption.label : placeholder}
+        </span>
+        <ChevronDown
+          size={16}
+          className={`shrink-0 text-stone-400 transition-transform duration-200 ease-out dark:text-[#6B7280] ${
+            isOpen ? 'rotate-180 text-amber-600 dark:text-amber-400' : ''
+          }`}
+        />
+      </button>
+
+      {/* Responsive Dropdown Menu */}
+      {isOpen && (
+        <ul
+          role="listbox"
+          tabIndex={-1}
+          className="absolute z-50 mt-1.5 max-h-56 w-full overflow-y-auto rounded-xl border border-stone-200 bg-white/95 p-1.5 shadow-xl backdrop-blur-md transition-all ease-out sm:max-h-64 dark:border-[#2B303C] dark:bg-[#13161D]/95 dark:shadow-black/70 scrollbar-thin scrollbar-thumb-stone-300 dark:scrollbar-thumb-stone-700"
+        >
+          {options.map((option) => {
+            const isSelected = option.value === value;
+            return (
+              <li
+                key={option.value}
+                role="option"
+                aria-selected={isSelected}
+                onClick={() => {
+                  onChange(option.value);
+                  setIsOpen(false);
+                }}
+                className={`group flex w-full cursor-pointer items-center justify-between rounded-lg px-3 py-2 text-xs sm:text-sm font-medium transition-colors ${
+                  isSelected
+                    ? 'bg-amber-500/10 text-amber-700 dark:bg-amber-400/15 dark:text-amber-300'
+                    : 'text-stone-700 hover:bg-stone-100 hover:text-stone-900 dark:text-[#D1D5DB] dark:hover:bg-[#1F242F] dark:hover:text-[#F9FAFB]'
+                }`}
+              >
+                <span className="truncate">{option.label}</span>
+                {isSelected && (
+                  <Check size={14} className="shrink-0 text-amber-600 dark:text-amber-400" />
+                )}
+              </li>
+            );
+          })}
+        </ul>
+      )}
+    </div>
+  );
+}
+
 export default function Booking() {
   const [searchParams] = useSearchParams();
   const preselectedService = searchParams.get('service') || '';
+
+  // Form Controlled State for Custom Selects
+  const [petType, setPetType] = useState('dog');
+  const [selectedService, setSelectedService] = useState(preselectedService);
+  const [selectedLocation, setSelectedLocation] = useState('');
 
   const [status, setStatus] = useState('idle');
   const [submittedData, setSubmittedData] = useState(null);
 
   const googleSheetUrl = import.meta.env.VITE_GOOGLE_SHEET_URL;
 
+  // Options arrays
+  const companionOptions = [
+    { value: 'dog', label: 'Dog 🐶' },
+    { value: 'cat', label: 'Cat 🐱' }
+  ];
+
+  const serviceOptions = services
+    .filter((s) => s.active)
+    .map((s) => ({
+      value: s.id,
+      label: s.name
+    }));
+
+  const locationOptions = locations.map((l) => ({
+    value: l.id,
+    label: l.label
+  }));
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!selectedService || !selectedLocation) {
+      alert('Please select both a service and your area.');
+      return;
+    }
 
     setStatus('submitting');
 
@@ -43,10 +179,8 @@ export default function Booking() {
       phone: formData.get('phone'),
       petType: formData.get('petType'),
       service: formData.get('service'),
-      location: formData.get('location'),
+      location: formData.get('location')
     };
-
-    console.log('🚀 [Booking] Submitting data:', data);
 
     try {
       if (!googleSheetUrl) {
@@ -57,16 +191,14 @@ export default function Booking() {
         method: 'POST',
         mode: 'no-cors',
         headers: {
-          'Content-Type': 'text/plain;charset=utf-8',
+          'Content-Type': 'text/plain;charset=utf-8'
         },
         body: JSON.stringify({
           ...data,
           createdAt: new Date().toISOString(),
-          status: 'pending',
-        }),
+          status: 'pending'
+        })
       });
-
-      console.log('✅ [Google Sheet] Data submitted successfully');
 
       setSubmittedData(data);
       setStatus('success');
@@ -78,31 +210,24 @@ export default function Booking() {
 
   // Success screen
   if (status === 'success' && submittedData) {
-    const svc = services.find(
-      (s) => s.id === submittedData.service
-    );
-
-    const loc = locations.find(
-      (l) => l.id === submittedData.location
-    );
+    const svc = services.find((s) => s.id === submittedData.service);
+    const loc = locations.find((l) => l.id === submittedData.location);
 
     const message = buildBookingMessage({
       ownerName: submittedData.ownerName,
       petType: submittedData.petType,
       serviceName: svc?.name || submittedData.service,
-      locationLabel: loc?.label || submittedData.location,
+      locationLabel: loc?.label || submittedData.location
     });
 
     return (
       <Section className="relative overflow-hidden py-16 sm:py-24">
-        {/* Subtle Ambient Radial Backlight */}
         <div
           aria-hidden="true"
           className="pointer-events-none absolute top-1/2 left-1/2 -z-10 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-emerald-500/10 blur-3xl"
         />
 
         <div className="relative mx-auto max-w-xl rounded-3xl border border-stone-200 bg-gradient-to-b from-stone-50 to-white p-8 text-center shadow-xl shadow-stone-200/50 sm:p-10 dark:border-[#232730] dark:bg-gradient-to-b dark:from-[#171B22] dark:to-[#12141A] dark:shadow-2xl dark:shadow-black/60">
-          {/* Success Status Badge */}
           <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl border border-emerald-500/30 bg-emerald-500/10 text-emerald-600 shadow-inner dark:text-emerald-400">
             <CheckCircle2 size={36} strokeWidth={2.2} />
           </div>
@@ -119,7 +244,6 @@ export default function Booking() {
             Thank you, <strong className="font-semibold text-stone-900 dark:text-[#F3F4F6]">{submittedData.ownerName}</strong>! Our care concierge desk is reviewing your companion&apos;s details and will reach out shortly to confirm the scheduled visit.
           </p>
 
-          {/* Booking Summary Pill Matrix */}
           <div className="mt-6 grid grid-cols-2 gap-2.5 rounded-2xl border border-stone-200 bg-white p-4 text-left text-xs shadow-xs dark:border-[#232730] dark:bg-[#0F1115] dark:shadow-none">
             <div>
               <span className="text-[11px] font-medium text-stone-500 dark:text-[#6B7280]">Service</span>
@@ -213,93 +337,40 @@ export default function Booking() {
               </div>
             </div>
 
-            {/* Pet Type */}
-            <div>
-              <label className="mb-1.5 flex items-center gap-1.5 text-xs font-semibold text-stone-700 dark:text-[#D1D5DB]">
-                <Dog size={13} className="text-amber-600 dark:text-amber-400" />
-                <span>Companion Type *</span>
-              </label>
-              <div className="relative">
-                <select
-                  name="petType"
-                  defaultValue="dog"
-                  required
-                  className="w-full cursor-pointer appearance-none rounded-xl border border-stone-200 bg-stone-50 px-4 py-2.5 text-xs text-stone-900 transition-colors focus:border-amber-500/80 focus:outline-none sm:text-sm dark:border-[#262A34] dark:bg-[#0F1115] dark:text-[#F3F4F6]"
-                >
-                  <option value="dog" className="bg-white text-stone-900 dark:bg-[#14171E] dark:text-[#F3F4F6]">Dog</option>
-                  <option value="cat" className="bg-white text-stone-900 dark:bg-[#14171E] dark:text-[#F3F4F6]">Cat</option>
-                </select>
-                <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-xs text-stone-400 dark:text-[#6B7280]">
-                  ▼
-                </span>
-              </div>
-            </div>
+            {/* Companion Type (Custom Dropdown) */}
+            <CustomSelect
+              id="petType"
+              name="petType"
+              label="Companion Type *"
+              icon={Dog}
+              options={companionOptions}
+              value={petType}
+              onChange={setPetType}
+            />
 
-            {/* Service + Location */}
+            {/* Service + Location (Custom Dropdowns) */}
             <div className="grid gap-4 sm:grid-cols-2">
-              <div>
-                <label className="mb-1.5 flex items-center gap-1.5 text-xs font-semibold text-stone-700 dark:text-[#D1D5DB]">
-                  <Sparkles size={13} className="text-amber-600 dark:text-amber-400" />
-                  <span>Service of Choice *</span>
-                </label>
-                <div className="relative">
-                  <select
-                    name="service"
-                    defaultValue={preselectedService}
-                    required
-                    className="w-full cursor-pointer appearance-none rounded-xl border border-stone-200 bg-stone-50 px-4 py-2.5 text-xs text-stone-900 transition-colors focus:border-amber-500/80 focus:outline-none sm:text-sm dark:border-[#262A34] dark:bg-[#0F1115] dark:text-[#F3F4F6]"
-                  >
-                    <option value="" className="bg-white text-stone-400 dark:bg-[#14171E] dark:text-[#6B7280]">
-                      Select a service
-                    </option>
-                    {services
-                      .filter((s) => s.active)
-                      .map((s) => (
-                        <option
-                          key={s.id}
-                          value={s.id}
-                          className="bg-white text-stone-900 dark:bg-[#14171E] dark:text-[#F3F4F6]"
-                        >
-                          {s.name}
-                        </option>
-                      ))}
-                  </select>
-                  <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-xs text-stone-400 dark:text-[#6B7280]">
-                    ▼
-                  </span>
-                </div>
-              </div>
+              <CustomSelect
+                id="service"
+                name="service"
+                label="Service of Choice *"
+                icon={Sparkles}
+                placeholder="Select a service"
+                options={serviceOptions}
+                value={selectedService}
+                onChange={setSelectedService}
+              />
 
-              <div>
-                <label className="mb-1.5 flex items-center gap-1.5 text-xs font-semibold text-stone-700 dark:text-[#D1D5DB]">
-                  <MapPin size={13} className="text-amber-600 dark:text-amber-400" />
-                  <span>Your Area *</span>
-                </label>
-                <div className="relative">
-                  <select
-                    name="location"
-                    defaultValue=""
-                    required
-                    className="w-full cursor-pointer appearance-none rounded-xl border border-stone-200 bg-stone-50 px-4 py-2.5 text-xs text-stone-900 transition-colors focus:border-amber-500/80 focus:outline-none sm:text-sm dark:border-[#262A34] dark:bg-[#0F1115] dark:text-[#F3F4F6]"
-                  >
-                    <option value="" className="bg-white text-stone-400 dark:bg-[#14171E] dark:text-[#6B7280]">
-                      Select your neighborhood
-                    </option>
-                    {locations.map((l) => (
-                      <option
-                        key={l.id}
-                        value={l.id}
-                        className="bg-white text-stone-900 dark:bg-[#14171E] dark:text-[#F3F4F6]"
-                      >
-                        {l.label}
-                      </option>
-                    ))}
-                  </select>
-                  <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-xs text-stone-400 dark:text-[#6B7280]">
-                    ▼
-                  </span>
-                </div>
-              </div>
+              <CustomSelect
+                id="location"
+                name="location"
+                label="Your Area *"
+                icon={MapPin}
+                placeholder="Select your neighborhood"
+                options={locationOptions}
+                value={selectedLocation}
+                onChange={setSelectedLocation}
+              />
             </div>
 
             {/* Error Message */}
@@ -314,19 +385,23 @@ export default function Booking() {
 
             {/* Submit CTA */}
             <div className="pt-2">
-              <Button
+              <button
                 type="submit"
-                variant="primary"
                 disabled={status === 'submitting'}
-                className="w-full bg-gradient-to-r from-amber-500 to-orange-500 py-3.5 font-bold text-stone-950 shadow-lg shadow-amber-500/20 transition-all hover:from-amber-400 hover:to-orange-400 active:scale-[0.99]"
+                className="relative flex w-full items-center justify-center rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 py-3.5 px-6 font-bold text-stone-950 shadow-lg shadow-amber-500/20 transition-all duration-200 hover:from-amber-400 hover:to-orange-400 active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-90 overflow-hidden"
               >
-                {status === 'submitting' && (
-                  <Loader2 size={18} className="animate-spin text-stone-950" />
-                )}
-                <span>
-                  {status === 'submitting' ? 'Dispatching Request…' : 'Request In-Home Booking'}
+                {/* Centered label with stable layout */}
+                <span className="text-sm sm:text-base font-bold tracking-wide">
+                  {status === 'submitting' ? 'Dispatching Request…' : 'Book Free'}
                 </span>
-              </Button>
+
+                {/* Corner spinner indicator */}
+                {status === 'submitting' && (
+                  <div className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center">
+                    <Loader2 size={20} className="animate-spin text-stone-950" />
+                  </div>
+                )}
+              </button>
 
               <p className="mt-2.5 text-center text-[11px] text-stone-500 dark:text-[#6B7280]">
                 🔒 100% Zero-Spam Guarantee. Your details are solely used to coordinate verified pet care.

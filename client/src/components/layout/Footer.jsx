@@ -47,7 +47,8 @@ const SERVICE_LINKS = [
   { label: 'Pet Training', href: '/services' },
   { label: 'Pet Walking', href: '/services' },
   { label: 'Pet Grooming', href: '/services' },
-  { label: 'Preventive Healthcare', href: '/services' },
+  { label: 'Vaccination', href: '/services' },
+  { label: 'Pet Registration', href: '/services/pet-registration' },
 ];
 
 const QUICK_LINKS = [
@@ -144,7 +145,7 @@ export default function Footer() {
             {/* Social Icons (Instagram, Facebook, YouTube, Reddit) */}
             <div className="mt-6 flex flex-wrap items-center gap-3">
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/petjeeva/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
@@ -164,7 +165,7 @@ export default function Footer() {
               </a>
 
               <a
-                href="https://youtube.com"
+                href="www.youtube.com/@petJeeva"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="YouTube"

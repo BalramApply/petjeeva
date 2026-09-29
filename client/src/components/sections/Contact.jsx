@@ -23,21 +23,13 @@ import {
   Phone
 } from 'lucide-react';
 
-const SERVICE_OPTIONS = [
-  'Dog & Cat Training',
-  'Dog Walking',
-  'Pet Grooming',
-  'Vaccination & Wellness',
-  'General / Emergency Inquiry'
-];
-
 const CONTACT_CHANNELS = [
   {
     id: 'whatsapp',
     title: 'Instant WhatsApp Concierge',
     desc: 'Chat directly with care coordinators for swift answers and walk scheduling.',
-    value: '+91 98765 43210',
-    display: '+91 98765 43210',
+    value: '+91 73038 00789',
+    display: '+91 73038 00789',
     type: 'whatsapp',
     badge: 'Response in ~5 mins',
     badgeClass: 'bg-emerald-500/10 text-emerald-600 border-emerald-500/30 dark:text-emerald-400 dark:border-emerald-500/20',
@@ -78,24 +70,6 @@ const CONTACT_CHANNELS = [
   }
 ];
 
-const FAQ_ITEMS = [
-  {
-    question: 'How fast will PetJeeva respond to my request?',
-    answer: 'WhatsApp and telephone inquiries are acknowledged within 5 to 15 minutes during regular hours (8:00 AM - 9:00 PM). Detailed form inquiries and personalized behavior consultations receive a dedicated specialist review within 2 to 4 business hours.'
-  },
-  {
-    question: 'Can I schedule a complimentary in-home meet & greet before booking?',
-    answer: 'Absolutely! For both daily dog walking and behavior training, we insist on an initial zero-obligation meet & greet. This allows your pet to sniff, get comfortable with their dedicated caregiver, and test compatibility in a low-stress environment.'
-  },
-  {
-    question: 'What happens in case of a medical emergency during a session?',
-    answer: 'Every PetJeeva specialist is certified in canine & feline CPR and first aid. Our staff is connected directly to our 24/7 On-Call Veterinary Triage Network, with pre-approved hospital access and GPS route emergency protocols ready at a moment\'s notice.'
-  },
-  {
-    question: 'Are PetJeeva groomers and walkers background-verified?',
-    answer: 'Yes. Only 2% of applicants clear our four-tier vetting filter: government identity check, criminal record validation, in-person temperament testing, and supervised humane handling certifications.'
-  }
-];
 
 // Sample active serviceable hubs in major metros
 const ACTIVE_PINCODES = [
@@ -213,20 +187,20 @@ export default function Contact() {
 
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-800 text-xs sm:text-sm font-medium tracking-wide backdrop-blur-sm dark:border-amber-500/20 dark:text-amber-300">
-            <Sparkles size={14} className="text-amber-600 dark:text-amber-400" />
-            <span>PetJeeva Care Concierge Desk</span>
-          </div>
+  <Sparkles size={14} className="text-amber-600 dark:text-amber-400" />
+  <span>Here to Help You and Your Pet</span>
+</div>
 
-          <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-stone-900 tracking-tight leading-[1.12] dark:text-[#F9FAFB]">
-            We Are Here For You <br className="hidden sm:inline" />
-            <span className="bg-gradient-to-r from-amber-600 via-orange-500 to-amber-500 bg-clip-text text-transparent dark:from-amber-400 dark:via-orange-400 dark:to-amber-200">
-              And Your Cherished Companion.
-            </span>
-          </h1>
+<h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-stone-900 tracking-tight leading-[1.12] dark:text-[#F9FAFB]">
+  We Are Here For You <br className="hidden sm:inline" />
+  <span className="bg-gradient-to-r from-amber-600 via-orange-500 to-amber-500 bg-clip-text text-transparent dark:from-amber-400 dark:via-orange-400 dark:to-amber-200">
+    And Your Pet.
+  </span>
+</h1>
 
-          <p className="text-sm sm:text-base md:text-lg text-stone-600 leading-relaxed max-w-2xl mx-auto dark:text-[#9CA3AF]">
-            Have questions about customized training routines, daily walk scheduling, zero-sedation grooming, or home wellness visits? Our certified animal care coordinators are just a touch away.
-          </p>
+<p className="text-sm sm:text-base md:text-lg text-stone-600 leading-relaxed max-w-2xl mx-auto dark:text-[#9CA3AF]">
+  Have questions about training, booking a dog walk, gentle grooming, or home vet visits? Our friendly team is always ready to help.
+</p>
 
           <div className="pt-2 flex flex-wrap items-center justify-center gap-2.5 sm:gap-3.5 text-xs font-medium text-stone-700 dark:text-[#D1D5DB]">
             <span className="flex items-center gap-1.5 bg-stone-50 px-3.5 py-1.5 rounded-full border border-stone-200 shadow-sm dark:bg-[#14171E] dark:border-[#232730]">

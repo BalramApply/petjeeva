@@ -14,9 +14,9 @@ import Section from '../components/layout/Section';
 import Container from '../components/layout/Container';
 import Button from '../components/ui/Button';
 import Badge from '../components/ui/Badge';
-import ProfessionalCard from '../components/sections/ProfessionalCard';
+import ReviewCard from '../components/sections/ReviewCard';
 import { services } from '../data/services';
-import { professionals } from '../data/professionals';
+import { reviews } from '../data/reviews';
 
 export default function ServiceDetail() {
   const { serviceId } = useParams();
@@ -50,7 +50,7 @@ export default function ServiceDetail() {
   }
 
   const Icon = Icons[service.icon];
-  const teamForService = professionals.filter((p) =>
+  const teamForService = reviews.filter((p) =>
     service.professionalRoles?.includes(p.id)
   );
 
@@ -196,7 +196,7 @@ export default function ServiceDetail() {
         >
           <div className="grid gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
             {teamForService.map((p) => (
-              <ProfessionalCard key={p.id} professional={p} />
+              <ReviewCard key={p.id} professional={p} />
             ))}
           </div>
         </Section>

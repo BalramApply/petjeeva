@@ -1,7 +1,3 @@
-// Demo pricing engine inputs. Multipliers/base prices are placeholders —
-// Phase 12 replaces this with real PriceRule documents managed by the
-// admin; estimatePrice() below is the single seam that swap happens at.
-
 export const petTypes = [
   { id: 'dog', label: 'Dog', icon: 'Dog' },
   { id: 'cat', label: 'Cat', icon: 'Cat' },
@@ -29,8 +25,6 @@ export const estimatorServices = [
   { id: 'wellness', label: 'Vaccination & Wellness', basePrice: 449, baseDuration: 30 },
 ];
 
-// Generic placeholder zones — never fabricate real neighborhood names
-// before the business confirms actual service areas (Admin > Service Areas).
 export const locations = [
   { id: 'Gurugram', label: 'Gurugram', multiplier: 1 },
   { id: 'Noida', label: 'Noida', multiplier: 1.1 },

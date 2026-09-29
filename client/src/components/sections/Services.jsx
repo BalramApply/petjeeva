@@ -9,12 +9,12 @@ export default function Services() {
   return (
     <Section
       id="services"
-      dark
+      className="bg-white dark:bg-[#0f1117]"
       heading="Comprehensive In-Home Care Services"
       subheading="Tailored care routines designed around your companion's specific temperaments, breed specifications, and daily health requirements."
     >
       {/* Quality Standards & Trust Banner */}
-      <div className="mb-10 rounded-2xl border border-stone-200 bg-white/80 p-4 shadow-sm backdrop-blur-sm sm:p-5 dark:border-[#232730] dark:bg-[#14171E]/60 dark:shadow-none">
+      <div className="mb-10 rounded-2xl border border-stone-200 bg-white p-4 shadow-sm backdrop-blur-sm sm:p-5 dark:border-[#232730] dark:bg-[#14171E]/60 dark:shadow-none">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-xs">
           <div className="flex items-center gap-2 text-amber-600 font-semibold tracking-wide dark:text-amber-400">
             <Sparkles size={15} />
@@ -42,7 +42,7 @@ export default function Services() {
           ))}
         </div>
       ) : (
-        <div className="rounded-3xl border border-stone-200 bg-white p-10 text-center shadow-lg shadow-stone-200/50 dark:border-[#232730] dark:bg-[#14171E] dark:shadow-xl dark:shadow-none">
+        <div className="rounded-3xl border border-stone-200 bg-white p-10 text-center shadow-lg shadow-stone-200/50 dark:border-[#232730] dark:bg-[#14171E] dark:shadow-none">
           <p className="text-sm text-stone-600 dark:text-[#9CA3AF]">
             Services are currently being updated. Please check back shortly or reach out via WhatsApp concierge.
           </p>

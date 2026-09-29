@@ -102,55 +102,6 @@ export const services = [
   },
 ];
 
-const VETTING_STEPS = [
-  {
-    icon: FileCheck2,
-    step: 'Step 01',
-    title: 'Multi-Tier Background Checks',
-    description: 'Every applicant undergoes strict government identity verification, residential validation, and zero-tolerance background audits.'
-  },
-  {
-    icon: GraduationCap,
-    step: 'Step 02',
-    title: 'Certified Behavioral Assessment',
-    description: 'Practical evaluations assessing pet body language recognition, fear-free redirection, and gentle humane handling techniques.'
-  },
-  {
-    icon: Stethoscope,
-    step: 'Step 03',
-    title: 'Emergency Medical & CPR Drills',
-    description: 'Mandatory canine and feline first-aid readiness, heatstroke mitigation protocols, and real-time vet coordination mastery.'
-  },
-  {
-    icon: Lock,
-    step: 'Step 04',
-    title: 'Monitored Accountability',
-    description: 'Every walk, home visit, and consultation is logged with route telemetry, timestamped photo milestones, and guardian reports.'
-  }
-];
-
-const SAFETY_PILLARS = [
-  {
-    title: 'Zero Sedation Policy',
-    highlight: '100% Gentle Handling',
-    desc: 'We never use pharmacological sedation or aggressive force during grooming or styling. Stress reduction is achieved through positive reinforcement and patience.'
-  },
-  {
-    title: 'Live Walk Route Telemetry',
-    highlight: 'GPS Verified',
-    desc: 'Follow your companion’s walk in real-time, receiving pee/poop markers, route maps, and hydration checkpoints the moment the session wraps.'
-  },
-  {
-    title: 'Hospital-Grade Sanitization',
-    highlight: 'Sterilized Instruments',
-    desc: 'All grooming shears, blades, and exam kits are autoclaved and sanitized with pet-safe enzymatic solutions between each individual pet visit.'
-  },
-  {
-    title: 'Digital Health Passports',
-    highlight: 'Instant Cloud Records',
-    desc: 'Vaccination records, vet notations, weight trends, and dietary allergies stored in one accessible portal with automated immunity booster alerts.'
-  }
-];
 
 const SERVICE_ICONS = {
   training: GraduationCap,
@@ -183,15 +134,15 @@ export default function About() {
           </div>
 
           <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-stone-900 tracking-tight leading-[1.12] dark:text-[#F9FAFB]">
-            Where Every Companion Lives <br className="hidden sm:inline" />
-            <span className="bg-gradient-to-r from-amber-600 via-orange-500 to-amber-500 bg-clip-text text-transparent dark:from-amber-400 dark:via-orange-400 dark:to-amber-200">
-              Their Healthiest Life.
-            </span>
-          </h1>
+  Helping Every Pet Live <br className="hidden sm:inline" />
+  <span className="bg-gradient-to-r from-amber-600 via-orange-500 to-amber-500 bg-clip-text text-transparent dark:from-amber-400 dark:via-orange-400 dark:to-amber-200">
+    A Happy, Healthy Life.
+  </span>
+</h1>
 
-          <p className="text-base sm:text-lg md:text-xl text-stone-600 leading-relaxed max-w-2xl mx-auto dark:text-[#9CA3AF]">
-            Founded on empathy and certified precision, <strong className="text-stone-900 font-semibold dark:text-[#F3F4F6]">PetJeeva</strong> brings ethical training, reliable walking, gentle salon grooming, and preventative wellness right to your door.
-          </p>
+<p className="text-base sm:text-lg md:text-xl text-stone-600 leading-relaxed max-w-2xl mx-auto dark:text-[#9CA3AF]">
+  Built on love and expert care, <strong className="text-stone-900 font-semibold dark:text-[#F3F4F6]">PetJeeva</strong> brings kind dog training, daily walking, gentle grooming, and checkups right to your door.
+</p>
 
           <div className="pt-2 flex flex-wrap items-center justify-center gap-2.5 sm:gap-3.5 text-xs font-medium text-stone-700 dark:text-[#D1D5DB]">
             <div className="flex items-center gap-2 bg-stone-50 px-4 py-2 rounded-full border border-stone-200 shadow-sm dark:bg-[#15181F] dark:border-[#232730]">

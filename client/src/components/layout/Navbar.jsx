@@ -1,17 +1,25 @@
 import { useEffect, useState } from "react";
-import { NavLink, Link } from "react-router-dom";
-import { Menu, X, ChevronRight, Sun, Moon } from "lucide-react";
+import { NavLink, Link, useLocation } from "react-router-dom";
+import { Menu, X, ChevronRight, ChevronDown, Sun, Moon } from "lucide-react";
 import Container from "./Container";
 import Button from "../ui/Button";
 import { businessInfo } from "../../data/businessInfo";
 import logo from "./image.png";
-import logoWhite from "./whiteLogo.png"; // white logo
+import logoWhite from "./whiteLogo.png";
+
+const SERVICE_ITEMS = [
+  { label: "Training", href: "/services/training" },
+  { label: "Walking", href: "/services/walking" },
+  { label: "Grooming", href: "/services/grooming" },
+  { label: "Vaccination", href: "/services/wellness" },
+  { label: "Pet-registration", href: "/services/pet-registration" },
+];
 
 const LINKS = [
   { label: "Home", href: "/" },
-  { label: "Services", href: "/services" },
+  { label: "Services", href: "/services", hasDropdown: true },
   { label: "How It Works", href: "/how-it-works" },
-  { label: "Professionals", href: "/professionals" },
+  { label: "Parents Reviews", href: "/reviews" },
   { label: "Gallery", href: "/gallery" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
@@ -20,6 +28,13 @@ const LINKS = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const location = useLocation();
+
+  // Close dropdown whenever route changes
+  useEffect(() => {
+    setServicesOpen(false);
+  }, [location.pathname]);
 
   // Default to 'light' mode unless explicitly saved as 'dark'
   const [theme, setTheme] = useState(() => {
@@ -61,14 +76,12 @@ export default function Navbar() {
       }`}
     >
       <Container className="flex items-center justify-between">
-        
         {/* Brand Logo & Identifier + Theme Toggle */}
         <div className="flex items-center gap-3">
           <Link
             to="/"
             className="group flex items-center gap-2.5 outline-none focus-visible:ring-2 focus-visible:ring-amber-500 rounded-lg"
           >
-            {/* Swaps logo based on active theme */}
             <img
               src={theme === "dark" ? logo : logoWhite}
               alt={`${businessInfo.name} Logo`}
@@ -79,7 +92,7 @@ export default function Navbar() {
             </span>
           </Link>
 
-          {/* Theme Toggle Button right of the logo */}
+          {/* Theme Toggle Button */}
           <button
             type="button"
             onClick={toggleTheme}
@@ -96,22 +109,77 @@ export default function Navbar() {
 
         {/* Desktop Navigation Links */}
         <nav className="hidden lg:flex items-center gap-1 xl:gap-2 rounded-full border border-stone-200/80 bg-stone-100/80 dark:border-[#232730] dark:bg-[#14171E]/70 px-4 py-1.5 backdrop-blur-md">
-          {LINKS.map((link) => (
-            <NavLink
-              key={link.href}
-              to={link.href}
-              end={link.href === "/"}
-              className={({ isActive }) =>
-                `rounded-full px-3 py-1.5 text-xs xl:text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500/60 ${
-                  isActive
-                    ? "bg-amber-500/10 text-amber-600 dark:text-amber-400 font-semibold"
-                    : "text-stone-600 hover:text-stone-900 hover:bg-stone-200/70 dark:text-[#9CA3AF] dark:hover:text-[#F9FAFB] dark:hover:bg-[#1E222A]"
-                }`
-              }
-            >
-              {link.label}
-            </NavLink>
-          ))}
+          {LINKS.map((link) => {
+            if (link.hasDropdown) {
+              return (
+                <div
+                  key={link.href}
+                  className="relative"
+                  onMouseEnter={() => setServicesOpen(true)}
+                  onMouseLeave={() => setServicesOpen(false)}
+                >
+                  <NavLink
+                    to={link.href}
+                    onClick={() => setServicesOpen(false)}
+                    className={({ isActive }) =>
+                      `flex items-center gap-1 rounded-full px-3 py-1.5 text-xs xl:text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500/60 ${
+                        isActive
+                          ? "bg-amber-500/10 text-amber-600 dark:text-amber-400 font-semibold"
+                          : "text-stone-600 hover:text-stone-900 hover:bg-stone-200/70 dark:text-[#9CA3AF] dark:hover:text-[#F9FAFB] dark:hover:bg-[#1E222A]"
+                      }`
+                    }
+                  >
+                    <span>{link.label}</span>
+                    <ChevronDown
+                      size={14}
+                      className={`transition-transform duration-200 opacity-70 ${
+                        servicesOpen ? "rotate-180 opacity-100" : ""
+                      }`}
+                    />
+                  </NavLink>
+
+                  {/* Dropdown Menu */}
+                  <div
+                    className={`transition-all duration-200 transform absolute left-1/2 -translate-x-1/2 pt-2 top-full min-w-[170px] z-50 ${
+                      servicesOpen
+                        ? "visible opacity-100 translate-y-0 pointer-events-auto"
+                        : "invisible opacity-0 translate-y-1.5 pointer-events-none"
+                    }`}
+                  >
+                    <div className="rounded-2xl border border-stone-200/90 bg-white/95 dark:border-[#232730] dark:bg-[#14171E]/95 shadow-xl shadow-stone-900/5 dark:shadow-black/40 backdrop-blur-lg p-1.5 flex flex-col gap-0.5">
+                      {SERVICE_ITEMS.map((service) => (
+                        <Link
+                          key={service.href}
+                          to={service.href}
+                          onClick={() => setServicesOpen(false)}
+                          className="rounded-xl px-3.5 py-2 text-xs xl:text-sm font-medium text-stone-700 hover:text-amber-600 hover:bg-amber-500/10 dark:text-[#D1D5DB] dark:hover:text-amber-400 dark:hover:bg-[#1E222A] transition-colors"
+                        >
+                          {service.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              );
+            }
+
+            return (
+              <NavLink
+                key={link.href}
+                to={link.href}
+                end={link.href === "/"}
+                className={({ isActive }) =>
+                  `rounded-full px-3 py-1.5 text-xs xl:text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500/60 ${
+                    isActive
+                      ? "bg-amber-500/10 text-amber-600 dark:text-amber-400 font-semibold"
+                      : "text-stone-600 hover:text-stone-900 hover:bg-stone-200/70 dark:text-[#9CA3AF] dark:hover:text-[#F9FAFB] dark:hover:bg-[#1E222A]"
+                  }`
+                }
+              >
+                {link.label}
+              </NavLink>
+            );
+          })}
         </nav>
 
         {/* Desktop CTA Action */}

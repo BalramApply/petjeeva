@@ -1,10 +1,6 @@
-// Demo services matching the four core categories from the brief.
-// Shape mirrors the future Service model so swapping this for a
-// GET /api/services call in Phase 12 is a drop-in change.
-// startingPrice is placeholder/demo — real pricing is admin-configured
-// via PriceRule, never hardcoded once that's wired up.
 import heroImg from './bathing.png';
-import vaccinations from './vaccinations.png'
+import vaccinations from './vaccinations.png';
+
 export const services = [
   {
     id: 'training',
@@ -42,7 +38,7 @@ export const services = [
     benefits: ['Breed-specific care', 'Gentle handling', 'At-home or in-studio'],
     process: ['Coat & skin check-in', 'Bath, trim and styling', 'Final brush-out and pickup'],
     professionalRoles: ['groomer'],
-    startingPrice: 599,
+    startingPrice: 999,
     active: true,
   },
   {
@@ -55,7 +51,20 @@ export const services = [
     benefits: ['Trained care team', 'Digital health records', 'Timely reminders'],
     process: ['Share your pet\'s health history', 'In-person checkup or vaccination', 'Digital record and reminder set'],
     professionalRoles: ['vet'],
-    startingPrice: 449,
+    startingPrice: "Based on Age",
+    active: true,
+  },
+  {
+    id: 'petregistration',
+    name: 'Pet Registration Assistance',
+    category: 'Civic & Compliance',
+    image: 'https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=800&q=80',
+    shortDescription: 'Hassle-free municipal pet registration, document check, and license filing.',
+    whoItsFor: 'Pet parents looking to obtain or renew their official municipal pet license (MCG / local authority).',
+    benefits: ['Document verification support', 'Quick filing assistance', 'Annual renewal reminders'],
+    process: ['Upload pet details & vaccine records', 'Document verification by our team', 'Filing submission & token dispatch'],
+    professionalRoles: ['advisor'],
+    startingPrice: "Based on Location",
     active: true,
   },
 ];
