@@ -6,8 +6,6 @@ import { fadeUp, staggerChildren, inViewOnce } from '../../utils/animations';
 import asset1 from '../../assets/asset4.jpg';
 import asset2 from '../../assets/asset16.jpg';
 
-const ASSET2_URL = "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=400&q=80";
-
 export default function HowItWorks() {
   const [step1, step2, step3] = howItWorksSteps;
 

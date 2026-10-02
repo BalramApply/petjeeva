@@ -29,7 +29,6 @@ import asset1 from '../../assets/asset1.jpg'
 import asset2 from '../../assets/asset16.jpg'
 import asset3 from '../../assets/asset10.jpg'
 import asset4 from '../../assets/asset20.png'
-import asset5 from '../../assets/asset5.jpg'
 import asset6 from '../../assets/asset9.jpg'
 import asset7 from '../../assets/Pet_Registeration.png'
 
