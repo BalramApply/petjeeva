@@ -25,7 +25,7 @@ import {
   PhoneCall,
   FileText
 } from 'lucide-react';
-import asset1 from '../../assets/asset1.jpg'
+import asset1 from '../../assets/Asset1.jpg'
 import asset2 from '../../assets/asset16.jpg'
 import asset3 from '../../assets/asset10.jpg'
 import asset4 from '../../assets/asset20.png'
