@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import Section from '../layout/Section';
 import { howItWorksSteps } from '../../data/howItWorks';
 import { fadeUp, staggerChildren, inViewOnce } from '../../utils/animations';
-import asset1 from '../../assets/asset4.jpg';
+import asset1 from '../../assets/Asset4.jpg';
 import asset2 from '../../assets/asset16.jpg';
 
 export default function HowItWorks() {

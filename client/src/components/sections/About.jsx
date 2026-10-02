@@ -29,7 +29,7 @@ import asset1 from '../../assets/Asset1.jpg'
 import asset2 from '../../assets/asset16.jpg'
 import asset3 from '../../assets/asset10.jpg'
 import asset4 from '../../assets/asset20.png'
-import asset6 from '../../assets/asset9.jpg'
+import asset6 from '../../assets/Asset9.jpg'
 import asset7 from '../../assets/Pet_Registeration.png'
 
 export const services = [
