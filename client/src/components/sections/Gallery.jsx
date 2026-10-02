@@ -18,7 +18,7 @@ import {
   Check
 } from 'lucide-react';
 import beforeImg from "../../assets/Before_Grooming.png";
-import afterImg from "../../assets/after_Grooming.png";
+import afterImg from "../../assets/After_Grooming.png";
 import asset1 from '../../assets/Asset1.jpg'
 import asset2 from '../../assets/Asset2.jpg'
 import asset3 from '../../assets/Asset3.jpg'
