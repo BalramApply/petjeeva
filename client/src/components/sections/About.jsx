@@ -25,13 +25,20 @@ import {
   PhoneCall,
   FileText
 } from 'lucide-react';
+import asset1 from '../../assets/asset1.jpg'
+import asset2 from '../../assets/asset16.jpg'
+import asset3 from '../../assets/asset10.jpg'
+import asset4 from '../../assets/asset20.png'
+import asset5 from '../../assets/asset5.jpg'
+import asset6 from '../../assets/asset9.jpg'
+import asset7 from '../../assets/Pet_Registeration.png'
 
 export const services = [
   {
     id: 'training',
     name: 'Dog & Cat Training',
     category: 'Training',
-    image: 'https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=800&q=80',
+    image: asset1,
     shortDescription: 'Behavior, obedience and puppy training tailored to your pet.',
     whoItsFor: 'Puppies learning the basics, or adult pets working on behavior, recall or socialization.',
     benefits: ['Structured sessions', 'One-on-one attention', 'Ongoing behavior support'],
@@ -44,7 +51,7 @@ export const services = [
     id: 'walking',
     name: 'Dog Walking',
     category: 'Walking',
-    image: 'https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=800&q=80',
+    image: asset2,
     shortDescription: 'Daily or scheduled walks with a consistent, trusted walker.',
     whoItsFor: 'Busy pet parents who want their dog walked reliably, rain or shine.',
     benefits: ['Flexible durations', 'Same walker each time', 'Visit updates'],
@@ -57,33 +64,33 @@ export const services = [
     id: 'grooming',
     name: 'Pet Grooming',
     category: 'Grooming',
-    image: 'https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=800&q=80',
+    image: asset3,
     shortDescription: 'Bathing, haircuts, nail trims and breed-specific coat care.',
     whoItsFor: 'Any pet due for a bath, trim, or extra coat care between visits.',
     benefits: ['Breed-specific care', 'Gentle handling', 'At-home or in-studio'],
     process: ['Coat & skin check-in', 'Bath, trim and styling', 'Final brush-out and pickup'],
     professionalRoles: ['groomer'],
-    startingPrice: 599,
+    startingPrice: 999,
     active: true,
   },
   {
     id: 'wellness',
     name: 'Vaccination & Wellness',
     category: 'Healthcare',
-    image: 'https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?auto=format&fit=crop&w=800&q=80',
+    image: asset4,
     shortDescription: 'Routine checkups, vaccinations and preventive care.',
     whoItsFor: 'Pets due for a routine checkup, vaccination, or general wellness review.',
     benefits: ['Trained care team', 'Digital health records', 'Timely reminders'],
     process: ['Share your pet\'s health history', 'In-person checkup or vaccination', 'Digital record and reminder set'],
     professionalRoles: ['vet'],
-    startingPrice: 449,
+    startingPrice: 'Based on Age',
     active: true,
   },
   {
     id: 'pet-registration',
     name: 'Pet Registration',
     category: 'Administrative & Legal',
-    image: 'https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=800&q=80',
+    image: asset7,
     shortDescription: 'Official pet registration, license acquisition, and legal identification.',
     whoItsFor: 'New pet parents and pet owners needing municipal licensing or official ownership records.',
     benefits: [
@@ -97,11 +104,9 @@ export const services = [
       'Receive digital certificate and registration ID'
     ],
     professionalRoles: ['pet_legal_advisor', 'registration_specialist'],
-    startingPrice: 449,
     active: true,
   },
 ];
-
 
 const SERVICE_ICONS = {
   training: GraduationCap,
@@ -116,12 +121,15 @@ export default function About() {
   const activeService = services.find((s) => s.id === activeServiceId) || services[0];
   const ActiveIcon = SERVICE_ICONS[activeService.id] || Sparkles;
 
+  const handleBookingRedirect = () => {
+    window.location.href = '/book';
+  };
+
   return (
     <div id="about" className="w-full bg-white text-stone-600 font-sans antialiased selection:bg-amber-500/20 selection:text-amber-800 transition-colors duration-200 dark:bg-[#0F1115] dark:text-[#9CA3AF] dark:selection:text-amber-300">
       
       {/* Hero Section */}
       <section className="relative overflow-hidden pt-16 pb-20 md:pt-24 md:pb-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        {/* Subtle Ambient Radial Glows */}
         <div
           aria-hidden="true"
           className="pointer-events-none absolute -top-24 left-1/2 -z-10 h-96 w-[44rem] -translate-x-1/2 rounded-full bg-gradient-to-tr from-amber-500/10 via-orange-500/5 to-transparent blur-3xl"
@@ -134,15 +142,15 @@ export default function About() {
           </div>
 
           <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-stone-900 tracking-tight leading-[1.12] dark:text-[#F9FAFB]">
-  Helping Every Pet Live <br className="hidden sm:inline" />
-  <span className="bg-gradient-to-r from-amber-600 via-orange-500 to-amber-500 bg-clip-text text-transparent dark:from-amber-400 dark:via-orange-400 dark:to-amber-200">
-    A Happy, Healthy Life.
-  </span>
-</h1>
+            Helping Every Pet Live <br className="hidden sm:inline" />
+            <span className="bg-gradient-to-r from-amber-600 via-orange-500 to-amber-500 bg-clip-text text-transparent dark:from-amber-400 dark:via-orange-400 dark:to-amber-200">
+              A Happy, Healthy Life.
+            </span>
+          </h1>
 
-<p className="text-base sm:text-lg md:text-xl text-stone-600 leading-relaxed max-w-2xl mx-auto dark:text-[#9CA3AF]">
-  Built on love and expert care, <strong className="text-stone-900 font-semibold dark:text-[#F3F4F6]">PetJeeva</strong> brings kind dog training, daily walking, gentle grooming, and checkups right to your door.
-</p>
+          <p className="text-base sm:text-lg md:text-xl text-stone-600 leading-relaxed max-w-2xl mx-auto dark:text-[#9CA3AF]">
+            Built on love and expert care, <strong className="text-stone-900 font-semibold dark:text-[#F3F4F6]">PetJeeva</strong> brings kind dog training, daily walking, gentle grooming, and checkups right to your door.
+          </p>
 
           <div className="pt-2 flex flex-wrap items-center justify-center gap-2.5 sm:gap-3.5 text-xs font-medium text-stone-700 dark:text-[#D1D5DB]">
             <div className="flex items-center gap-2 bg-stone-50 px-4 py-2 rounded-full border border-stone-200 shadow-sm dark:bg-[#15181F] dark:border-[#232730]">
@@ -188,7 +196,7 @@ export default function About() {
 
           <div className="bg-stone-50 rounded-2xl sm:rounded-3xl p-5 sm:p-6 border border-stone-200 shadow-sm transition-all duration-200 hover:border-stone-300 hover:-translate-y-0.5 dark:bg-[#14171E] dark:border-[#232730] dark:shadow-xl dark:shadow-black/40 dark:hover:border-[#333945]">
             <span className="text-3xl sm:text-4xl font-extrabold text-stone-900 block tracking-tight dark:text-[#F9FAFB]">
-              4.9 / 5
+              4.4 / 5
             </span>
             <span className="text-xs sm:text-sm font-medium text-stone-600 mt-1.5 block dark:text-[#9CA3AF]">
               Parent Satisfaction
@@ -229,10 +237,6 @@ export default function About() {
               </h2>
 
               <p className="text-stone-600 leading-relaxed text-sm sm:text-base dark:text-[#9CA3AF]">
-                For years, pet parents were forced to navigate fragmented services—unvetted dog walkers with zero accountability, groomers relying on harsh restraints or unannounced sedation, and clinics with confusing billing.
-              </p>
-
-              <p className="text-stone-600 leading-relaxed text-sm sm:text-base dark:text-[#9CA3AF]">
                 <strong className="text-stone-900 font-semibold dark:text-[#F3F4F6]">PetJeeva (&apos;Jeeva&apos; meaning life and soul)</strong> was created to restore absolute integrity to modern pet parenting. We believe our animals are not mere animals; they are family members entitled to certified, gentle, and transparent professionals every single day.
               </p>
 
@@ -254,7 +258,7 @@ export default function About() {
             <div className="lg:col-span-6">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-stone-300/60 border border-stone-200 dark:border-[#272B33] dark:shadow-black/60">
                 <img 
-                  src="https://images.unsplash.com/photo-1544568100-847a948585b9?auto=format&fit=crop&w=1200&q=80" 
+                  src={asset6} 
                   alt="PetJeeva caregiver with happy dog" 
                   className="w-full h-[380px] sm:h-[420px] object-cover"
                 />
@@ -322,9 +326,16 @@ export default function About() {
                 <span className="px-3 py-1 rounded-full text-xs font-bold bg-amber-500/10 text-amber-800 border border-amber-500/30 dark:border-amber-500/20 dark:text-amber-300">
                   {activeService.category} Pillar
                 </span>
-                <span className="px-3 py-1 rounded-full text-xs font-bold bg-white text-stone-900 border border-stone-200 dark:bg-[#1B1E26] dark:text-[#F3F4F6] dark:border-[#2B303B]">
-                  Starts at ₹{activeService.startingPrice}
-                </span>
+                
+                {/* Price Tag (renders 'Based on Age', starts at ₹..., or hidden if no startingPrice) */}
+                {activeService.startingPrice && (
+                  <span className="px-3 py-1 rounded-full text-xs font-bold bg-white text-stone-900 border border-stone-200 dark:bg-[#1B1E26] dark:text-[#F3F4F6] dark:border-[#2B303B]">
+                    {typeof activeService.startingPrice === 'number'
+                      ? `Starts at ₹${activeService.startingPrice}`
+                      : activeService.startingPrice}
+                  </span>
+                )}
+
                 {activeService.professionalRoles.map((role) => (
                   <span key={role} className="px-3 py-1 rounded-full text-[11px] font-medium bg-stone-100 text-stone-600 border border-stone-200 uppercase tracking-wider dark:bg-[#101217] dark:text-[#9CA3AF] dark:border-[#232730]">
                     Role: {role.replace(/_/g, ' ')}
@@ -362,20 +373,33 @@ export default function About() {
                 </div>
               </div>
 
-              {/* 3-Step Process */}
-              <div className="space-y-2 pt-1">
-                <span className="text-xs font-semibold text-stone-900 uppercase tracking-wider block dark:text-[#F3F4F6]">The 3-Step Process:</span>
-                <div className="space-y-2">
-                  {activeService.process.map((step, idx) => (
-                    <div key={idx} className="flex items-center gap-3 text-xs sm:text-sm text-stone-600 dark:text-[#9CA3AF]">
-                      <span className="w-5 h-5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-600 flex items-center justify-center font-bold text-xs shrink-0 dark:border-amber-500/20 dark:text-amber-400">
-                        {idx + 1}
-                      </span>
-                      <span>{step}</span>
-                    </div>
-                  ))}
+              {/* 3-Step Process or Pet Registration Button */}
+              {activeService.id === 'pet-registration' ? (
+                <div className="pt-2">
+                  <button
+                    type="button"
+                    onClick={handleBookingRedirect}
+                    className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-stone-950 font-bold text-sm sm:text-base shadow-lg shadow-amber-500/20 transition-all hover:scale-[1.02] active:scale-[0.98] flex-shrink-0"
+                  >
+                    <span>Pet Registration Assistance</span>
+                    <ArrowRight size={18} />
+                  </button>
                 </div>
-              </div>
+              ) : (
+                <div className="space-y-2 pt-1">
+                  <span className="text-xs font-semibold text-stone-900 uppercase tracking-wider block dark:text-[#F3F4F6]">The 3-Step Process:</span>
+                  <div className="space-y-2">
+                    {activeService.process.map((step, idx) => (
+                      <div key={idx} className="flex items-center gap-3 text-xs sm:text-sm text-stone-600 dark:text-[#9CA3AF]">
+                        <span className="w-5 h-5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-600 flex items-center justify-center font-bold text-xs shrink-0 dark:border-amber-500/20 dark:text-amber-400">
+                          {idx + 1}
+                        </span>
+                        <span>{step}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Right Visual Card */}

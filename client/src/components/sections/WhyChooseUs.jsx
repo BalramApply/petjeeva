@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import Section from '../layout/Section';
 import { whyChooseUsPoints } from '../../data/whyChooseUs';
 import { fadeUp, staggerChildren, inViewOnce } from '../../utils/animations';
-import heroImg from './hero.png';
+import heroImg from '../../assets/Why_ChooseUs.png';
 
 export default function WhyChooseUs() {
   return (
@@ -129,10 +129,10 @@ export default function WhyChooseUs() {
             </div>
             <div>
               <p className="text-xs font-semibold text-stone-900 leading-snug dark:text-[#F9FAFB]">
-                Same trusted team, every time you book
+                Pet-First Care
               </p>
               <p className="text-[10px] text-stone-500 mt-0.5 dark:text-[#9CA3AF]">
-                Zero stranger anxiety
+                Gentle, professional & reliable
               </p>
             </div>
           </motion.div>

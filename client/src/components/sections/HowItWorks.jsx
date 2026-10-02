@@ -3,6 +3,10 @@ import { motion } from 'framer-motion';
 import Section from '../layout/Section';
 import { howItWorksSteps } from '../../data/howItWorks';
 import { fadeUp, staggerChildren, inViewOnce } from '../../utils/animations';
+import asset1 from '../../assets/asset4.jpg';
+import asset2 from '../../assets/asset16.jpg';
+
+const ASSET2_URL = "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=400&q=80";
 
 export default function HowItWorks() {
   const [step1, step2, step3] = howItWorksSteps;
@@ -32,7 +36,7 @@ export default function HowItWorks() {
           <motion.div variants={fadeUp} className="col-span-1 flex flex-col items-center justify-center -translate-y-6">
             <div className="group relative w-36 h-36 rounded-2xl overflow-hidden border-2 border-amber-500/30 shadow-lg shadow-amber-500/10 transition-transform duration-300 hover:scale-105">
               <img
-                src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=400&q=80"
+                src={asset1}
                 alt="Choose service demo"
                 className="w-full h-full object-cover"
               />
@@ -75,7 +79,7 @@ export default function HowItWorks() {
 
             <div className="group relative w-36 h-36 rounded-2xl overflow-hidden border-2 border-amber-500/30 shadow-lg shadow-amber-500/10 transition-transform duration-300 hover:scale-105">
               <img
-                src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=400&q=80"
+                src={asset2}
                 alt="Personalized pet care demo"
                 className="w-full h-full object-cover"
               />
@@ -98,7 +102,7 @@ export default function HowItWorks() {
             <Icons.ArrowDown className="text-amber-500 animate-bounce" size={24} />
             <div className="w-32 h-32 rounded-2xl overflow-hidden border-2 border-amber-500/40 shadow-md">
               <img
-                src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=400&q=80"
+                src={asset1}
                 alt="Choose service demo"
                 className="w-full h-full object-cover"
               />
@@ -113,7 +117,7 @@ export default function HowItWorks() {
             <Icons.ArrowDown className="text-amber-500 animate-bounce" size={24} />
             <div className="w-32 h-32 rounded-2xl overflow-hidden border-2 border-amber-500/40 shadow-md">
               <img
-                src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=400&q=80"
+                src={asset2}
                 alt="Personalized pet care demo"
                 className="w-full h-full object-cover"
               />

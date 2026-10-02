@@ -16,14 +16,14 @@ import {
   Award
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import video1 from './video1.mp4'
-import video2 from './video2.mp4'
-import video3 from './video3.mp4'
-import video4 from './video4.mp4'
-import image1 from './video1.png'
-import image2 from './video2.png'
-import image3 from './video3.png'
-import image4 from './video4.png'
+import video1 from '../../assets/video1.mp4'
+import video2 from '../../assets/video2.mp4'
+import video3 from '../../assets/video3.mp4'
+import video4 from '../../assets/video4.mp4'
+import image1 from '../../assets/video1.png'
+import image2 from '../../assets/video2.png'
+import image3 from '../../assets/video3.png'
+import image4 from '../../assets/video4.png'
 
 const TESTIMONIAL_STORIES = [
   {
@@ -85,37 +85,7 @@ const TESTIMONIAL_STORIES = [
   quote: 'Easy and reliable pet registration services in Gurugram, helping pet parents keep their pets safely registered and documented.',
   likes: 342,
   commentsCount: 18,
-},
-  {
-    id: 'laila',
-    petName: 'Laila',
-    detail: 'Advance Training pack',
-    tag: 'Advanced Off-Leash',
-    duration: '0:58',
-    thumbnail: 'https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=800&q=80',
-    videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4',
-    owner: 'Ananya Verma',
-    breed: 'Indie Dog (Desi)',
-    location: 'Hyderabad, Jubilee Hills',
-    quote: 'Indies are super smart but need the right psychological channel! Laila mastered hand signals, stay, and instant recall in crowded spaces.',
-    likes: 890,
-    commentsCount: 54,
-  },
-  {
-    id: 'bella',
-    petName: 'Bella',
-    detail: '6 months',
-    tag: 'Potty & Crate Habits',
-    duration: '0:22',
-    thumbnail: 'https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=800&q=80',
-    videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4',
-    owner: 'Dev & Natasha',
-    breed: 'Corgi',
-    location: 'Chennai, Besant Nagar',
-    quote: 'Zero indoor accidents within 10 days of starting the feeding and doorbell schedule. Truly transformed our daily routine!',
-    likes: 312,
-    commentsCount: 15,
-  }
+}
 ];
 
 function DesktopInPlaceCard({ story, isPlaying, onSelect, onStop }) {
@@ -747,7 +717,7 @@ export function Testimonials({ forceMobileMode = false }) {
           <div className="flex items-center gap-2.5">
             <Award className="w-5 h-5 text-[#FF7A59]" />
             <div>
-              <span className="font-extrabold text-stone-900 text-base sm:text-lg dark:text-stone-100">4.5/5</span>
+              <span className="font-extrabold text-stone-900 text-base sm:text-lg dark:text-stone-100">4.4/5</span>
               <span className="text-stone-500 font-normal ml-1.5 dark:text-stone-400">Verified Rating</span>
             </div>
           </div>

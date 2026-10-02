@@ -11,7 +11,7 @@ import Container from '../layout/Container';
 import { getWhatsAppLink } from '../../data/businessInfo';
 import { fadeUp, staggerChildren } from '../../utils/animations';
 
-import heroImg from './hero.png';
+import heroImg from '../../assets/heroImage.jpg'
 
 export default function Hero() {
   return (
@@ -44,7 +44,7 @@ export default function Hero() {
           >
             <span className="inline-flex items-center gap-2 rounded-full border border-amber-500/30 bg-amber-500/10 px-3.5 py-1 text-xs font-medium tracking-wide text-amber-800 backdrop-blur-sm dark:border-amber-500/20 dark:bg-amber-500/10 dark:text-amber-300">
               <Sparkles size={13} className="text-amber-600 dark:text-amber-400" />
-              Certified In-Home Pet Care & Health
+              Trusted Pet Care at Your Door
             </span>
           </motion.div>
 
@@ -65,9 +65,10 @@ export default function Hero() {
             variants={fadeUp}
             className="mt-6 max-w-lg text-base leading-relaxed text-stone-600 sm:text-lg dark:text-[#9CA3AF]"
           >
-            Professional pet care designed around your pet&apos;s comfort,
+            Professional pet care for dogs and cats — from grooming and walking to training, sitting and more, delivered with care across Gurugram and Noida.
+            {/* Professional pet care designed around your pet&apos;s comfort,
             safety, and daily rhythm — certified grooming, active walking,
-            and preventive wellness.
+            and preventive wellness. */}
           </motion.p>
 
           {/* CTA Cluster */}
@@ -108,7 +109,7 @@ export default function Hero() {
           >
             <div className="flex items-center gap-1.5">
               <div className="flex text-amber-500 dark:text-amber-400">
-                {[...Array(5)].map((_, i) => (
+                {[...Array(4)].map((_, i) => (
                   <Star
                     key={i}
                     size={14}
@@ -119,7 +120,7 @@ export default function Hero() {
               </div>
 
               <span className="text-xs font-semibold text-stone-900 dark:text-[#F3F4F6]">
-                4.9/5
+                4.4/5
               </span>
 
               <span className="text-xs text-stone-500 dark:text-[#6B7280]">
@@ -197,11 +198,11 @@ export default function Hero() {
 
             <div>
               <p className="text-xs font-semibold leading-snug text-stone-900 dark:text-[#F9FAFB]">
-                Same trusted team, every time you book
+                 Pet-First Care
               </p>
 
               <p className="mt-0.5 text-[10px] text-stone-500 dark:text-[#9CA3AF]">
-                Zero stranger anxiety
+                Gentle, professional & reliable
               </p>
             </div>
           </motion.div>

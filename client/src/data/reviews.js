@@ -1,7 +1,6 @@
-import trainerImg from './trainer.png';
-import walkerImg from './wallker.png';
-import vaccinationImg from './vaccinations.png';
-import groomerImg from './groomer.png';
+import AnkitImg from '../assets/Ankit_Review.png';
+import AashishImg from '../assets/Aashish_Review.png';
+import RajanImg from '../assets/Rajan_Review.png';
 
 export const reviews = [
   {
@@ -14,7 +13,7 @@ export const reviews = [
       name: 'Ajay Sharma',
       petName: 'Bruno',
       petBreed: 'Golden Retriever (8 mos)',
-      avatarUrl: trainerImg,
+      avatarUrl: AnkitImg,
     },
     title: 'Transformed our leash reactive puppy in 3 sessions!',
     comment:
@@ -33,7 +32,7 @@ export const reviews = [
       name: 'Rohan Mehra',
       petName: 'Milo',
       petBreed: 'Persian Cat',
-      avatarUrl: groomerImg,
+      avatarUrl: RajanImg,
     },
     title: 'Stress-free grooming for my anxious Persian cat',
     comment:
@@ -42,25 +41,6 @@ export const reviews = [
     verifiedBooking: true,
     highlight: 'Sedation-Free Spa',
   },
-  // {
-  //   id: 'rev-walking',
-  //   service: 'Walking',
-  //   serviceCategory: 'Daily Exercise & GPS Track',
-  //   serviceIcon: 'Footprints',
-  //   rating: 5,
-  //   author: {
-  //     name: 'Ravi Verma',
-  //     petName: 'Bella & Simba',
-  //     petBreed: 'Indie & Beagle duo',
-  //     avatarUrl: walkerImg,
-  //   },
-  //   title: 'Live GPS route updates & happy tired doggos',
-  //   comment:
-  //     'With 10-hour office days, PetJeeva daily walks have been an absolute lifesaver. The walker sends GPS walk tracks, pee/poop updates, and the cutest water break photos after every 45-minute stroll.',
-  //   date: '3 days ago',
-  //   verifiedBooking: true,
-  //   highlight: 'GPS Live Route Tracking',
-  // },
   {
     id: 'rev-vaccination',
     service: 'Vaccination',
@@ -68,10 +48,10 @@ export const reviews = [
     serviceIcon: 'Syringe',
     rating: 5,
     author: {
-      name: 'Dr. Kabir Sen',
+      name: 'Kabir Sen',
       petName: 'Leo',
       petBreed: 'Labrador Retriever (2 yrs)',
-      avatarUrl: vaccinationImg,
+      avatarUrl: AashishImg,
     },
     title: 'Annual DHPPiL booster done at home with zero trauma',
     comment:

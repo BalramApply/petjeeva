@@ -4,8 +4,8 @@ import { Menu, X, ChevronRight, ChevronDown, Sun, Moon } from "lucide-react";
 import Container from "./Container";
 import Button from "../ui/Button";
 import { businessInfo } from "../../data/businessInfo";
-import logo from "./image.png";
-import logoWhite from "./whiteLogo.png";
+import logoBlack from "../../assets/Blacklogo.png";
+import logoWhite from "../../assets/whiteLogo.png";
 
 const SERVICE_ITEMS = [
   { label: "Training", href: "/services/training" },
@@ -83,7 +83,7 @@ export default function Navbar() {
             className="group flex items-center gap-2.5 outline-none focus-visible:ring-2 focus-visible:ring-amber-500 rounded-lg"
           >
             <img
-              src={theme === "dark" ? logo : logoWhite}
+              src={theme === "dark" ? logoBlack : logoWhite}
               alt={`${businessInfo.name} Logo`}
               className="h-9 w-9 object-contain transition-transform duration-200 group-hover:scale-105"
             />

@@ -1,14 +1,17 @@
-// Builds the pre-filled WhatsApp message shown after a successful
-// booking request, per the brief's WhatsApp Booking Flow template.
-export function buildBookingMessage({ ownerName, petName, serviceName, preferredDate, preferredTime, locationLabel }) {
+export function buildBookingMessage({
+  ownerName,
+  phone,
+  petType,
+  serviceName,
+  locationLabel
+}) {
   return [
-    'Hello, I would like to book a pet-care service.',
+    'Hello, I would like to book Free Demo pet-care service.',
     '',
-    `Owner: ${ownerName}`,
-    `Pet: ${petName}`,
-    `Service: ${serviceName}`,
-    `Date: ${preferredDate}`,
-    `Preferred Time: ${preferredTime}`,
-    `Location: ${locationLabel}`,
+    `Owner: ${ownerName || 'N/A'}`,
+    `Phone: ${phone || 'N/A'}`,
+    `Pet Type: ${petType || 'N/A'}`,
+    `Service: ${serviceName || 'N/A'}`,
+    `Location: ${locationLabel || 'N/A'}`,
   ].join('\n');
 }

@@ -215,6 +215,7 @@ export default function Booking() {
 
     const message = buildBookingMessage({
       ownerName: submittedData.ownerName,
+      phone: submittedData.phone,
       petType: submittedData.petType,
       serviceName: svc?.name || submittedData.service,
       locationLabel: loc?.label || submittedData.location

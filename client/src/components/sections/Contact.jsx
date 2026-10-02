@@ -35,34 +35,12 @@ const CONTACT_CHANNELS = [
     badgeClass: 'bg-emerald-500/10 text-emerald-600 border-emerald-500/30 dark:text-emerald-400 dark:border-emerald-500/20',
     actionText: 'Message on WhatsApp'
   },
-  // {
-  //   id: 'hotline',
-  //   title: 'Care & Booking Hotline',
-  //   desc: 'Speak with our admissions specialists for customized multi-pet plans.',
-  //   value: '+91 1800 572 8222',
-  //   display: '1800-572-8222 (Toll Free)',
-  //   type: 'tel',
-  //   badge: '9:00 AM – 8:30 PM',
-  //   badgeClass: 'bg-amber-500/10 text-amber-800 border-amber-500/30 dark:text-amber-300 dark:border-amber-500/20',
-  //   actionText: 'Call Care Desk'
-  // },
-  // {
-  //   id: 'emergency',
-  //   title: '24/7 Pet Emergency Hotline',
-  //   desc: 'Dedicated tele-triage line for urgent vet routing and immediate triage.',
-  //   value: '+91 91100 24700',
-  //   display: '+91 91100 24700',
-  //   type: 'tel',
-  //   badge: '24/7 Priority Emergency',
-  //   badgeClass: 'bg-rose-500/10 text-rose-600 border-rose-500/30 dark:text-rose-400 dark:border-rose-500/25',
-  //   actionText: 'Call Emergency Line'
-  // },
   {
     id: 'email',
     title: 'Care Concierge Email',
     desc: 'Detailed behavior records, vet report histories, or corporate inquiries.',
-    value: 'care@petjeeva.com',
-    display: 'care@petjeeva.com',
+    value: 'petjeeva24x7@gmail.com',
+    display: 'petjeeva24x7@gmail.com',
     type: 'email',
     badge: 'Same-day Reply',
     badgeClass: 'bg-orange-500/10 text-orange-700 border-orange-500/30 dark:text-orange-300 dark:border-orange-500/20',

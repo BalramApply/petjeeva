@@ -17,134 +17,355 @@ import {
   ShieldCheck,
   Check
 } from 'lucide-react';
-
+import beforeImg from "../../assets/Before_Grooming.png";
+import afterImg from "../../assets/after_Grooming.png";
+import asset1 from '../../assets/asset1.jpg'
+import asset2 from '../../assets/asset2.jpg'
+import asset3 from '../../assets/asset3.jpg'
+import asset4 from '../../assets/asset4.jpg'
+import asset5 from '../../assets/asset5.jpg'
+import asset6 from '../../assets/asset6.jpg'
+import asset7 from '../../assets/asset7.jpg'
+import asset8 from '../../assets/asset8.jpg'
+import asset9 from '../../assets/asset9.jpg'
+import asset10 from '../../assets/asset10.jpg'
+import asset11 from '../../assets/asset11.jpg'
+import asset12 from '../../assets/asset12.jpg'
+import asset13 from '../../assets/asset13.jpg'
+import asset14 from '../../assets/asset14.jpg'
+import asset15 from '../../assets/asset15.jpg'
+import asset16 from '../../assets/asset16.jpg'
+import asset17 from '../../assets/asset17.jpg'
+import asset18 from '../../assets/asset18.jpg'
+import asset19 from '../../assets/asset19.jpg'
+import asset20 from '../../assets/asset20.png'
 const GALLERY_ITEMS = [
   {
     id: 1,
-    title: "Golden Hour Playtime",
-    petName: "Milo & Rusty",
+    title: "Parkside Paw Training",
+    petName: "Coco",
     category: "Dogs",
-    service: "Daycare & Play",
-    caregiver: "Sarah Jenkins (Certified Trainer)",
-    careNote: "Milo enjoyed obstacle courses today and made friends with Rusty during the 2 PM lawn run!",
-    image: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&q=80",
-    aspect: "tall",
+    service: "Training & Pet Care",
+    caregiver: "PetJeeva Care Specialist",
+    careNote: "Coco nailed the paw-shake training in the park today! Rewarded with treats for great focus and friendly behavior during the morning session.",
+    image: asset1,
+    aspect: "wide",
     likes: 142,
     date: "2024-05-18",
-    badge: "Daycare Fun",
-    tags: ["Dog Park", "Social Play", "Golden Retriever"]
+    badge: "Training Time",
+    tags: ["Shih Tzu", "Obedience Training", "PetJeeva"],
+    brand: "PetJeeva Complete Pet Care"
   },
   {
     id: 2,
-    title: "Botanical Spa & De-Shedding",
-    petName: "Luna",
-    category: "Grooming & Spa",
-    service: "Luxury Oatmeal Bath & Trim",
-    caregiver: "Marcus Reed (Master Groomer)",
-    careNote: "Luna was relaxed during her aromatherapy paw balm treatment. Coat is silk soft and brush-ready.",
-    image: "https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=1200&q=80",
+    title: "Focused Leash Training",
+    petName: "Bruno",
+    category: "Dogs",
+    service: "Walking & Obedience",
+    caregiver: "PetJeeva Care Specialist",
+    careNote: "Bruno had a great focused session in the park today! Working on leash manners and calm sitting - such a smart and energetic boy.",
+    image: asset2,
     aspect: "wide",
-    likes: 218,
-    date: "2024-05-20",
-    badge: "Spa Transformation",
-    tags: ["Aromatherapy", "Hypoallergenic", "Persian"]
+    likes: 168,
+    date: "2024-05-18",
+    badge: "Training Walk",
+    tags: ["German Shepherd", "Leash Training", "PetJeeva"],
+    brand: "PetJeeva Complete Pet Care"
   },
   {
     id: 3,
-    title: "Sunbeam Afternoon Nap",
-    petName: "Oliver",
-    category: "Cats",
-    service: "Private Cattery Suite",
-    caregiver: "Elena Brooks (Feline Specialist)",
-    careNote: "Curled up after having salmon treats and interactive feather teaser playtime.",
-    image: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=80",
-    aspect: "square",
-    likes: 95,
-    date: "2024-05-22",
-    badge: "Cozy Suite",
-    tags: ["Cattery", "Naptime", "Relaxed"]
+    title: "Service Dog Training",
+    petName: "Simba",
+    category: "Dogs",
+    service: "Service Training & Care",
+    caregiver: "PetJeeva Care Specialist",
+    careNote: "Simba is doing excellent in his service training! Focused on positive reinforcement and treat-based obedience during today's park session.",
+    image: asset3,
+    aspect: "wide",
+    likes: 215,
+    date: "2024-05-18",
+    badge: "Service Training",
+    tags: ["Labrador", "Service Dog", "In Training"],
+    brand: "PetJeeva Complete Pet Care"
   },
   {
     id: 4,
-    title: "Routine Wellness & Heart Check",
-    petName: "Barnaby",
-    category: "Health & Wellness",
-    service: "Comprehensive Physical & Dental",
-    caregiver: "Dr. Alistair Finch (DVM)",
-    careNote: "Vitals are prime, weight steady at 28kg, coat healthy and teeth polished with enzymatic gel.",
-    image: "https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?auto=format&fit=crop&w=1200&q=80",
-    aspect: "tall",
-    likes: 184,
-    date: "2024-05-15",
-    badge: "Clean Bill of Health",
-    tags: ["Vet Certified", "Preventative Care", "Senior Pet"]
+    title: "Therapy Dog Bonding",
+    petName: "Goldie",
+    category: "Happy Moments",
+    service: "Therapy & Companionship Care",
+    caregiver: "PetJeeva Care Specialist",
+    careNote: "Goldie brought so much joy today! Gentle bonding session in the park, practicing calm companionship and therapy manners.",
+    image: asset4,
+    aspect: "wide",
+    likes: 231,
+    date: "2024-05-18",
+    badge: "Therapy Care",
+    tags: ["Golden Retriever", "Therapy Dog", "Bonding Session"],
+    brand: "PetJeeva Complete Pet Care"
   },
   {
     id: 5,
-    title: "Puppy Agility First Steps",
-    petName: "Pip & Koko",
-    category: "Happy Moments",
-    service: "Puppy Social Club",
-    caregiver: "Chloe Davenport (Behaviorist)",
-    careNote: "First time conquering the gentle incline tunnel without hesitation! Such joyful tail wags.",
-    image: "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=80",
+    title: "Focused Obedience Training",
+    petName: "Oreo",
+    category: "Dogs",
+    service: "Obedience & Behavior Training",
+    caregiver: "PetJeeva Care Specialist",
+    careNote: "Oreo was super attentive today! Practiced hand signals and focus commands in the park - such an intelligent and quick learner.",
+    image: asset5,
     aspect: "wide",
-    likes: 312,
-    date: "2024-05-21",
-    badge: "Milestone",
-    tags: ["Puppy Club", "Agility", "Playgroup"]
+    likes: 189,
+    date: "2024-05-18",
+    badge: "Obedience Training",
+    tags: ["Border Collie", "Smart Breed", "Command Training"],
+    brand: "PetJeeva Complete Pet Care"
   },
   {
     id: 6,
-    title: "Teddy Bear Trim & Blueberry Facial",
-    petName: "Bella",
-    category: "Grooming & Spa",
-    service: "Full Styling & Sanitizing",
-    caregiver: "Marcus Reed",
-    careNote: "Poodle blend scissor finish with rounded ears and hygienic tidy. Look at that proud smile!",
-    image: "https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&w=1200&q=80",
-    aspect: "square",
-    likes: 167,
-    date: "2024-05-19",
-    badge: "Top Styling",
-    tags: ["Breed Cut", "Blueberry Facial", "Poodle Mix"]
+    title: "Gentle Bonding Time",
+    petName: "Buddy",
+    category: "Daycare & Play",
+    service: "Daycare & Companionship",
+    caregiver: "PetJeeva Care Specialist",
+    careNote: "Buddy enjoyed a calm and affectionate session today! Lots of cuddles and positive reassurance during his park visit.",
+    image: asset6,
+    aspect: "wide",
+    likes: 203,
+    date: "2024-05-18",
+    badge: "Bonding Time",
+    tags: ["Labrador", "Companionship", "Gentle Care"],
+    brand: "PetJeeva Complete Pet Care"
   },
   {
     id: 7,
-    title: "Curious Window Perch Watch",
-    petName: "Cleo",
-    category: "Cats",
-    service: "Cat Lounge Enrichment",
-    caregiver: "Elena Brooks",
-    careNote: "Bird-watching session with custom vertical cat trees and organic cat grass enrichment.",
-    image: "https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=1200&q=80",
-    aspect: "square",
-    likes: 129,
-    date: "2024-05-17",
-    badge: "Enrichment",
-    tags: ["Cat Lounge", "Play Therapy"]
+    title: "Confidence & Leash Control",
+    petName: "Rex",
+    category: "Dogs",
+    service: "Behavioral Training & Walks",
+    caregiver: "PetJeeva Care Specialist",
+    careNote: "Rex showed amazing confidence today! Practiced alert focus and calm leash handling during his park training walk.",
+    image: asset7,
+    aspect: "wide",
+    likes: 192,
+    date: "2024-05-18",
+    badge: "Behavior Training",
+    tags: ["German Shepherd", "Leash Manners", "Alert Training"],
+    brand: "PetJeeva Complete Pet Care"
   },
   {
     id: 8,
-    title: "Splash Zone Splashdown",
-    petName: "Cooper",
+    title: "Agility Jump Training",
+    petName: "Oreo",
     category: "Daycare & Play",
-    service: "Aqua Therapy & Water Fun",
-    caregiver: "Sam Walker (Hydro Specialist)",
-    careNote: "Cooling off in the shallow filtered splash pad on warm sunny afternoons.",
-    image: "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=80",
-    aspect: "tall",
-    likes: 276,
-    date: "2024-05-23",
-    badge: "Aqua Play",
-    tags: ["Splash Pad", "Summer Care", "Hydrotherapy"]
+    service: "Agility & Active Play",
+    caregiver: "PetJeeva Care Specialist",
+    careNote: "Oreo crushed the agility course today! High-energy jump training with perfect focus and enthusiasm on the hurdles.",
+    image: asset8,
+    aspect: "wide",
+    likes: 257,
+    date: "2024-05-18",
+    badge: "Agility Fun",
+    tags: ["Border Collie", "Agility Training", "Obstacle Course"],
+    brand: "PetJeeva Complete Pet Care"
+  },
+  {
+    id: 9,
+    title: "SAR Training Session",
+    petName: "Max",
+    category: "Dogs",
+    service: "SAR & Working Dog Training",
+    caregiver: "PetJeeva Care Specialist",
+    careNote: "Max was on high alert during today's search and rescue prep! Working on scent tracking and harness training in the forest trail.",
+    image: asset9,
+    aspect: "wide",
+    likes: 278,
+    date: "2024-05-18",
+    badge: "Working Dog",
+    tags: ["German Shepherd", "SAR", "Working Dog"],
+    brand: "PetJeeva Complete Pet Care"
+  },
+  {
+    id: 10,
+    title: "Spa Day Bath Time",
+    petName: "Goldie",
+    category: "Grooming & Spa",
+    service: "Grooming & Spa",
+    caregiver: "PetJeeva Care Specialist",
+    careNote: "Goldie enjoyed a relaxing spa bath today! Full wash and rinse with gentle shampoo for a shiny, fresh coat.",
+    image: asset10,
+    aspect: "wide",
+    likes: 242,
+    date: "2024-05-18",
+    badge: "Grooming Care",
+    tags: ["Golden Retriever", "Bath Time", "Spa Day"],
+    brand: "PetJeeva Complete Pet Care"
+  },
+  {
+    id: 11,
+    title: "Sniff and Explore Walk",
+    petName: "Bella",
+    category: "Daycare & Play",
+    service: "Enrichment Walk & Care",
+    caregiver: "PetJeeva Care Specialist",
+    careNote: "Bella loved her enrichment walk today! Lots of sniffing and exploring in the park while practicing loose-leash walking.",
+    image: asset11,
+    aspect: "wide",
+    likes: 176,
+    date: "2024-05-18",
+    badge: "Enrichment Walk",
+    tags: ["Labrador", "Sniff Walk", "Enrichment"],
+    brand: "PetJeeva Complete Pet Care"
+  },
+  {
+    id: 12,
+    title: "Retrieve & Carry Training",
+    petName: "Leo",
+    category: "Dogs",
+    service: "Obedience & Retrieve Training",
+    caregiver: "PetJeeva Care Specialist",
+    careNote: "Leo aced his retrieve training today! Practiced soft-mouth carrying and hold commands in the open field.",
+    image: asset12,
+    aspect: "wide",
+    likes: 221,
+    date: "2024-05-18",
+    badge: "Retrieve Training",
+    tags: ["Labrador", "Retrieve", "Field Training"],
+    brand: "PetJeeva Complete Pet Care"
+  },
+  {
+    id: 13,
+    title: "Focus & Engagement Session",
+    petName: "Oreo",
+    category: "Dogs",
+    service: "Obedience & Focus Training",
+    caregiver: "PetJeeva Care Specialist",
+    careNote: "Oreo's focus was incredible today! Worked on hand signals and engagement exercises in the park with lots of positive reinforcement.",
+    image: asset13,
+    aspect: "wide",
+    likes: 205,
+    date: "2024-05-18",
+    badge: "Focus Training",
+    tags: ["Border Collie", "Focus Work", "Hand Signals"],
+    brand: "PetJeeva Complete Pet Care"
+  },
+  {
+    id: 14,
+    title: "Paw Shake & Tricks",
+    petName: "Coco",
+    category: "Happy Moments",
+    service: "Trick Training & Bonding",
+    caregiver: "PetJeeva Care Specialist",
+    careNote: "Coco nailed the paw shake today! Fun trick training session with treats and lots of praise in the park.",
+    image: asset14,
+    aspect: "wide",
+    likes: 264,
+    date: "2024-05-18",
+    badge: "Trick Training",
+    tags: ["Shih Tzu", "Tricks", "Paw Shake"],
+    brand: "PetJeeva Complete Pet Care"
+  },
+  {
+    id: 15,
+    title: "Happy Park Walk",
+    petName: "Goldie",
+    category: "Happy Moments",
+    service: "Daily Walks & Exercise",
+    caregiver: "PetJeeva Care Specialist",
+    careNote: "Goldie had a wonderful walk today! Enjoyed a relaxed stroll with perfect loose-leash manners and lots of tail wags.",
+    image: asset15,
+    aspect: "wide",
+    likes: 198,
+    date: "2024-05-18",
+    badge: "Daily Walk",
+    tags: ["Golden Retriever", "Daily Walk", "Loose Leash"],
+    brand: "PetJeeva Complete Pet Care"
+  },
+  {
+    id: 16,
+    title: "Active Run Session",
+    petName: "Goldie",
+    category: "Daycare & Play",
+    service: "Running & Fitness Exercise",
+    caregiver: "PetJeeva Care Specialist",
+    careNote: "Goldie crushed his fitness run today! High-energy jog with great pace matching and leash control throughout the park.",
+    image: asset16,
+    aspect: "wide",
+    likes: 235,
+    date: "2024-05-18",
+    badge: "Fitness Run",
+    tags: ["Golden Retriever", "Running", "Exercise"],
+    brand: "PetJeeva Complete Pet Care"
+  },
+  {
+    id: 17,
+    title: "Leisure Park Stroll",
+    petName: "Goldie",
+    category: "Happy Moments",
+    service: "Daily Walks & Exercise",
+    caregiver: "PetJeeva Care Specialist",
+    careNote: "Goldie enjoyed a peaceful stroll today! Calm and happy walk with excellent leash manners on the paved park path.",
+    image: asset17,
+    aspect: "wide",
+    likes: 188,
+    date: "2024-05-18",
+    badge: "Daily Walk",
+    tags: ["Golden Retriever", "Park Walk", "Leash Training"],
+    brand: "PetJeeva Complete Pet Care"
+  },
+  {
+    id: 18,
+    title: "Dental Brushing Session",
+    petName: "Goldie",
+    category: "Grooming & Spa",
+    service: "Dental Care & Grooming",
+    caregiver: "PetJeeva Care Specialist",
+    careNote: "Goldie had a gentle dental cleaning today! Thorough tooth brushing with pet-safe toothpaste for fresh breath and healthy gums.",
+    image: asset18,
+    aspect: "wide",
+    likes: 212,
+    date: "2024-05-18",
+    badge: "Dental Care",
+    tags: ["Golden Retriever", "Dental Care", "Hygiene"],
+    brand: "PetJeeva Complete Pet Care"
+  },
+  {
+    id: 19,
+    title: "Vaccination Visit",
+    petName: "Goldie",
+    category: "Health & Wellness",
+    service: "Vaccination & Health Check",
+    caregiver: "PetJeeva Care Specialist",
+    careNote: "Goldie was super brave during vaccination today! Smooth and calm preventive care session for rabies protection and wellness.",
+    image: asset19,
+    aspect: "wide",
+    likes: 267,
+    date: "2024-05-18",
+    badge: "Vaccination Care",
+    tags: ["Golden Retriever", "Vaccination", "Rabies Prevention"],
+    brand: "PetJeeva Complete Pet Care"
+  },
+  {
+    id: 20,
+    title: "Puppy Vaccination Visit",
+    petName: "Goldie",
+    category: "Health & Wellness",
+    service: "Puppy Vaccination & Health Check",
+    caregiver: "PetJeeva Care Specialist",
+    careNote: "Little Goldie was so brave for her first distemper vaccine! Gentle nasal vaccination with lots of cuddles and care afterwards.",
+    image: asset20,
+    aspect: "wide",
+    likes: 289,
+    date: "2024-05-18",
+    badge: "Puppy Care",
+    tags: ["Golden Retriever", "Puppy Vaccine", "Distemper Prevention"],
+    brand: "PetJeeva Complete Pet Care"
   }
 ];
 
 const CATEGORIES = [
   "All",
   "Dogs",
-  "Cats",
+  // "Cats",
   "Grooming & Spa",
   "Daycare & Play",
   "Health & Wellness",
@@ -209,57 +430,58 @@ function TransformationSection() {
         </div>
 
         {/* Interactive Comparison Slider */}
-        <div className="lg:w-7/12 w-full">
-          <div 
-            className="relative w-full h-80 sm:h-96 rounded-2xl overflow-hidden cursor-ew-resize select-none border border-stone-200 shadow-inner bg-stone-100 dark:border-[#272B33] dark:bg-[#0B0D11]"
-            onMouseMove={(e) => {
-              if (e.buttons === 1 || isDragging) handleMouseMove(e);
-            }}
-            onMouseDown={() => setIsDragging(true)}
-            onMouseUp={() => setIsDragging(false)}
-            onTouchMove={handleTouchMove}
-          >
-            {/* After Image (Base) */}
-            <img 
-              src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=1200&q=80" 
-              alt="Archie After Care Grooming" 
-              className="absolute inset-0 w-full h-full object-cover pointer-events-none"
-            />
-            <div className="absolute top-4 right-4 bg-white/90 border border-stone-200 text-stone-900 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold shadow-lg dark:bg-[#0F1115]/90 dark:border-white/10 dark:text-[#F9FAFB]">
-              After Grooming ✨
-            </div>
+<div className="lg:w-7/12 w-full">
+  <div 
+    className="relative w-full h-80 sm:h-96 rounded-2xl overflow-hidden cursor-ew-resize select-none border border-stone-200 shadow-inner bg-stone-100 dark:border-[#272B33] dark:bg-[#0B0D11]"
+    onMouseMove={(e) => {
+      if (e.buttons === 1 || isDragging) handleMouseMove(e);
+    }}
+    onMouseDown={() => setIsDragging(true)}
+    onMouseUp={() => setIsDragging(false)}
+    onTouchMove={handleTouchMove}
+  >
+    {/* After Image (Base) */}
+    <img 
+      src={afterImg} 
+      alt="Archie After Care Grooming" 
+      className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+    />
+    <div className="absolute top-4 right-4 bg-white/90 border border-stone-200 text-stone-900 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold shadow-lg dark:bg-[#0F1115]/90 dark:border-white/10 dark:text-[#F9FAFB]">
+      After Grooming ✨
+    </div>
 
-            {/* Before Image (Clipped via slider pos) */}
-            <div 
-              className="absolute inset-y-0 left-0 overflow-hidden" 
-              style={{ width: `${sliderPos}%` }}
-            >
-              <img 
-                src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1200&q=80" 
-                alt="Archie Before Care Grooming" 
-                className="absolute inset-0 w-full h-full object-cover max-w-none pointer-events-none"
-                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-              />
-              <div className="absolute top-4 left-4 bg-white/90 border border-stone-200 text-stone-700 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold shadow-lg dark:bg-[#0F1115]/90 dark:border-white/10 dark:text-[#D1D5DB]">
-                Before Arrival 🐾
-              </div>
-            </div>
+    {/* Before Image (Clipped via slider pos) */}
+    <div 
+      className="absolute inset-y-0 left-0 overflow-hidden" 
+      style={{ width: `${sliderPos}%` }}
+    >
+      <div className="relative w-full h-80 sm:h-96">
+        <img 
+          src={beforeImg} 
+          alt="Archie Before Care Grooming" 
+          className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+        />
+      </div>
+      <div className="absolute top-4 left-4 bg-white/90 border border-stone-200 text-stone-700 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold shadow-lg dark:bg-[#0F1115]/90 dark:border-white/10 dark:text-[#D1D5DB]">
+        Before Arrival 🐾
+      </div>
+    </div>
 
-            {/* Splitter Line and Handle */}
-            <div 
-              className="absolute inset-y-0 w-0.5 bg-white/90 shadow-[0_0_12px_rgba(255,255,255,0.4)] cursor-ew-resize flex items-center justify-center pointer-events-none"
-              style={{ left: `${sliderPos}%` }}
-            >
-              <div className="w-8 h-8 -ml-4 bg-gradient-to-r from-amber-500 to-orange-500 border border-white/70 rounded-full flex items-center justify-center text-stone-950 shadow-lg shadow-black/40">
-                <ChevronLeft size={13} className="-mr-0.5" strokeWidth={2.5} />
-                <ChevronRight size={13} className="-ml-0.5" strokeWidth={2.5} />
-              </div>
-            </div>
-          </div>
-          <p className="text-center text-xs text-stone-500 mt-3 dark:text-[#6B7280]">
-            ← Drag or slide across the image to see Archie&apos;s transformation →
-          </p>
-        </div>
+    {/* Splitter Line and Handle */}
+    <div 
+      className="absolute inset-y-0 w-0.5 bg-white/90 shadow-[0_0_12px_rgba(255,255,255,0.4)] cursor-ew-resize flex items-center justify-center pointer-events-none"
+      style={{ left: `${sliderPos}%` }}
+    >
+      <div className="w-8 h-8 -ml-4 bg-gradient-to-r from-amber-500 to-orange-500 border border-white/70 rounded-full flex items-center justify-center text-stone-950 shadow-lg shadow-black/40">
+        <ChevronLeft size={13} className="-mr-0.5" strokeWidth={2.5} />
+        <ChevronRight size={13} className="-ml-0.5" strokeWidth={2.5} />
+      </div>
+    </div>
+  </div>
+  <p className="text-center text-xs text-stone-500 mt-3 dark:text-[#6B7280]">
+    ← Drag or slide across the image to see Archie&apos;s transformation →
+  </p>
+</div>
       </div>
     </section>
   );

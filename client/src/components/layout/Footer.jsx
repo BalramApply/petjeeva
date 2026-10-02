@@ -13,8 +13,8 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Container from "./Container";
 import { businessInfo } from "../../data/businessInfo";
-import logo from "./image.png";
-import logoWhite from "./whiteLogo.png";
+import logoBlack from "../../assets/Blacklogo.png";
+import logoWhite from "../../assets/whiteLogo.png";
 
 // Clean inline SVGs for brand icons not present in standard Lucide sets
 function YoutubeIcon({ className = "h-4 w-4" }) {
@@ -101,7 +101,7 @@ export default function Footer() {
                 className="group inline-flex min-w-0 items-center gap-2.5 rounded-lg outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
               >
                 <img
-                  src={theme === "dark" ? logo : logoWhite}
+                  src={theme === "dark" ? logoBlack : logoWhite}
                   alt={`${businessInfo.name} Logo`}
                   className="h-9 w-9 shrink-0 object-contain transition-transform duration-200 group-hover:scale-105"
                 />

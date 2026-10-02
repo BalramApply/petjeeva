@@ -6,7 +6,7 @@ export const businessInfo = {
   name: 'Pet Jeeva', // DEMO — replace with real registered brand name
   phone: '+91 73038 00789', // DEMO
   whatsappNumber: '7303800789', // DEMO — digits only, for wa.me links
-  email: 'balramapply123@gmail.com', // DEMO
+  email: 'petjeeva24x7@gmail.com', // DEMO
 };
 
 export function getWhatsAppLink(message = 'Hello, I would like to book a pet-care service.') {

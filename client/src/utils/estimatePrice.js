@@ -1,8 +1,3 @@
-/**
- * Local demo pricing calculation. This is the ONLY place pricing math
- * happens on the frontend — Phase 12 swaps the body of this function
- * for a POST /api/price-estimate call without touching any caller.
- */
 export function estimatePrice({ size, coat, service, location }) {
   if (!size || !coat || !service || !location) return null;
 

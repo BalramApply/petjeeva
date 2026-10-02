@@ -1,25 +1,28 @@
-import heroImg from './bathing.png';
-import vaccinations from './vaccinations.png';
+import petRegister from '../assets/Pet_Registeration.png';
+import walkerImg from '../assets/asset21.png';
+import asset1 from '../assets/asset01.jpg';
+import asset2 from '../assets/asset10.jpg';
+import asset3 from '../assets/asset19.jpg';
 
 export const services = [
   {
     id: 'training',
     name: 'Dog & Cat Training',
     category: 'Training',
-    image: 'https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=800&q=80',
+    image: asset1,
     shortDescription: 'Behavior, obedience and puppy training tailored to your pet.',
     whoItsFor: 'Puppies learning the basics, or adult pets working on behavior, recall or socialization.',
     benefits: ['Structured sessions', 'One-on-one attention', 'Ongoing behavior support'],
     process: ['Initial behavior assessment', 'Personalized training plan', 'Regular sessions with progress check-ins'],
     professionalRoles: ['trainer'],
-    startingPrice: 799,
+    startingPrice: 7499,
     active: true,
   },
   {
     id: 'walking',
     name: 'Dog Walking',
     category: 'Walking',
-    image: 'https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=800&q=80',
+    image: walkerImg,
     shortDescription: 'Daily or scheduled walks with a consistent, trusted walker.',
     whoItsFor: 'Busy pet parents who want their dog walked reliably, rain or shine.',
     benefits: ['Flexible durations', 'Same walker each time', 'Visit updates'],
@@ -32,20 +35,20 @@ export const services = [
     id: 'grooming',
     name: 'Pet Grooming',
     category: 'Grooming',
-    image: heroImg,
+    image: asset2,
     shortDescription: 'Bathing, haircuts, nail trims and breed-specific coat care.',
     whoItsFor: 'Any pet due for a bath, trim, or extra coat care between visits.',
     benefits: ['Breed-specific care', 'Gentle handling', 'At-home or in-studio'],
     process: ['Coat & skin check-in', 'Bath, trim and styling', 'Final brush-out and pickup'],
     professionalRoles: ['groomer'],
-    startingPrice: 999,
+    startingPrice: 899,
     active: true,
   },
   {
     id: 'wellness',
     name: 'Vaccination & Wellness',
     category: 'Healthcare',
-    image: vaccinations,
+    image: asset3,
     shortDescription: 'Routine checkups, vaccinations and preventive care.',
     whoItsFor: 'Pets due for a routine checkup, vaccination, or general wellness review.',
     benefits: ['Trained care team', 'Digital health records', 'Timely reminders'],
@@ -58,7 +61,7 @@ export const services = [
     id: 'petregistration',
     name: 'Pet Registration Assistance',
     category: 'Civic & Compliance',
-    image: 'https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=800&q=80',
+    image: petRegister,
     shortDescription: 'Hassle-free municipal pet registration, document check, and license filing.',
     whoItsFor: 'Pet parents looking to obtain or renew their official municipal pet license (MCG / local authority).',
     benefits: ['Document verification support', 'Quick filing assistance', 'Annual renewal reminders'],

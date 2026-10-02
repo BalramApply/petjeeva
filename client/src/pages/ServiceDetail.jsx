@@ -15,6 +15,8 @@ import Container from '../components/layout/Container';
 import Button from '../components/ui/Button';
 import Badge from '../components/ui/Badge';
 import ReviewCard from '../components/sections/ReviewCard';
+import TrainingPackages from '../components/sections/TrainingPackage';
+import GroomingPackage from '../components/sections/GroomingPackage';
 import { services } from '../data/services';
 import { reviews } from '../data/reviews';
 
@@ -49,6 +51,8 @@ export default function ServiceDetail() {
     );
   }
 
+  const isTraining = service.id === 'training' || serviceId === 'training';
+  const isGrooming = service.id === 'grooming' || serviceId === 'grooming';
   const Icon = Icons[service.icon];
   const teamForService = reviews.filter((p) =>
     service.professionalRoles?.includes(p.id)
@@ -58,7 +62,6 @@ export default function ServiceDetail() {
     <>
       {/* Service Hero Banner */}
       <section className="relative overflow-hidden border-b border-stone-200 bg-stone-50 pt-14 pb-16 transition-colors duration-200 md:pt-20 md:pb-24 dark:border-[#232730] dark:bg-[#0A0C0F]">
-        {/* Subtle Ambient Radial Glow */}
         <div
           aria-hidden="true"
           className="pointer-events-none absolute -top-32 left-1/2 -z-10 h-96 w-[46rem] -translate-x-1/2 rounded-full bg-gradient-to-tr from-amber-500/10 via-orange-500/5 to-transparent blur-3xl"
@@ -71,7 +74,7 @@ export default function ServiceDetail() {
               Home
             </Link>
             <ChevronRight size={12} />
-            <Link to="/#services" className="transition-colors hover:text-stone-900 dark:hover:text-[#F3F4F6]">
+            <Link to="/services" className="transition-colors hover:text-stone-900 dark:hover:text-[#F3F4F6]">
               Services
             </Link>
             <ChevronRight size={12} />
@@ -117,89 +120,98 @@ export default function ServiceDetail() {
         </Container>
       </section>
 
-      {/* Who It's For + What We Provide */}
-      <Section className="py-16 sm:py-20">
-        <div className="grid gap-8 md:grid-cols-2 lg:gap-12">
-          {/* Who It's For Card */}
-          <div className="rounded-3xl border border-stone-200 bg-white p-6 shadow-sm shadow-stone-200/50 sm:p-8 dark:border-[#232730] dark:bg-[#14171E] dark:shadow-xl dark:shadow-black/40">
-            <div className="mb-3 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">
-              <Sparkles size={14} />
-              <span>Target Companion Profile</span>
-            </div>
-            <h2 className="mb-3 text-xl font-bold tracking-tight text-stone-900 sm:text-2xl dark:text-[#F9FAFB]">
-              Who it&apos;s for
-            </h2>
-            <p className="text-xs leading-relaxed text-stone-600 sm:text-sm dark:text-[#9CA3AF]">
-              {service.whoItsFor}
-            </p>
-          </div>
-
-          {/* What We Provide Card */}
-          <div className="rounded-3xl border border-stone-200 bg-white p-6 shadow-sm shadow-stone-200/50 sm:p-8 dark:border-[#232730] dark:bg-[#14171E] dark:shadow-xl dark:shadow-black/40">
-            <div className="mb-3 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
-              <ShieldCheck size={14} />
-              <span>Care Standards &amp; Deliverables</span>
-            </div>
-            <h2 className="mb-4 text-xl font-bold tracking-tight text-stone-900 sm:text-2xl dark:text-[#F9FAFB]">
-              What we provide
-            </h2>
-            <ul className="space-y-3">
-              {service.benefits.map((benefit) => (
-                <li key={benefit} className="flex items-start gap-3 text-xs text-stone-700 sm:text-sm dark:text-[#D1D5DB]">
-                  <div className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-emerald-500/15 text-emerald-600 dark:text-emerald-400">
-                    <Check size={11} strokeWidth={3} />
-                  </div>
-                  <span>{benefit}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </Section>
-
-      {/* Step-by-Step Process */}
-      <Section dark heading="How this service works" subheading="Transparent, stress-free care from scheduled arrival to visit wrap-up.">
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
-          {service.process.map((step, i) => (
-            <div
-              key={step}
-              className="group relative flex flex-col justify-between rounded-2xl border border-stone-200 bg-white p-6 shadow-sm shadow-stone-200/50 transition-all duration-200 hover:-translate-y-0.5 hover:border-amber-500/30 hover:shadow-md dark:border-[#232730] dark:bg-[#14171E] dark:shadow-lg dark:shadow-black/30 dark:hover:border-[#383F4D]"
-            >
-              <div>
-                <div className="mb-4 flex items-center justify-between">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-amber-500/30 bg-amber-500/10 text-sm font-bold text-amber-600 shadow-inner dark:border-amber-500/25 dark:text-amber-400">
-                    {i + 1}
-                  </div>
-                  <span className="text-[11px] font-semibold text-stone-500 dark:text-[#6B7280]">
-                    STEP 0{i + 1}
-                  </span>
+      {/* Conditionally Render: If Training -> Show TrainingPackages, else Show Default Sections */}
+      {isTraining ? (
+        <TrainingPackages />
+      ) : isGrooming ? (
+        <GroomingPackage />
+      ) : (
+        <>
+          {/* Who It's For + What We Provide */}
+          <Section className="py-16 sm:py-20">
+            <div className="grid gap-8 md:grid-cols-2 lg:gap-12">
+              {/* Who It's For Card */}
+              <div className="rounded-3xl border border-stone-200 bg-white p-6 shadow-sm shadow-stone-200/50 sm:p-8 dark:border-[#232730] dark:bg-[#14171E] dark:shadow-xl dark:shadow-black/40">
+                <div className="mb-3 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">
+                  <Sparkles size={14} />
+                  <span>Target Companion Profile</span>
                 </div>
-                <p className="text-xs font-medium leading-relaxed text-stone-700 transition-colors group-hover:text-stone-900 sm:text-sm dark:text-[#D1D5DB] dark:group-hover:text-[#F9FAFB]">
-                  {step}
+                <h2 className="mb-3 text-xl font-bold tracking-tight text-stone-900 sm:text-2xl dark:text-[#F9FAFB]">
+                  Who it&apos;s for
+                </h2>
+                <p className="text-xs leading-relaxed text-stone-600 sm:text-sm dark:text-[#9CA3AF]">
+                  {service.whoItsFor}
                 </p>
               </div>
 
-              <div className="mt-6 flex items-center gap-1.5 border-t border-stone-100 pt-3 text-[11px] text-stone-500 dark:border-[#1F232C] dark:text-[#6B7280]">
-                <Clock size={12} className="text-amber-600 dark:text-amber-400/80" />
-                <span>Standard Protocol</span>
+              {/* What We Provide Card */}
+              <div className="rounded-3xl border border-stone-200 bg-white p-6 shadow-sm shadow-stone-200/50 sm:p-8 dark:border-[#232730] dark:bg-[#14171E] dark:shadow-xl dark:shadow-black/40">
+                <div className="mb-3 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
+                  <ShieldCheck size={14} />
+                  <span>Care Standards &amp; Deliverables</span>
+                </div>
+                <h2 className="mb-4 text-xl font-bold tracking-tight text-stone-900 sm:text-2xl dark:text-[#F9FAFB]">
+                  What we provide
+                </h2>
+                <ul className="space-y-3">
+                  {service.benefits.map((benefit) => (
+                    <li key={benefit} className="flex items-start gap-3 text-xs text-stone-700 sm:text-sm dark:text-[#D1D5DB]">
+                      <div className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-emerald-500/15 text-emerald-600 dark:text-emerald-400">
+                        <Check size={11} strokeWidth={3} />
+                      </div>
+                      <span>{benefit}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
-          ))}
-        </div>
-      </Section>
+          </Section>
 
-      {/* Team for this service */}
-      {teamForService.length > 0 && (
-        <Section
-          heading="Who you'll meet"
-          subheading="Certified handlers with veterinary-grade vetting, CPR training, and positive handling certifications."
-        >
-          <div className="grid gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
-            {teamForService.map((p) => (
-              <ReviewCard key={p.id} professional={p} />
-            ))}
-          </div>
-        </Section>
+          {/* Step-by-Step Process */}
+          <Section dark heading="How this service works" subheading="Transparent, stress-free care from scheduled arrival to visit wrap-up.">
+            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
+              {service.process.map((step, i) => (
+                <div
+                  key={step}
+                  className="group relative flex flex-col justify-between rounded-2xl border border-stone-200 bg-white p-6 shadow-sm shadow-stone-200/50 transition-all duration-200 hover:-translate-y-0.5 hover:border-amber-500/30 hover:shadow-md dark:border-[#232730] dark:bg-[#14171E] dark:shadow-lg dark:shadow-black/30 dark:hover:border-[#383F4D]"
+                >
+                  <div>
+                    <div className="mb-4 flex items-center justify-between">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-amber-500/30 bg-amber-500/10 text-sm font-bold text-amber-600 shadow-inner dark:border-amber-500/25 dark:text-amber-400">
+                        {i + 1}
+                      </div>
+                      <span className="text-[11px] font-semibold text-stone-500 dark:text-[#6B7280]">
+                        STEP 0{i + 1}
+                      </span>
+                    </div>
+                    <p className="text-xs font-medium leading-relaxed text-stone-700 transition-colors group-hover:text-stone-900 sm:text-sm dark:text-[#D1D5DB] dark:group-hover:text-[#F9FAFB]">
+                      {step}
+                    </p>
+                  </div>
+
+                  <div className="mt-6 flex items-center gap-1.5 border-t border-stone-100 pt-3 text-[11px] text-stone-500 dark:border-[#1F232C] dark:text-[#6B7280]">
+                    <Clock size={12} className="text-amber-600 dark:text-amber-400/80" />
+                    <span>Standard Protocol</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </Section>
+
+          {/* Team for this service */}
+          {teamForService.length > 0 && (
+            <Section
+              heading="Who you'll meet"
+              subheading="Certified handlers with veterinary-grade vetting, CPR training, and positive handling certifications."
+            >
+              <div className="grid gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
+                {teamForService.map((p) => (
+                  <ReviewCard key={p.id} professional={p} />
+                ))}
+              </div>
+            </Section>
+          )}
+        </>
       )}
 
       {/* Final Call to Action */}
@@ -229,7 +241,7 @@ export default function ServiceDetail() {
           <div className="mt-7 flex flex-wrap justify-center gap-3">
             <Button
               variant="primary"
-              href={`/book?service=${service.id}`}
+              href="/book"
               className="bg-gradient-to-r from-amber-500 to-orange-500 px-7 py-3 font-bold text-stone-950 shadow-lg shadow-amber-500/20 transition-all hover:scale-[1.02] hover:from-amber-400 hover:to-orange-400 active:scale-[0.98]"
             >
               Book Free Demo
