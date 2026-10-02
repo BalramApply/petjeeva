@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import Section from '../layout/Section';
 import { whyChooseUsPoints } from '../../data/whyChooseUs';
 import { fadeUp, staggerChildren, inViewOnce } from '../../utils/animations';
-import heroImg from '../../assets/Why_ChooseUs.png';
+import heroImg from '../../assets/Asset4.jpg';
 
 export default function WhyChooseUs() {
   return (
