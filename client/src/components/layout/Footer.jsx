@@ -155,7 +155,7 @@ export default function Footer() {
               </a>
 
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/profile.php?id=61594664495314"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
@@ -174,7 +174,7 @@ export default function Footer() {
                 <YoutubeIcon className="h-4 w-4" />
               </a>
 
-              <a
+              {/* <a
                 href="https://reddit.com"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -182,7 +182,7 @@ export default function Footer() {
                 className="flex h-9 w-9 items-center justify-center rounded-xl border border-stone-200 bg-white text-stone-600 shadow-xs transition-all duration-200 hover:border-amber-500/40 hover:bg-stone-50 hover:text-amber-600 dark:border-[#232730] dark:bg-[#14171E] dark:text-[#9CA3AF] dark:shadow-none dark:hover:border-amber-500/40 dark:hover:bg-[#1A1E27] dark:hover:text-amber-400"
               >
                 <RedditIcon className="h-4 w-4" />
-              </a>
+              </a> */}
             </div>
           </div>
 
