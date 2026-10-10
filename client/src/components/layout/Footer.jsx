@@ -44,10 +44,10 @@ function RedditIcon({ className = "h-4 w-4" }) {
 }
 
 const SERVICE_LINKS = [
-  { label: 'Pet Training', href: '/services' },
-  { label: 'Pet Walking', href: '/services' },
-  { label: 'Pet Grooming', href: '/services' },
-  { label: 'Vaccination', href: '/services' },
+  { label: 'Pet Training', href: '/services/training' },
+  { label: 'Pet Walking', href: '/services/walking' },
+  { label: 'Pet Grooming', href: '/services/grooming' },
+  { label: 'Vaccination', href: '/services/wellness' },
   { label: 'Pet Registration', href: '/services/pet-registration' },
 ];
 
@@ -55,7 +55,6 @@ const QUICK_LINKS = [
   { label: 'Home', href: '/' },
   { label: 'Services', href: '/services' },
   { label: 'How It Works', href: '/how-it-works' },
-  { label: 'Professionals', href: '/professionals' },
   { label: 'Gallery', href: '/gallery' },
   { label: 'About', href: '/about' },
   { label: 'Contact', href: '/contact' },
@@ -83,9 +82,8 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative border-t border-stone-200 bg-stone-50 text-stone-600 selection:bg-amber-500/20 selection:text-amber-800 transition-colors duration-200 overflow-hidden dark:border-[#232730] dark:bg-[#0A0C0F] dark:text-[#9CA3AF] dark:selection:text-amber-300">
-      {/* Subtle top ambient glow */}
-      <div
+   <footer className="relative border-t border-stone-200 bg-stone-50 pb-12 sm:pb-0 text-stone-600 selection:bg-amber-500/20 selection:text-amber-800 transition-colors duration-200 overflow-hidden dark:border-[#232730] dark:bg-[#0A0C0F] dark:text-[#9CA3AF] dark:selection:text-amber-300">
+    <div
         aria-hidden="true"
         className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 h-44 w-[40rem] rounded-full bg-gradient-to-r from-amber-500/10 via-orange-500/5 to-transparent blur-3xl"
       />
@@ -165,7 +163,7 @@ export default function Footer() {
               </a>
 
               <a
-                href="www.youtube.com/@petJeeva"
+                href="https://www.youtube.com/@petJeeva"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="YouTube"
@@ -258,17 +256,14 @@ export default function Footer() {
       </Container>
 
       {/* Sub-Footer Bottom Bar */}
-      <div className="border-t border-stone-200 bg-stone-100 py-5 dark:border-[#1C2028] dark:bg-[#08090C]">
-        <Container className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-stone-500 dark:text-[#6B7280]">
-          <p className="flex items-center gap-1.5">
-            © {new Date().getFullYear()} {businessInfo.name}. Crafted with
-            <Heart size={12} className="text-amber-500 fill-amber-500" /> for happier pets.
-          </p>
-          <p className="text-center sm:text-right text-stone-400 dark:text-[#4B5563]">
-            Demo content shown where real business details are not yet configured.
-          </p>
-        </Container>
-      </div>
+      <div className="border-t border-stone-200 bg-stone-100 pt-5 pb-10 sm:py-5 dark:border-[#1C2028] dark:bg-[#08090C]">
+  <Container className="flex items-center justify-center text-center text-xs text-stone-500 dark:text-[#6B7280]">
+    <p className="flex items-center justify-center gap-1.5">
+      © {new Date().getFullYear()} {businessInfo.name}. Crafted with
+      <Heart size={12} className="text-amber-500 fill-amber-500" /> for happier pets.
+    </p>
+  </Container>
+</div>
     </footer>
   );
 }

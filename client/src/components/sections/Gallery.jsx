@@ -51,7 +51,7 @@ const GALLERY_ITEMS = [
     image: asset1,
     aspect: "wide",
     likes: 142,
-    date: "2024-05-18",
+    date: "2024-01-01",
     badge: "Training Time",
     tags: ["Shih Tzu", "Obedience Training", "PetJeeva"],
     brand: "PetJeeva Complete Pet Care"
@@ -67,7 +67,7 @@ const GALLERY_ITEMS = [
     image: asset2,
     aspect: "wide",
     likes: 168,
-    date: "2024-05-18",
+    date: "2024-01-14",
     badge: "Training Walk",
     tags: ["German Shepherd", "Leash Training", "PetJeeva"],
     brand: "PetJeeva Complete Pet Care"
@@ -83,7 +83,7 @@ const GALLERY_ITEMS = [
     image: asset3,
     aspect: "wide",
     likes: 215,
-    date: "2024-05-18",
+    date: "2024-01-22",
     badge: "Service Training",
     tags: ["Labrador", "Service Dog", "In Training"],
     brand: "PetJeeva Complete Pet Care"
@@ -99,7 +99,7 @@ const GALLERY_ITEMS = [
     image: asset4,
     aspect: "wide",
     likes: 231,
-    date: "2024-05-18",
+    date: "2024-01-30",
     badge: "Therapy Care",
     tags: ["Golden Retriever", "Therapy Dog", "Bonding Session"],
     brand: "PetJeeva Complete Pet Care"
@@ -115,7 +115,7 @@ const GALLERY_ITEMS = [
     image: asset5,
     aspect: "wide",
     likes: 189,
-    date: "2024-05-18",
+    date: "2024-02-07",
     badge: "Obedience Training",
     tags: ["Border Collie", "Smart Breed", "Command Training"],
     brand: "PetJeeva Complete Pet Care"
@@ -131,7 +131,7 @@ const GALLERY_ITEMS = [
     image: asset6,
     aspect: "wide",
     likes: 203,
-    date: "2024-05-18",
+    date: "2024-02-08",
     badge: "Bonding Time",
     tags: ["Labrador", "Companionship", "Gentle Care"],
     brand: "PetJeeva Complete Pet Care"
@@ -147,7 +147,7 @@ const GALLERY_ITEMS = [
     image: asset7,
     aspect: "wide",
     likes: 192,
-    date: "2024-05-18",
+    date: "2024-02-16",
     badge: "Behavior Training",
     tags: ["German Shepherd", "Leash Manners", "Alert Training"],
     brand: "PetJeeva Complete Pet Care"
@@ -163,7 +163,7 @@ const GALLERY_ITEMS = [
     image: asset8,
     aspect: "wide",
     likes: 257,
-    date: "2024-05-18",
+    date: "2024-02-24",
     badge: "Agility Fun",
     tags: ["Border Collie", "Agility Training", "Obstacle Course"],
     brand: "PetJeeva Complete Pet Care"
@@ -179,7 +179,7 @@ const GALLERY_ITEMS = [
     image: asset9,
     aspect: "wide",
     likes: 278,
-    date: "2024-05-18",
+    date: "2024-03-04",
     badge: "Working Dog",
     tags: ["German Shepherd", "SAR", "Working Dog"],
     brand: "PetJeeva Complete Pet Care"
@@ -195,7 +195,7 @@ const GALLERY_ITEMS = [
     image: asset10,
     aspect: "wide",
     likes: 242,
-    date: "2024-05-18",
+    date: "2024-03-12",
     badge: "Grooming Care",
     tags: ["Golden Retriever", "Bath Time", "Spa Day"],
     brand: "PetJeeva Complete Pet Care"
@@ -211,7 +211,7 @@ const GALLERY_ITEMS = [
     image: asset11,
     aspect: "wide",
     likes: 176,
-    date: "2024-05-18",
+    date: "2024-03-20",
     badge: "Enrichment Walk",
     tags: ["Labrador", "Sniff Walk", "Enrichment"],
     brand: "PetJeeva Complete Pet Care"
@@ -227,7 +227,7 @@ const GALLERY_ITEMS = [
     image: asset12,
     aspect: "wide",
     likes: 221,
-    date: "2024-05-18",
+    date: "2024-03-28",
     badge: "Retrieve Training",
     tags: ["Labrador", "Retrieve", "Field Training"],
     brand: "PetJeeva Complete Pet Care"
@@ -243,7 +243,7 @@ const GALLERY_ITEMS = [
     image: asset13,
     aspect: "wide",
     likes: 205,
-    date: "2024-05-18",
+    date: "2024-03-29",
     badge: "Focus Training",
     tags: ["Border Collie", "Focus Work", "Hand Signals"],
     brand: "PetJeeva Complete Pet Care"
@@ -259,7 +259,7 @@ const GALLERY_ITEMS = [
     image: asset14,
     aspect: "wide",
     likes: 264,
-    date: "2024-05-18",
+    date: "2024-04-06",
     badge: "Trick Training",
     tags: ["Shih Tzu", "Tricks", "Paw Shake"],
     brand: "PetJeeva Complete Pet Care"
@@ -275,7 +275,7 @@ const GALLERY_ITEMS = [
     image: asset15,
     aspect: "wide",
     likes: 198,
-    date: "2024-05-18",
+    date: "2024-04-14",
     badge: "Daily Walk",
     tags: ["Golden Retriever", "Daily Walk", "Loose Leash"],
     brand: "PetJeeva Complete Pet Care"
@@ -291,7 +291,7 @@ const GALLERY_ITEMS = [
     image: asset16,
     aspect: "wide",
     likes: 235,
-    date: "2024-05-18",
+    date: "2024-04-22",
     badge: "Fitness Run",
     tags: ["Golden Retriever", "Running", "Exercise"],
     brand: "PetJeeva Complete Pet Care"
@@ -307,7 +307,7 @@ const GALLERY_ITEMS = [
     image: asset17,
     aspect: "wide",
     likes: 188,
-    date: "2024-05-18",
+    date: "2024-04-30",
     badge: "Daily Walk",
     tags: ["Golden Retriever", "Park Walk", "Leash Training"],
     brand: "PetJeeva Complete Pet Care"
@@ -323,7 +323,7 @@ const GALLERY_ITEMS = [
     image: asset18,
     aspect: "wide",
     likes: 212,
-    date: "2024-05-18",
+    date: "2024-09-24",
     badge: "Dental Care",
     tags: ["Golden Retriever", "Dental Care", "Hygiene"],
     brand: "PetJeeva Complete Pet Care"
@@ -339,7 +339,7 @@ const GALLERY_ITEMS = [
     image: asset19,
     aspect: "wide",
     likes: 267,
-    date: "2024-05-18",
+    date: "2024-10-02",
     badge: "Vaccination Care",
     tags: ["Golden Retriever", "Vaccination", "Rabies Prevention"],
     brand: "PetJeeva Complete Pet Care"
@@ -355,7 +355,7 @@ const GALLERY_ITEMS = [
     image: asset20,
     aspect: "wide",
     likes: 289,
-    date: "2024-05-18",
+    date: "2024-10-10",
     badge: "Puppy Care",
     tags: ["Golden Retriever", "Puppy Vaccine", "Distemper Prevention"],
     brand: "PetJeeva Complete Pet Care"
